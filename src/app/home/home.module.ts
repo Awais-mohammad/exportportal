@@ -7,7 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderComponentModule } from '../header/header.component.module';
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 @NgModule({
   imports: [
@@ -16,7 +19,10 @@ import { HeaderComponentModule } from '../header/header.component.module';
     IonicModule,
     HomePageRoutingModule,
     HeaderComponentModule,
+<<<<<<< Updated upstream
     FooterComponentModule,
+=======
+>>>>>>> Stashed changes
   ],
   declarations: [HomePage],
 })

@@ -1,5 +1,6 @@
-import { Component,HostListener } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +12,29 @@ export class HomePage {
 
   constructor(
     private router: Router,
-  ) { }
+    private fireStore: AngularFirestore,
+  ) {
+    this.getCats();
+  }
 
   width = window.innerWidth;
-  
+  categories: any;
+
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.width = window.innerWidth;
+  }
+
+  getCats() {
+    const cats = this.fireStore.collection('appData').doc('categories').get().subscribe(data => {
+      this.categories = data.Df.sn.proto.mapValue.fields;
+      console.log(this.categories);
+    })
+  }
+
+  goToPage(path: string) {
+    this.router.navigate([path]).then(() => {
+    });
   }
 
   slideOpts = {
@@ -179,11 +196,6 @@ export class HomePage {
         }
       },
     }
-  }
-
-  goToPage(path: string) {
-    this.router.navigate([path]).then(() => {
-    });
   }
 
 }
