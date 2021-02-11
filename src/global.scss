@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,16 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: title;
+  src: url("./assets/fonts/Teko-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: slides;
+  src: url("./assets/fonts/Staatliches-Regular.ttf");
+}
+ion-content {
+  --background: rgb(236, 236, 236);
+}
