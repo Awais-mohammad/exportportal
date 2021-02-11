@@ -9,4 +9,4 @@ import { FooterComponent } from './footer.component';
     declarations: [FooterComponent],
     exports: [FooterComponent]
 })
-export class HeaderComponentModule { }
+export class FooterComponentModule { }
