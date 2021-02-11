@@ -7,7 +7,7 @@
 section {
     width: 100%;
     display: inline-block;
-    background: black;
+    background: rgb(24, 24, 24);
     height: 50vh;
     text-align: center;
     font-size: 22px;
@@ -16,7 +16,7 @@ section {
 }
 
 .footer-distributed {
-    background: rgba(0, 0, 0, 0.707);
+    background: rgb(0, 0, 0);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.319);
     box-sizing: border-box;
     width: 100%;
@@ -41,7 +41,7 @@ section {
 /* The company logo */
 
 .footer-distributed h3 {
-    color: #ffffff;
+    color: #c5c5c5;
     font: normal 36px "Open Sans", cursive;
     margin: 0;
 }
@@ -53,7 +53,7 @@ section {
 /* Footer links */
 
 .footer-distributed .footer-links {
-    color: #ffffff;
+    color: #d4d4d4;
     margin: 20px 0 12px;
     padding: 0;
 }
@@ -81,7 +81,7 @@ section {
 
 .footer-distributed .footer-center i {
     background-color: #33383b;
-    color: #ffffff;
+    color: #cccbcb;
     font-size: 25px;
     width: 38px;
     height: 38px;
