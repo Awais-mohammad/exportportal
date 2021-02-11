@@ -28,8 +28,8 @@ export class HomePage {
 
   getCats() {
     const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data:any) => {
-      console.log(this.categories);
       this.categories = data.Df.sn.proto.mapValue.fields;
+      console.log(this.categories);
       this.showMore();
       cats.unsubscribe();
     })
@@ -41,7 +41,7 @@ export class HomePage {
     } else {
       currDex = this.showCats.length;
     }
-    for (var i = currDex; i < this.showCats.length + 4; i++) {
+    for (var i = currDex; i < currDex + 4; i++) {
       console.log(this.categories.cats.arrayValue.values[i].stringValue);
       this.showCats.push(this.categories.cats.arrayValue.values[i].stringValue);
     }

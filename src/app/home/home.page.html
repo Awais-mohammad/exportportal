@@ -104,7 +104,7 @@
   </div>
   <div class="cardsparent">
 
-    <div *ngFor="let item of [].constructor(12)" class="card 1">
+    <div *ngFor="let item of showCats" class="card 1">
 
       <div class="card_image">
 
@@ -114,12 +114,15 @@
 
       <div class="card_title title-white">
 
-        <p>Card Title</p>
+        <p>{{item.toUpperCase()}}</p>
 
       </div>
 
     </div>
 
+  </div>
+  <div style="text-align: center;">
+    <ion-button (click)="showMore()">Show More</ion-button>
   </div>
 </ion-content>
 <app-footer></app-footer>
