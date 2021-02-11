@@ -1,7 +1,7 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true">
   <div class="header">
-    <ion-grid style="padding-top:250px;width:500px;float: right;">
+    <ion-grid style="padding-top:250px;width:600px;float: right;" *ngIf = "width>600">
       <ion-row>
         <ion-col>
           <ion-slides [options]="slideOpts">
@@ -48,7 +48,53 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-
+    <ion-grid style="padding-top:250px;width:100%;float: right;" *ngIf = "width<=600">
+      <ion-row>
+        <ion-col>
+          <ion-slides [options]="slideOpts">
+            <ion-slide>
+              <div>
+                <!--<h3 style = "color:white; font-family: bangers;text-align:center;">Coming</h3>-->
+                <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
+                font-family: slides; font-size:3em;">Find exporters by category
+                </h1>
+                <p style="color:white;text-align:center;">
+                  <ion-button style="font-family: general;" fill="outline" color="none"
+                    style="border:1px solid white;border-radius: 10px;color:white" (click)="goToPage('custom-order')">
+                    View Categories</ion-button>
+                </p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div>
+                <!--<h3 style = "color:white; font-family: bangers;text-align:center;">Coming</h3>-->
+                <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
+                font-family: slides; font-size:3em;">Find exporters by category
+                </h1>
+                <p style="color:white;text-align:center;">
+                  <ion-button style="font-family: general;" fill="outline" color="none"
+                    style="border:1px solid white;border-radius: 10px;color:white" (click)="goToPage('custom-order')">
+                    View Categories</ion-button>
+                </p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div>
+                <!--<h3 style = "color:white; font-family: bangers;text-align:center;">Coming</h3>-->
+                <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
+                font-family: slides; font-size:3em;">Find exporters by category
+                </h1>
+                <p style="color:white;text-align:center;">
+                  <ion-button style="font-family: general;" fill="outline" color="none"
+                    style="border:1px solid white;border-radius: 10px;color:white" (click)="goToPage('custom-order')">
+                    View Categories</ion-button>
+                </p>
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
   <div class="cardsparent">
 

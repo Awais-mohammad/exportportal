@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,6 +12,13 @@ export class HomePage {
   constructor(
     private router: Router,
   ) { }
+
+  width = window.innerWidth;
+  
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.width = window.innerWidth;
+  }
 
   slideOpts = {
     grabCursor: true,
