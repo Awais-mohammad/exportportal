@@ -1,3 +1,4 @@
+import { SidemenuComponentmodule } from './../sidemenu/sidemenu.component.module';
 import { FooterComponentModule } from './../footer/footer.component.module';
 import { FooterComponent } from './../footer/footer.component';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderComponentModule } from '../header/header.component.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +18,9 @@ import { HeaderComponentModule } from '../header/header.component.module';
     HomePageRoutingModule,
     HeaderComponentModule,
     FooterComponentModule,
-   ],
+    SidemenuComponentmodule,
+
+  ],
   declarations: [HomePage],
 })
 export class HomePageModule { }
