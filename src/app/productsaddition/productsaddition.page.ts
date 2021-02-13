@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'app-productsaddition',
@@ -13,18 +14,19 @@ export class ProductsadditionPage implements OnInit {
   ) { }
 
   categories: any;
-  selectedcat: string;
+  selectedcat: string = "baby";
 
   temp: any;
-  subtypes: any[];
+  cats: any[];
+  subCats: any;
 
   getCats() {
     const cats = this.fireStore.collection('appData').doc('categories').valueChanges().subscribe((data: any) => {
       this.categories = data;
+      console.log(this.categories);
       this.temp = data
-      this.subtypes = this.categories.cats;
-      console.log('ksghoiw', this.subtypes);
-
+      this.cats = this.categories.cats;
+      console.log("THERE YOU GO AWAISSS!!!!!!!!!!!!!!", this.categories[this.selectedcat]);
     })
   }
 
