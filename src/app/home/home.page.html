@@ -1,10 +1,8 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true">
-  <div class="header">
+  <div class="header" *ngIf="width">
     <ion-grid style="padding-top:250px;" *ngIf="width>600">
       <ion-row>
-
-
         <ion-col style="width: 60%;">
           <ion-slides [options]="slideOpts">
             <ion-slide>
@@ -118,13 +116,13 @@
 
   <!--Categories-->
   <div>
-    <ion-toolbar style="text-align: center;" color = "tertiary">
+    <ion-toolbar style="text-align: center;" color="tertiary">
       <h1 style="font-family: title;font-size: 3em;color:rgb(255, 255, 255);text-align: center;">Categories</h1>
     </ion-toolbar>
     <div class="cardsparent">
       <div *ngFor="let item of showCats" class="card 1">
         <div class="card_image">
-          <img src="../../assets/images/cats/{{item}}.jpg"/>
+          <img src="../../assets/images/cats/{{item}}.jpg" />
         </div>
         <div class="card_title title-white">
           <p>{{item.toUpperCase()}}</p>
@@ -140,6 +138,115 @@
   </div>
 
 
+  <!--Products-->
+  <div>
+    <ion-toolbar style="text-align: center;" color="tertiary">
+      <h1 style="font-family: title;font-size: 3em;color:rgb(255, 255, 255);text-align: center;">Products</h1>
+    </ion-toolbar>
+    <div>
+      <ion-grid *ngIf="width>600">
+        <ion-row *ngIf="categories">
+          <ion-col style="background: white;border-radius: 25px;" size="2">
+            <div *ngFor="let cat of categories.cats.arrayValue.values">
+              <ion-item color="none" mode="ios" button style="font-family:title;font-weight: 600;">
+                {{capitalizeFirstLetter(cat.stringValue)}}
+              </ion-item>
+            </div>
+          </ion-col>
+          <ion-col style="padding-left:50px;padding-right:50px;text-align: center;" size="10">
+            <ion-card style="width: 300px;display: inline-block;">
+              <div class="card_image">
+                <img src="../../assets/images/unnamed.jpg" />
+              </div>
+              <ion-card-header style="text-align: left;">
+                <ion-card-subtitle>Fantech inc</ion-card-subtitle>
+                <ion-card-title style="font-family: title;">Headphones</ion-card-title>
+              </ion-card-header>
+              <ion-item color="success" style="font-family: monospace;text-align: center;" button>View Exporter
+              </ion-item>
+            </ion-card>
+            <ion-card style="width: 300px;display: inline-block;">
+              <div class="card_image">
+                <img src="../../assets/images/unnamed.jpg" />
+              </div>
+              <ion-card-header style="text-align: left;">
+                <ion-card-subtitle>Fantech inc</ion-card-subtitle>
+                <ion-card-title style="font-family: title;">Headphones</ion-card-title>
+              </ion-card-header>
+              <ion-item color="success" style="font-family: monospace;text-align: center;" button>View Exporter
+              </ion-item>
+            </ion-card>
+            <ion-card style="width: 300px;display: inline-block;">
+              <div class="card_image">
+                <img src="../../assets/images/unnamed.jpg" />
+              </div>
+              <ion-card-header style="text-align: left;">
+                <ion-card-subtitle>Fantech inc</ion-card-subtitle>
+                <ion-card-title style="font-family: title;">Headphones</ion-card-title>
+              </ion-card-header>
+              <ion-item color="success" style="font-family: monospace;text-align: center;" button>View Exporter
+              </ion-item>
+            </ion-card>
+            <ion-card style="width: 300px;display: inline-block;">
+              <div class="card_image">
+                <img src="../../assets/images/unnamed.jpg" />
+              </div>
+              <ion-card-header style="text-align: left;">
+                <ion-card-subtitle>Fantech inc</ion-card-subtitle>
+                <ion-card-title style="font-family: title;">Headphones</ion-card-title>
+              </ion-card-header>
+              <ion-item color="success" style="font-family: monospace;text-align: center;" button>View Exporter
+              </ion-item>
+            </ion-card>
+            <ion-card style="width: 300px;display: inline-block;">
+              <div class="card_image">
+                <img src="../../assets/images/unnamed.jpg" />
+              </div>
+              <ion-card-header style="text-align: left;">
+                <ion-card-subtitle>Fantech inc</ion-card-subtitle>
+                <ion-card-title style="font-family: title;">Headphones</ion-card-title>
+              </ion-card-header>
+              <ion-item color="success" style="font-family: monospace;text-align: center;" button>View Exporter
+              </ion-item>
+            </ion-card>
+            <ion-card style="width: 300px;display: inline-block;">
+              <div class="card_image">
+                <img src="../../assets/images/unnamed.jpg" />
+              </div>
+              <ion-card-header style="text-align: left;">
+                <ion-card-subtitle>Fantech inc</ion-card-subtitle>
+                <ion-card-title style="font-family: title;">Headphones</ion-card-title>
+              </ion-card-header>
+              <ion-item color="success" style="font-family: monospace;text-align: center;" button>View Exporter
+              </ion-item>
+            </ion-card>
+            <ion-card style="width: 300px;display: inline-block;">
+              <div class="card_image">
+                <img src="../../assets/images/unnamed.jpg" />
+              </div>
+              <ion-card-header style="text-align: left;">
+                <ion-card-subtitle>Fantech inc</ion-card-subtitle>
+                <ion-card-title style="font-family: title;">Headphones</ion-card-title>
+              </ion-card-header>
+              <ion-item color="success" style="font-family: monospace;text-align: center;" button>View Exporter
+              </ion-item>
+            </ion-card>
+            <ion-card style="width: 300px;display: inline-block;">
+              <div class="card_image">
+                <img src="../../assets/images/unnamed.jpg" />
+              </div>
+              <ion-card-header style="text-align: left;">
+                <ion-card-subtitle>Fantech inc</ion-card-subtitle>
+                <ion-card-title style="font-family: title;">Headphones</ion-card-title>
+              </ion-card-header>
+              <ion-item color="success" style="font-family: monospace;text-align: center;" button>View Exporter
+              </ion-item>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
   <app-footer></app-footer>
 
 </ion-content>

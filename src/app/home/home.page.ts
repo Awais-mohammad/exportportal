@@ -35,6 +35,10 @@ export class HomePage {
     })
   }
 
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
   showMore() {
     if (!this.showCats) {
       var currDex = 0;
