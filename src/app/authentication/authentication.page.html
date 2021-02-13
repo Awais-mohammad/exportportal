@@ -1,0 +1,122 @@
+<app-header></app-header>
+
+<ion-content>
+
+  <div class="header">
+
+  </div>
+
+  <div class="page">
+
+    <ion-card *ngIf="!signup">
+
+      <ion-card-content>
+
+        <div>
+
+          <ion-title class="headinone">Sign In</ion-title>
+
+          <ion-title class="headintwo">Already have an account?
+
+            <span (click)="showHideSignup()" style="color: #09757A;">Sign in</span>
+
+          </ion-title>
+
+        </div>
+
+        <div style=" padding-top: 7px;" class="fields">
+
+          <div class="paddtop">
+            <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
+            <ion-input placeholder='Enter your e-mail'></ion-input>
+          </div>
+
+          <div class="paddtop">
+            <ion-label style="display: flex;justify-content: flex-start;">Username</ion-label>
+            <ion-input placeholder='Enter your username'></ion-input>
+          </div>
+
+          <div class="paddtop">
+            <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+            <ion-input placeholder='Enter your password'></ion-input>
+          </div>
+
+          <div class="paddtop">
+            <ion-button style=" max-width: 50vh;" color="dark" expand='block'>
+              <p>CREATE ACCOUNT</p>
+            </ion-button>
+            <ion-label class="terms">By creating an account, you agree to EXPORT PORTAL's <span>Terms &
+                Conditions</span> and
+              <span>Privacy Policy</span>
+            </ion-label>
+          </div>
+
+
+        </div>
+
+      </ion-card-content>
+
+
+    </ion-card>
+
+    <ion-card *ngIf="signup">
+
+      <ion-card-content>
+
+        <div class="card">
+
+          <ion-title class="headinone">Create An Account</ion-title>
+
+          <ion-title class="headintwo">New to EXPORTPORTAL
+
+            <span (click)="showHideSignup()" style="color: #09757A;">Create Account</span>
+
+          </ion-title>
+
+        </div>
+
+        <div style=" padding-top: 7px;" class="fields">
+
+          <div class="paddtop">
+            <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
+            <ion-input placeholder='Enter your e-mail'></ion-input>
+          </div>
+
+          <div class="paddtop">
+            <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+            <ion-input placeholder='Enter your password'></ion-input>
+          </div>
+
+          <div class="flexend">
+            <ion-button color="dark" fill='clear'>
+              <p style="font-family: monospace;font-size: 14px;font-weight: bold;">forgot password?</p>
+            </ion-button>
+
+          </div>
+
+          <div>
+            <ion-button style=" max-width: 50vh;" color="dark" expand='block'>
+              <p>SIGN IN</p>
+            </ion-button>
+
+            <div class="disflex">
+              <ion-checkbox></ion-checkbox>
+              <ion-label class="padleft">Keep me signed in on this device</ion-label>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </ion-card-content>
+
+
+    </ion-card>
+
+
+  </div>
+
+  <app-footer></app-footer>
+
+</ion-content>
