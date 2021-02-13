@@ -5,7 +5,7 @@
       <ion-row>
 
 
-        <ion-col style="width: 70%;">
+        <ion-col style="width: 60%;">
           <ion-slides [options]="slideOpts">
             <ion-slide>
               <div>
@@ -51,7 +51,7 @@
             </ion-slide>
           </ion-slides>
         </ion-col>
-        <ion-col style="width: 30%;">
+        <ion-col style="width: 40%;padding-right:10%;">
           <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
           font-family: slides; font-size:3em;">Finding exporters in Pakistan has never been easier
           </h1>
@@ -118,13 +118,13 @@
 
   <!--Categories-->
   <div>
-    <div style="text-align: center;">
-      <h1 style="font-family: title;">Categories</h1>
-    </div>
+    <ion-toolbar style="text-align: center;" color = "tertiary">
+      <h1 style="font-family: title;font-size: 3em;color:rgb(255, 255, 255);text-align: center;">Categories</h1>
+    </ion-toolbar>
     <div class="cardsparent">
       <div *ngFor="let item of showCats" class="card 1">
         <div class="card_image">
-          <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
+          <img src="../../assets/images/cats/{{item}}.jpg"/>
         </div>
         <div class="card_title title-white">
           <p>{{item.toUpperCase()}}</p>
