@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   async checkRoute() {
     setInterval(() => {
       this.activePath = this.router.url.slice(1, this.router.url.length);
-    }, 1000)
+    }, 100)
   }
 
   ngOnInit() {
@@ -33,6 +33,7 @@ export class HeaderComponent implements OnInit {
   goToPage(path: string) {
     this.router.navigate([path]).then(() => {
       this.activePath = this.router.url.slice(1, this.router.url.length);
+      console.log(this.activePath);
     });
   }
 

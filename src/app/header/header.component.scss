@@ -4,7 +4,30 @@
     border-radius: 10%;
     transition: 0.2s;
 }
-.bars:hover{
+.bars:hover {
     background: rgb(175, 175, 175);
 }
 
+ion-button:hover {
+    --color: rgb(0, 0, 0);
+}
+
+.activated {
+    box-shadow: 0 4px 2px -2px gray;
+    color: rgb(38, 153, 247);
+}
+
+.hoo {
+    padding:5px;
+    transition: 300ms;
+}
+
+.hoo:hover {
+    color: rgb(45, 119, 255);
+    box-shadow: 0 4px 2px -3px gray;
+    transition: 100ms;
+}
+
+.hoo:active {
+    color: rgb(255, 255, 255);
+}
