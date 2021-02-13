@@ -6,13 +6,16 @@
       Export Portal
     </ion-title>
     <div slot="end" *ngIf="width > 600" style="padding-right:100px;">
-      <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;text-underline-position: below;text-underline-offset: 1;">Home</ion-button>
+      <ion-button fill="clear"
+        style="color: white; font-size:1.2em; font-family: Impact;text-underline-position: below;text-underline-offset: 1;">
+        Home</ion-button>
       <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;">Products</ion-button>
       <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;">Categories</ion-button>
       <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;">Vendors</ion-button>
       <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;">About</ion-button>
       <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;">Contact</ion-button>
-      <ion-button fill="outline" style="color: white; font-size:1.2em; font-family: Impact;">Login/Register</ion-button>
+      <ion-button (click)="goToPage('authentication')" fill="outline"
+        style="color: white; font-size:1.2em; font-family: Impact;">Login/Register</ion-button>
     </div>
   </ion-toolbar>
 </ion-header>
