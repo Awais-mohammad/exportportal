@@ -1,9 +1,11 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true">
   <div class="header">
-    <ion-grid style="padding-top:250px;width:600px;float: right;" *ngIf="width>600">
+    <ion-grid style="padding-top:250px;" *ngIf="width>600">
       <ion-row>
-        <ion-col>
+
+
+        <ion-col style="width: 70%;">
           <ion-slides [options]="slideOpts">
             <ion-slide>
               <div>
@@ -49,10 +51,21 @@
             </ion-slide>
           </ion-slides>
         </ion-col>
+        <ion-col style="width: 30%;">
+          <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
+          font-family: slides; font-size:3em;">Finding exporters in Pakistan has never been easier
+          </h1>
+          <ion-searchbar mode="ios" color="light" placeholder="Search for product, vendor or category..">
+          </ion-searchbar>
+        </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-grid style="padding-top:250px;width:100%;float: right;" *ngIf="width<=600">
+    <ion-grid style="padding-top:200px;width:100%;float: right;" *ngIf="width<=600">
       <ion-row>
+        <ion-col style="width: 40%;">
+          <ion-searchbar mode="ios" color="light" placeholder="Search for product, vendor or category..">
+          </ion-searchbar>
+        </ion-col>
         <ion-col>
           <ion-slides [options]="slideOpts">
             <ion-slide>
@@ -102,27 +115,28 @@
       </ion-row>
     </ion-grid>
   </div>
-  <div class="cardsparent">
 
-    <div *ngFor="let item of showCats" class="card 1">
-
-      <div class="card_image">
-
-        <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
-
-      </div>
-
-      <div class="card_title title-white">
-
-        <p>{{item.toUpperCase()}}</p>
-
-      </div>
-
+  <!--Categories-->
+  <div>
+    <div style="text-align: center;">
+      <h1 style="font-family: title;">Categories</h1>
     </div>
-
-  </div>
-  <div style="text-align: center;">
-    <ion-button (click)="showMore()">Show More</ion-button>
+    <div class="cardsparent">
+      <div *ngFor="let item of showCats" class="card 1">
+        <div class="card_image">
+          <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
+        </div>
+        <div class="card_title title-white">
+          <p>{{item.toUpperCase()}}</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center;" *ngIf="showCats && categories">
+      <ion-button (click)="showMore()" fill="clear" style="font-family: slides;font-size:25px;"
+        *ngIf="showCats.length < categories.cats.arrayValue.values.length">
+        <ion-icon name="add-outline"></ion-icon>Show More
+      </ion-button>
+    </div>
   </div>
 
 
