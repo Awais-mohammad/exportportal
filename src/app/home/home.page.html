@@ -1,7 +1,7 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true">
   <div class="header">
-
+    <app-sidemenu></app-sidemenu>
     <ion-grid style="padding-top:250px;width:600px;float: right;" *ngIf="width>600">
       <ion-row>
         <ion-col>
@@ -103,18 +103,14 @@
       </ion-row>
     </ion-grid>
   </div>
-
-  <div class="title">
-    <ion-title class="titlefonts">Categories</ion-title>
-  </div>
   <div class="cardsparent">
-
 
     <div *ngFor="let item of showCats" class="card 1">
 
       <div class="card_image">
 
-        <ion-button class="a">view</ion-button>
+        <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
+
       </div>
 
       <div class="card_title title-white">
@@ -126,7 +122,7 @@
     </div>
 
   </div>
-  <div style="text-align: center;position: relative;top: 1em;">
+  <div style="text-align: center;">
     <ion-button (click)="showMore()">Show More</ion-button>
   </div>
 
