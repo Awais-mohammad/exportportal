@@ -8,13 +8,13 @@
 
   <div class="page">
 
-    <ion-card *ngIf="!signup">
+    <ion-card class="fade-in" *ngIf="!signup">
 
       <ion-card-content>
 
         <div>
 
-          <ion-title class="headinone">Sign In</ion-title>
+          <ion-title class="headinone">Create An Account</ion-title>
 
           <ion-title class="headintwo">Already have an account?
 
@@ -28,21 +28,21 @@
 
           <div class="paddtop">
             <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
-            <ion-input placeholder='Enter your e-mail'></ion-input>
+            <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
           </div>
 
           <div class="paddtop">
             <ion-label style="display: flex;justify-content: flex-start;">Username</ion-label>
-            <ion-input placeholder='Enter your username'></ion-input>
+            <ion-input [(ngModel)]="username" placeholder='Enter your username'></ion-input>
           </div>
 
           <div class="paddtop">
             <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-            <ion-input placeholder='Enter your password'></ion-input>
+            <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
           </div>
 
           <div class="paddtop">
-            <ion-button style=" max-width: 50vh;" color="dark" expand='block'>
+            <ion-button (click)="register()" style=" max-width: 50vh;" color="dark" expand='block'>
               <p>CREATE ACCOUNT</p>
             </ion-button>
             <ion-label class="terms">By creating an account, you agree to EXPORT PORTAL's <span>Terms &
@@ -59,13 +59,13 @@
 
     </ion-card>
 
-    <ion-card *ngIf="signup">
+    <ion-card class="fade-in" *ngIf="signup">
 
       <ion-card-content>
 
         <div class="card">
 
-          <ion-title class="headinone">Create An Account</ion-title>
+          <ion-title class="headinone">Sign In</ion-title>
 
           <ion-title class="headintwo">New to EXPORTPORTAL
 
@@ -79,12 +79,12 @@
 
           <div class="paddtop">
             <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
-            <ion-input placeholder='Enter your e-mail'></ion-input>
+            <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
           </div>
 
           <div class="paddtop">
             <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-            <ion-input placeholder='Enter your password'></ion-input>
+            <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
           </div>
 
           <div class="flexend">
@@ -95,7 +95,7 @@
           </div>
 
           <div>
-            <ion-button style=" max-width: 50vh;" color="dark" expand='block'>
+            <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
               <p>SIGN IN</p>
             </ion-button>
 

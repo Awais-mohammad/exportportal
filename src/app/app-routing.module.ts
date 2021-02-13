@@ -14,7 +14,12 @@ const routes: Routes = [
   {
     path: 'authentication',
     loadChildren: () => import('./authentication/authentication.module').then( m => m.AuthenticationPageModule)
+  },  {
+    path: 'productsaddition',
+    loadChildren: () => import('./productsaddition/productsaddition.module').then( m => m.ProductsadditionPageModule)
   },
+
+ 
 ];
 
 @NgModule({
