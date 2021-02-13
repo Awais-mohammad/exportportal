@@ -11,8 +11,7 @@
   margin: 30px auto;
   width: 400px;
   height: 300px;
-  border-radius: 40px;
-  box-shadow: -1px 15px 30px -12px black;
+  box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: 0.4s;
 }
@@ -32,27 +31,30 @@
 
 .card .card_title {
   text-align: center;
-  border-radius: 0px 0px 40px 40px;
   font-family: sans-serif;
   font-weight: bold;
   font-size: 1.3em;
-  margin-top: -80px;
-  height: 40px;
+  position: relative;
+  top: -4em;
+  padding: 10px;
   color: white;
+  background-color:  rgba(0, 0, 0, 0.521);;
 }
 
+
 .card:hover {
-  transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 #container a {
   text-decoration: none;
 }
 
-.header{
-  height:700px;
-  background: url('../../assets/images/back.jpg');
+.header {
+  height: 700px;
+  background: url("../../assets/images/back.jpg");
   background-size: cover;
   box-shadow: 0px 0px 10px 3px black;
 }
@@ -60,4 +62,19 @@
   .card-list {
     flex-direction: column;
   }
+}
+
+.title {
+  text-align: center;
+  padding-top: 2em;
+}
+.titlefonts {
+  font-family: title;
+  font-size: 50px;
+}
+.a {
+  display: none;
+}
+a:hover {
+  display: inline;
 }
