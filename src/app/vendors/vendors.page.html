@@ -1,7 +1,13 @@
 <app-header></app-header>
 
 <ion-content>
-
+    <div style="text-align:center;padding-top: 288px;">
+        <div [innerHtml]='msg'></div>
+        <label>
+            <input type="file" (change)="selectFile($event)">
+        </label>
+        <button [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+    </div>
 </ion-content>
 
 <app-footer></app-footer>
