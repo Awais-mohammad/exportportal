@@ -13,7 +13,7 @@
       <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;" *ngIf="activePath == 'home'">
         <span class="hoo activated">Home</span>
       </ion-button>
-      <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
+      <ion-button (click)="goToPage('products')" fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
         *ngIf="activePath != 'products'">
         <span class="hoo">Products</span>
       </ion-button>
@@ -21,7 +21,7 @@
         *ngIf="activePath == 'products'">
         <span class="hoo activated">Products</span>
       </ion-button>
-      <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
+      <ion-button (click)="goToPage('categories')" fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
         *ngIf="activePath != 'categories'">
         <span class="hoo">Categories</span>
       </ion-button>
@@ -29,7 +29,7 @@
         *ngIf="activePath == 'categories'">
         <span class="hoo activated">Categories</span>
       </ion-button>
-      <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
+      <ion-button (click)="goToPage('vendors')" fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
         *ngIf="activePath != 'vendors'">
         <span class="hoo">Vendors</span>
       </ion-button>
