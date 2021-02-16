@@ -1,0 +1,286 @@
+.fullpage {
+    height: 100%;
+    width: 100%;
+}
+
+.webheader {
+    height: 500px;
+    background: url("../../assets/images/adminpanel.jpg") no-repeat center center;
+    background-size: cover;
+    box-shadow: 0px 0px 10px 3px rgb(167, 166, 166);
+    position: relative;
+    z-index: 1;
+    background-size: cover;
+}
+.textheader {
+    position: relative;
+    z-index: 3;
+    text-align: left;
+    top: 40%;
+    padding-left: 3em;
+}
+.mobtextheader {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    top: 40%;
+}
+.content {
+    text-align: center;
+    position: relative;
+    top: 2em;
+}
+.cardparent {
+    border-radius: 25px;
+    width: 90%;
+}
+
+.panel {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    height: 160px;
+    margin: 10px;
+    padding-left: 2em;
+    min-width: 95%;
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+    a {
+        position: relative;
+        display: block;
+        padding: 12px 25px 25px 25px;
+        color: #fff;
+        text-decoration: none;
+        z-index: 2;
+        span {
+            display: block;
+            font-size: 96px;
+            font-weight: 700;
+            line-height: 96px;
+        }
+    }
+    &:after {
+        position: absolute;
+        font-family: FontAwesome;
+        color: rgba(0, 0, 0, 1);
+        z-index: 1;
+        transition: all 0.5s;
+        // Use this to prevent misplacing background caused by default line-height
+        line-height: normal;
+    }
+    &.post {
+        background-color: #b8aa0e;
+        &:after {
+            content: "\f08d";
+            font-size: 200px;
+            color: darken(#b8aa0e, 4%);
+            top: 45px;
+            right: 60px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        &:hover:after {
+            top: 8px;
+        }
+    }
+    &.comment {
+        background-color: #0377c0;
+        &:after {
+            content: "\f075";
+            font-size: 180px;
+            color: darken(#0377c0, 4%);
+            top: 30px;
+            right: 35px;
+        }
+        &:hover:after {
+            top: -5px;
+        }
+    }
+    &.page {
+        background-color: #279824;
+        &:after {
+            content: "\f15c";
+            font-size: 160px;
+            color: darken(#279824, 4%);
+            top: 62px;
+            right: 39px;
+        }
+        &:hover:after {
+            top: 24px;
+        }
+    }
+    &.user {
+        background-color: #fc1c3e;
+        &:after {
+            content: "\f007";
+            font-size: 200px;
+            color: darken(#fc1c3e, 8%);
+            top: 45px;
+            right: 35px;
+        }
+        &:hover:after {
+            top: 7px;
+        }
+    }
+    &:hover:after {
+        transition: all 0.5s;
+    }
+}
+
+.panelmobile {
+    box-sizing: border-box;
+    position: relative;
+    height: 160px;
+    margin: 10px;
+    min-width: 30%;
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+    a {
+        position: relative;
+        display: block;
+        padding: 12px 25px 25px 25px;
+        color: #fff;
+        text-decoration: none;
+        z-index: 2;
+        span {
+            display: block;
+            font-size: 96px;
+            font-weight: 700;
+            line-height: 96px;
+        }
+    }
+    &:after {
+        position: absolute;
+        font-family: FontAwesome;
+        color: rgba(0, 0, 0, 1);
+        z-index: 1;
+        transition: all 0.5s;
+        // Use this to prevent misplacing background caused by default line-height
+        line-height: normal;
+    }
+    &.post {
+        background-color: #b8aa0e;
+        &:after {
+            content: "\f08d";
+            font-size: 200px;
+            color: darken(#b8aa0e, 4%);
+            top: 45px;
+            right: 60px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        &:hover:after {
+            top: 8px;
+        }
+    }
+    &.comment {
+        background-color: #0377c0;
+        &:after {
+            content: "\f075";
+            font-size: 180px;
+            color: darken(#0377c0, 4%);
+            top: 30px;
+            right: 35px;
+        }
+        &:hover:after {
+            top: -5px;
+        }
+    }
+    &.page {
+        background-color: #279824;
+        &:after {
+            content: "\f15c";
+            font-size: 160px;
+            color: darken(#279824, 4%);
+            top: 62px;
+            right: 39px;
+        }
+        &:hover:after {
+            top: 24px;
+        }
+    }
+    &.user {
+        background-color: #fc1c3e;
+        &:after {
+            content: "\f007";
+            font-size: 200px;
+            color: darken(#fc1c3e, 8%);
+            top: 45px;
+            right: 35px;
+        }
+        &:hover:after {
+            top: 7px;
+        }
+    }
+    &:hover:after {
+        transition: all 0.5s;
+    }
+}
+.containermobile {
+    margin: 0 auto;
+    max-width: 980px;
+    display: flex;
+}
+
+.containerweb {
+    margin: 0 auto;
+    max-width: 980px;
+}
+.title {
+    font-family: "Noto Sans JP", sans-serif;
+    color: black;
+    font-weight: bold;
+}
+.straitfont {
+    font-family: "Strait", sans-serif;
+}
+
+ion-card {
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: none !important;
+}
+
+.headinone {
+    font-family: title;
+    font-size: 40px;
+}
+
+.headintwo {
+    font-size: 12px;
+    font-family: "Hammersmith One", sans-serif;
+}
+
+.fields {
+    padding: 30px;
+    font-family: "Hammersmith One", sans-serif;
+}
+
+ion-input {
+    font-size: 10px;
+    font-family: "Oxygen", sans-serif;
+    border: 2px solid rgba(0, 0, 0, 0.415);
+    max-width: 50vh;
+}
+
+.span {
+    color: #09757a;
+}
+
+.paddtop {
+    padding-top: 20px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Strait&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Truculenta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap");

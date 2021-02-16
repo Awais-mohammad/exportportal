@@ -1,0 +1,124 @@
+.webheader {
+    height: 500px;
+    background: url("../../assets/images/vendorloginpageimage.jpg") no-repeat center center;
+    background-size: cover;
+    box-shadow: 0px 0px 10px 3px rgb(167, 166, 166);
+    position: relative;
+    z-index: 1;
+    background-size: cover;
+}
+.mobileheader {
+    height: 550px;
+    background: url("../../assets/images/vendorloginpageimage.jpg") no-repeat scroll center center;
+    width: 100%;
+    object-fit: fill;
+    box-shadow: 0px 0px 10px 3px rgb(167, 166, 166);
+    position: relative;
+    z-index: 1;
+}
+
+.txt {
+    top: 37%;
+    white-space: normal;
+    position: relative;
+    z-index: 5;
+}
+.card {
+    text-align: center;
+    position: relative;
+    border-radius: 25px;
+    width: 92%;
+    height: 50%;
+    background-color: white;
+    .heading {
+        font-family: "Noto Sans JP", sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+
+        padding: 0.5em;
+    }
+}
+
+.image-center {
+    margin: 0 auto;
+}
+ion-avatar {
+    padding-top: 1em;
+    height: 8em;
+    width: 8em;
+}
+.title {
+    font-family: "Noto Sans JP", sans-serif;
+    color: black;
+    font-weight: bold;
+}
+.straitfont {
+    font-family: "Strait", sans-serif;
+}
+
+ion-card {
+    color: black;
+    cursor: pointer;
+    width: 100%;
+}
+
+.headinone {
+    font-family: title;
+    font-size: 40px;
+}
+
+.headintwo {
+    font-size: 12px;
+    font-family: "Hammersmith One", sans-serif;
+}
+
+.fields {
+    padding: 30px;
+    font-family: "Hammersmith One", sans-serif;
+}
+
+ion-input {
+    font-size: 10px;
+    font-family: "Oxygen", sans-serif;
+    border: 2px solid rgba(0, 0, 0, 0.415);
+    max-width: 50vh;
+}
+
+.span {
+    color: #09757a;
+}
+
+.paddtop {
+    padding-top: 20px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Strait&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Truculenta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap");
+
+.cardheightcontroller {
+    height: 22em;
+}
+//copyrights 2020 @awaisme.com & ekniazi.com
+.card1 {
+    background: #c31432;
+    background: -webkit-linear-gradient(to top, #240b36, #c31432);
+    background: linear-gradient(to top, #240b36, #c31432);
+    border-radius: 25px;
+}
+.card2 {
+    background: #da4453;
+    background: -webkit-linear-gradient(to top, #89216b, #da4453);
+    background: linear-gradient(to top, #89216b, #da4453);
+
+    border-radius: 25px;
+}
+.card3 {
+    background: #c94b4b;
+    background: -webkit-linear-gradient(to top, #4b134f, #c94b4b);
+    background: linear-gradient(to top, #4b134f, #c94b4b);
+    border-radius: 25px;
+}

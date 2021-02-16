@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -12,11 +12,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'authentication',
-    loadChildren: () => import('./authentication/authentication.module').then( m => m.AuthenticationPageModule)
-  },  {
-    path: 'productsaddition',
-    loadChildren: () => import('./productsaddition/productsaddition.module').then( m => m.ProductsadditionPageModule)
+    path: 'vendors-dashboard',
+    loadChildren: () => import('./vendors-dashboard/vendors-dashboard.module').then(m => m.VendorsDashboardPageModule)
+  },
+  {
+    path: 'vendors-main',
+    loadChildren: () => import('./vendors-main/vendors-main.module').then( m => m.VendorsMainPageModule)
   },
   {
     path: 'products',
@@ -32,6 +33,9 @@ const routes: Routes = [
   },
 
  
+
+
+
 ];
 
 @NgModule({

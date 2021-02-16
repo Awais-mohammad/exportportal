@@ -1,0 +1,332 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="fullpage">
+    <!--WEB HEADER-->
+    <div class="webheader">
+      <!--Headr txt-->
+      <div *ngIf="width > 800" class="textheader">
+        <ion-title style="font-size: 3em;font-family: title;color:white">GROW YOUR <span
+            style="color: orange;">BUSINESS</span></ion-title>
+        <ion-label
+          style="color: whitesmoke;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;padding-left:1.3em;">
+          List Your
+          Products To Attract
+          Importers From All Over World</ion-label>
+
+        <br>
+
+        <ion-button style="font-family: general;" color="light" mode="ios"
+          style="border-radius: 10px;color:white; font-family: title;font-size: 1.3em;padding-top: 1em;padding-left:1.3em ;">
+          ADD PRODUCT</ion-button>
+      </div>
+
+      <!--Mobile-->
+      <div *ngIf="width < 800" class="mobtextheader">
+        <ion-label style="font-size: 3em;font-family: title;color:white">GROW YOUR <span
+            style="color: orange;">BUSINESS</span></ion-label>
+        <br>
+        <ion-label
+          style="color: whitesmoke;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+          List Your
+          Products To Attract
+          Importers From All Over World</ion-label>
+
+        <br>
+
+        <ion-button style="font-family: general;" color="light" mode="ios"
+          style="border-radius: 10px;color:white; font-family: title;font-size: 1.3em;padding-top: 1em;">
+          ADD PRODUCT</ion-button>
+      </div>
+    </div>
+    <!--END OF HEADERS-->
+
+    <div class="content">
+      <!--MOBILE-->
+      <div style="position: relative;left: 1em;" *ngIf="width < 800" class="cardparent">
+        <ion-label style="font-family: title;padding-top:2em;font-size: 3em;">TO DO's</ion-label>
+
+        <div class="containerweb">
+          <div class="panel post">
+            <a href="javascript:void();"><span style="font-family: title;font-size: 30px;padding: 0;">LIST
+                PRODUCTS</span>
+              <span
+                style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 10px;position: relative;top: -5em;">ADD
+                YOUR PRODUCTS TO ATTRACT IMPORTERS</span>
+            </a>
+          </div>
+          <div class="panel comment">
+            <a href="javascript:void();"><span style="font-family: title;font-size: 30px;padding: 0;">MANAGE
+                PRODUCTS</span>
+              <span
+                style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 10px;position: relative;top: -5em;">
+                Edit,View & Delete Products
+              </span>
+            </a>
+          </div>
+          <div class="panel page">
+            <a href="javascript:void();"><span style="font-family: title;font-size: 30px;padding: 0;">
+                VIEW ORDERS
+              </span>
+              <span
+                style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 10px;position: relative;top: -5em;">
+                COMING SOON</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--WEB-->
+      <div style="position: relative;left: 2em;" *ngIf="width > 800" class="cardparent">
+        <ion-label style="font-family: title;padding-top:2em;font-size: 3em;">TO DO's</ion-label>
+
+        <div class="containermobile">
+          <div class="panelmobile post">
+            <a href="javascript:void();"><span style="font-family: title;font-size: 30px;padding: 0;">LIST
+                PRODUCTS</span>
+              <span
+                style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 10px;position: relative;top: -5em;">ADD
+                YOUR PRODUCTS TO ATTRACT IMPORTERS</span>
+            </a>
+          </div>
+          <div class="panelmobile comment">
+            <a href="javascript:void();"><span style="font-family: title;font-size: 30px;padding: 0;">MANAGE
+                PRODUCTS</span>
+              <span
+                style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 10px;position: relative;top: -5em;">
+                Edit,View & Delete Products
+              </span>
+            </a>
+          </div>
+          <div class="panelmobile page">
+            <a href="javascript:void();"><span style="font-family: title;font-size: 30px;padding: 0;">
+                VIEW ORDERS
+              </span>
+              <span
+                style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 10px;position: relative;top: -5em;">
+                COMING SOON</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div style="position: relative;display: inline-block;width: 90%;">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+
+              <!--add item FORM For WEB-->
+              <div *ngIf="width > 800" style="text-align: center;">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col offset="0.5" size="11">
+
+
+                      <ion-card class="fade-in">
+
+                        <ion-card-content style="display: flex;justify-content: center;align-items: center;">
+
+
+
+                          <div style=" padding-top: 7px;" class="fields">
+
+                            <ion-row align-items-center>
+                              <ion-col>
+
+                                <div>
+
+                                  <ion-label class="headinone">ADD ITEM</ion-label>
+                                  <br>
+                                  <ion-label style="position: relative;top: -1em;" class="headintwo">
+                                    ADD A PRODUCT TO EXPORT
+                                  </ion-label>
+
+                                </div>
+
+                                <div>
+                                  <ion-label style="display: flex;justify-content: flex-start;">Name
+                                  </ion-label>
+                                  <ion-input [(ngModel)]="prodName" placeholder='Enter item Name'></ion-input>
+                                </div>
+
+                                <div class="paddtop">
+                                  <ion-label style="display: flex;justify-content: flex-start;">Description
+                                  </ion-label>
+                                  <ion-input [(ngModel)]="prodDescription" placeholder='Enter item details'></ion-input>
+                                </div>
+                              </ion-col>
+                            </ion-row>
+
+                            <div class="paddtop">
+                              <div *ngIf="cats"
+                                style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
+                                <ion-label style="padding: 1em;">CATEGORY</ion-label>
+                                <ion-select mode='ios' [(ngModel)]="selectedcat" (ionChange)="choosecat(selectedcat)">
+                                  <ion-select-option *ngFor="let item of cats" value="{{item}}">{{item}}
+                                  </ion-select-option>
+
+                                </ion-select>
+                              </div>
+                            </div>
+
+                            <div class="paddtop">
+                              <div *ngIf="temp"
+                                style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
+                                <ion-label style="padding: 1em;">SUBCATEGORY</ion-label>
+                                <ion-select mode='ios' [(ngModel)]="subCats" (ionChange)="choosesubcat(subCats)">
+                                  <ion-select-option *ngFor="let item of temp[selectedcat]" value="{{item}}">
+                                    {{item}}
+                                  </ion-select-option>
+
+                                </ion-select>
+                              </div>
+                            </div>
+
+                            <div class="paddtop">
+
+                              <div [innerHtml]='msg'></div>
+                              <label>
+                                <input type="file" (change)="selectFile($event)">
+                              </label>
+
+                              <ion-button (click)="addRecord()" style=" max-width: 50vh;" color="dark" expand='block'>
+                                <p>ADD</p>
+                              </ion-button>
+                              <div style="display: flex;">
+                                <ion-label style="color: red;">Only Pakistan Manufactured Products Allowed
+                                </ion-label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                        </ion-card-content>
+
+
+                      </ion-card>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+
+              <!--add item FORM For Mobile-->
+              <div *ngIf="width < 800" style="text-align: center;">
+
+
+
+
+                <div style=" padding-top: 7px;" class="fields">
+
+                  <ion-row>
+                    <ion-col>
+
+                      <div>
+
+                        <ion-label class="headinone">ADD ITEM</ion-label>
+                        <br>
+                        <ion-label style="position: relative;top: -1em;" class="headintwo">
+                          ADD A PRODUCT TO EXPORT
+                        </ion-label>
+
+                      </div>
+
+                      <div>
+                        <ion-label style="display: flex;justify-content: flex-start;">Name
+                        </ion-label>
+                        <ion-input placeholder='Enter item Name'></ion-input>
+                      </div>
+
+                      <div class="paddtop">
+                        <ion-label style="display: flex;justify-content: flex-start;">Description
+                        </ion-label>
+                        <ion-input placeholder='Enter item details'></ion-input>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+
+                  <div class="paddtop">
+                    <div *ngIf="cats"
+                      style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
+                      <ion-label style="padding: 1em;">CATEGORY</ion-label>
+                      <ion-select mode='ios' [(ngModel)]="selectedcat" (ionChange)="choosecat(selectedcat)">
+                        <ion-select-option *ngFor="let item of cats" value="{{item}}">{{item}}
+                        </ion-select-option>
+
+                      </ion-select>
+                    </div>
+                  </div>
+
+                  <div class="paddtop">
+                    <div *ngIf="temp"
+                      style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
+                      <ion-label style="padding: 1em;">SUBCATEGORY</ion-label>
+                      <ion-select mode='ios' [(ngModel)]="subCats" (ionChange)="choosesubcat(subCats)">
+                        <ion-select-option *ngFor="let item of temp[selectedcat]" value="{{item}}">
+                          {{item}}
+                        </ion-select-option>
+
+                      </ion-select>
+                    </div>
+                  </div>
+
+                  <div class="paddtop">
+                    <ion-button style=" max-width: 50vh;" color="dark" expand='block'>
+                      <p>ADD</p>
+                    </ion-button>
+                    <div style="display: flex;">
+                      <ion-label style="color: red;">Only Pakistan Manufactured Products Allowed
+                      </ion-label>
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </div>
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div>
+
+        <div style="text-align: right;height: 30%;">
+          <img style="height: 10%;object-fit: cover;" src="../../assets/images/support.png" alt="">
+        </div>
+
+        <div *ngIf="width < 800" style="text-align: center;position: relative;top: -1.5em;">
+          <ion-label style="font-family: title;font-weight: bold;font-size: 3.5em;">NEED SUPPORT?
+          </ion-label>
+          <br>
+          <ion-label
+            style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;position: relative;top: -1.2em;">
+            We Are Here Email Us At
+            <span style="color: crimson;">support@exportportal.com</span>
+          </ion-label>
+        </div>
+
+
+        <div *ngIf="width > 800" style="text-align: center;position: relative;top: -15em;right: 10em;">
+          <ion-label style="font-family: title;font-weight: bold;font-size: 3.5em;">NEED SUPPORT?
+          </ion-label>
+          <br>
+          <ion-label
+            style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;position: relative;top: -1.2em;">
+            We Are Here Email Us At
+            <span style="color: crimson;">support@exportportal.com</span>
+          </ion-label>
+        </div>
+
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+</ion-content>

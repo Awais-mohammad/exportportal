@@ -1,0 +1,519 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+
+  <!--HEADERS-->
+  <div style="position: relative;top: -1.3em;">
+    <!--web header-->
+    <div *ngIf="width > 800" class="webheader">
+      <div style="padding-right: 5em;text-align: right;" class="txt">
+        <h1 style="color:white; font-weight: bold;font-family: bangers;
+        font-family: slides; font-size:3em;">Over <span class="highlight">500+ registered</span> exporters
+        </h1>
+        <h4 class="highlight" style="font-family: bangers;text-align: right;
+        font-family: slides; font-size:1em;">Register Yourself To Let The World Know You
+        </h4>
+
+        <p style="color:white;">
+          <ion-button style="font-family: general;align-items: center;" color="light" mode="ios"
+            style="border-radius: 10px;color:white; font-family: title;font-size: 1.3em;">
+            Resgister As Vendor</ion-button>
+        </p>
+      </div>
+    </div>
+    <!--END OF WEB HEADER-->
+
+    <!--Start of Mobile header-->
+    <div *ngIf="width<800" class="mobileheader">
+      <div class="txt">
+        <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
+        font-family: slides; font-size:3em;">Over <span class="highlight">500+ registered</span> exporters
+        </h1>
+        <h4 class="highlight" style="font-family: bangers;text-align: center;
+      font-family: slides; font-size:1em;">Register Yourself To Let The World Know You
+        </h4>
+        <p style="color:white;text-align:center;">
+          <ion-button style="font-family: general;" color="light" mode="ios"
+            style="border-radius: 10px;color:white; font-family: title;font-size: 1.3em;">
+            Resgister As Vendor</ion-button>
+      </div>
+    </div>
+    <!--END OF MOBILE HEADER-->
+
+    <!--COntent started-->
+    <!--For web $ mobile-->
+    <div style="text-align: center;display: flex;justify-content: center;padding-top:3em ;">
+
+      <div *ngIf="width > 800" class="card">
+        <ion-label style="font-family: 'Exo 2', sans-serif;" class="heading">
+          What Will Be Provided On Registration
+        </ion-label>
+        <div style="display: flex;padding: 25px;">
+          <!--WEB-->
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <ion-card class="cardheightcontroller card1">
+                  <ion-avatar class="image-center">
+                    <img src="../../assets/images/weofferone.png" alt="">
+                  </ion-avatar>
+
+
+                  <ion-card-content style="color: white;position: relative;top: 2em;">
+
+                    <ion-title style="color: white;" class="title">
+                      A Vendor Account
+                    </ion-title>
+                    <ion-label class="straitfont"
+                      style="font-weight: bold;color: wheat;padding-top: 1em;text-align: center;">
+                      FEATURES
+                    </ion-label>
+                    <div style="text-align: center;">
+
+                      <ion-icon name="remove-outline"></ion-icon>
+                      <ion-label class="straitfont">Free Vendor Account to List You</ion-label>
+                      <br>
+                      <ion-icon name="remove-outline"></ion-icon>
+                      <ion-label class="straitfont">Free Vendor Account to Make Name In World</ion-label>
+                      <br>
+                      <ion-icon name="remove-outline"></ion-icon>
+                      <ion-label class="straitfont">Get Importers Attraction From All Over World</ion-label>
+
+                    </div>
+
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+
+              <ion-col size="4">
+                <ion-card class="cardheightcontroller card2">
+                  <ion-avatar class="image-center">
+                    <img src="../../assets/images/weoffertwo.png.jpg" alt="">
+                  </ion-avatar>
+
+                  <ion-card-content style="color: white;position: relative;top: 2em;">
+
+
+                    <ion-title style="color: white;" class="title">
+                      Unlimited Products listing
+                    </ion-title>
+
+                    <ion-label class="straitfont"
+                      style="font-weight: bold;color: wheat;padding-top: 1em;text-align: left;">FEATURES
+                    </ion-label>
+                    <div style="text-align: center;">
+
+                      <ion-icon name="remove-outline"></ion-icon>
+                      <ion-label class="straitfont">List Unlimited Products To Export All Over World</ion-label>
+                      <br>
+                      <ion-icon name="remove-outline"></ion-icon>
+                      <ion-label class="straitfont">Get Clients With <span class="highlight">ZERO </span>COST
+                      </ion-label>
+                      <br>
+                      <ion-icon name="remove-outline"></ion-icon>
+                      <ion-label class="straitfont">Get Importers Attraction From All Over World</ion-label>
+
+                    </div>
+
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+
+              <ion-col size="4">
+                <ion-card class="cardheightcontroller card3">
+                  <ion-avatar class="image-center">
+                    <img src="../../assets/images/weofferthree.jpg" alt="">
+                  </ion-avatar>
+
+                  <ion-card-content style="color: white;position: relative;top: 1em;">
+
+                    <ion-title style="color: white;" class="title">
+                      Support Desk
+                    </ion-title>
+
+                    <ion-label class="straitfont"
+                      style="font-weight: bold;color: wheat;padding-top: 1em;text-align: left;">FEATURES
+                    </ion-label>
+                    <div style="text-align: center;">
+                      <ion-icon name="remove-outline"></ion-icon>
+                      <ion-label class="straitfont">Free Support From <span class="highlight">EXPORTPORTAL</span> team
+                      </ion-label>
+                      <br>
+                      <ion-icon name="remove-outline"></ion-icon>
+                      <ion-label class="straitfont">
+                        Answer To Issues
+                      </ion-label>
+                      <br>
+                      <ion-icon name="remove-outline"></ion-icon>
+                      <ion-label class="straitfont">No Spaming</ion-label>
+
+                    </div>
+
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+
+      <!--For mobile-->
+      <div *ngIf="width < 800" class="card">
+        <ion-label class="heading">
+          What Will Be Provided On Registration
+        </ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col offset="0.5" size="10">
+              <ion-card class="card1">
+                <ion-avatar class="image-center">
+                  <img src="../../assets/images/weofferone.png" alt="">
+                </ion-avatar>
+
+                <ion-card-content style="color: white;">
+
+
+                  <ion-title style="color: white;" class="title">
+                    A Vendor Account
+                  </ion-title>
+                  <ion-label class="straitfont"
+                    style="font-weight: bold;color: wheat;padding-top: 1em;text-align: left;">FEATURES
+                  </ion-label>
+                  <div style="text-align: center;">
+
+                    <ion-icon name="remove-outline"></ion-icon>
+                    <ion-label class="straitfont">Free Vendor Account to List You</ion-label>
+
+                    <br>
+
+                    <ion-icon name="remove-outline"></ion-icon>
+                    <ion-label class="straitfont">Free Vendor Account to Make Name In World</ion-label>
+
+                    <br>
+
+                    <ion-icon name="remove-outline"></ion-icon>
+                    <ion-label class="straitfont">Get Importers Attraction From All Over World</ion-label>
+
+                  </div>
+
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <ion-col offset="0.5" size="10">
+              <ion-card class="card2">
+                <ion-avatar class="image-center">
+                  <img src="../../assets/images/weoffertwo.png.jpg" alt="">
+                </ion-avatar>
+
+                <ion-card-content style="color: white;">
+
+
+                  <ion-title style='color:white' class="title">
+                    Unlimited Products listing
+                  </ion-title>
+
+                  <ion-label class="straitfont"
+                    style="font-weight: bold;color: wheat;padding-top: 1em;text-align: left;">FEATURES
+                  </ion-label>
+                  <div style="text-align: center;">
+
+                    <ion-icon name="remove-outline"></ion-icon>
+                    <ion-label class="straitfont">List Unlimited Products To Export All Over World</ion-label>
+                    <br>
+                    <ion-icon name="remove-outline"></ion-icon>
+                    <ion-label class="straitfont">Get Clients With <span class="highlight">ZERO </span>COST
+                    </ion-label>
+                    <br>
+                    <ion-icon name="remove-outline"></ion-icon>
+                    <ion-label class="straitfont">Get Importers Attraction From All Over World</ion-label>
+
+                  </div>
+
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <ion-col offset="0.5" size="10">
+              <ion-card class="card3">
+                <ion-avatar class="image-center">
+                  <img src="../../assets/images/weofferthree.jpg" alt="">
+                </ion-avatar>
+
+                <ion-card-content style="color: white;">
+
+                  <ion-title style="color: white;" class="title">
+                    Support Desk
+                  </ion-title>
+
+                  <ion-label class="straitfont"
+                    style="font-weight: bold;color: wheat;padding-top: 1em;text-align: left;">FEATURES
+                  </ion-label>
+                  <div style="text-align: center;">
+
+                    <ion-icon name="remove-outline"></ion-icon>
+                    <ion-label class="straitfont">Free Support From <span class="highlight">EXPORTPORTAL</span> team
+                    </ion-label>
+
+                    <br>
+
+                    <ion-icon name="remove-outline"></ion-icon>
+                    <ion-label class="straitfont">
+                      Answer To Issues
+                    </ion-label>
+
+                    <br>
+
+                    <ion-icon name="remove-outline"></ion-icon>
+                    <ion-label class="straitfont">No Spaming</ion-label>
+                  </div>
+
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+
+      </div>
+
+    </div>
+
+    <!--LOGIN SIGNUP FORM For WEB-->
+    <div *ngIf="width > 800" style="text-align: center;">
+      <ion-grid>
+        <ion-row>
+          <ion-col offset="0.5" size="11">
+            <ion-card *ngIf="!showLogin" class="fade-in">
+
+              <ion-card-content style="display: flex;justify-content: center;align-items: center;">
+
+                <div>
+
+                  <ion-title class="headinone">Create An Account</ion-title>
+
+                  <ion-title class="headintwo">Already have an account?
+
+                    <span (click)="showHideLoginForm()" style="color: #09757A;">Sign in</span>
+
+                  </ion-title>
+
+                </div>
+
+                <div style=" padding-top: 7px;" class="fields">
+
+                  <ion-row align-items-center>
+                    <ion-col>
+                      <div class="paddtop">
+                        <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
+                        <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
+                      </div>
+
+                      <div class="paddtop">
+                        <ion-label style="display: flex;justify-content: flex-start;">Company Name</ion-label>
+                        <ion-input [(ngModel)]="username" placeholder='Enter your company name'></ion-input>
+                      </div>
+
+                      <div class="paddtop">
+                        <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+                        <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+
+                  <div class="paddtop">
+                    <ion-button (click)="register()" style=" max-width: 50vh;" color="dark" expand='block'>
+                      <p>CREATE ACCOUNT</p>
+                    </ion-button>
+                    <ion-label class="terms">By creating an account, you agree to EXPORT <br> PORTAL's <span
+                        class="span">Terms &
+                        Conditions</span> and
+                      <span class="span">Privacy Policy</span>
+                    </ion-label>
+                  </div>
+
+
+                </div>
+
+              </ion-card-content>
+
+
+            </ion-card>
+
+            <ion-card *ngIf="showLogin" class="fade-in">
+
+              <ion-card-content style="display: flex;justify-content: center;align-items: center;">
+
+                <div>
+
+                  <ion-title class="headinone">Sign In To Account</ion-title>
+
+                  <ion-title class="headintwo">Don't have an account?
+
+                    <span (click)="showHideLoginForm()" style="color: #09757A;">Sign Up</span>
+
+                  </ion-title>
+
+                </div>
+
+                <div style=" padding-top: 7px;" class="fields">
+
+                  <ion-row align-items-center>
+                    <ion-col>
+                      <div class="paddtop">
+                        <ion-label style="display: flex;justify-content: flex-start;">Email
+                        </ion-label>
+                        <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
+                      </div>
+
+                      <div class="paddtop">
+                        <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+                        <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+
+                  <div class="paddtop">
+                    <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
+                      <p>LOGIN</p>
+                    </ion-button>
+                    <div style="display: flex;">
+                      <ion-checkbox></ion-checkbox>
+                      <ion-label class="padleft">Keep me signed in on this device</ion-label>
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </ion-card-content>
+
+
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!--LOGIN SIGNUP FORM For Mobile-->
+    <div *ngIf="width < 800" style="text-align: center;">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="11">
+            <ion-card *ngIf="!showLogin" class="fade-in">
+
+              <ion-card-content style="text-align: center;">
+
+                <div>
+
+                  <ion-title class="headinone">Create An Account</ion-title>
+
+                  <ion-title class="headintwo">Already have an account?
+
+                    <span (click)="showHideLoginForm()" style="color: #09757A;">Sign in</span>
+
+                  </ion-title>
+
+                </div>
+
+                <div style=" padding-top: 7px;position: relative;left: 1.5em;" class="fields">
+
+                  <div class="paddtop">
+                    <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
+                    <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
+                  </div>
+
+                  <div class="paddtop">
+                    <ion-label style="display: flex;justify-content: flex-start;">Company Name</ion-label>
+                    <ion-input [(ngModel)]="username" placeholder='Enter your company name'></ion-input>
+                  </div>
+
+                  <div class="paddtop">
+                    <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+                    <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
+                  </div>
+
+                  <div class="paddtop">
+                    <ion-button (click)="register()" style=" max-width: 50vh;" color="dark" expand='block'>
+                      <p>CREATE ACCOUNT</p>
+                    </ion-button>
+                    <ion-label style="width:30px;white-space: normal;" class="terms">By creating an account, you agree
+                      <br> to EXPORT PORTAL's
+                      <span class="span">Terms &
+                        Conditions</span> and
+                      <span class="span">Privacy Policy</span>
+                    </ion-label>
+                  </div>
+
+
+                </div>
+
+              </ion-card-content>
+
+
+            </ion-card>
+
+            <ion-card *ngIf="showLogin" class="fade-in">
+
+              <ion-card-content style="text-align: center;">
+
+                <div>
+
+                  <ion-title class="headinone">SIGN IN YOUR ACCOUNT</ion-title>
+
+                  <ion-title class="headintwo">Don't Have An Account?
+
+                    <span (click)="showHideLoginForm()" style="color: #09757A;">Sign Up</span>
+
+                  </ion-title>
+
+                </div>
+
+                <div style=" padding-top: 7px;position: relative;left: 1.5em;" class="fields">
+
+                  <div class="paddtop">
+                    <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
+                    <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
+                  </div>
+
+                  <div class="paddtop">
+                    <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+                    <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
+                  </div>
+
+                  <div class="paddtop">
+                    <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
+                      <p>LOGIN</p>
+                    </ion-button>
+                    <div style="display: flex;">
+                      <ion-checkbox></ion-checkbox>
+                      <ion-label class="padleft">Keep me signed in on this device</ion-label>
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </ion-card-content>
+
+
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div
+      style="display: flex;justify-content: center;align-items: center;text-align: center;font-weight: bold;font-family: 'Truculenta', sans-serif;padding: 5em;">
+      <div style="width: 50%;">
+        EXPORT<span style="color: #09757A;">PORTAL</span> is here to support your business through the
+        challenging times. Join Today! In this global crisis, Export Portal helps SMEs find simple yet workable trade
+        solutions. Reliable Platform. Get Assistance. Easy And Safe Deals.
+        <br>
+        <ion-button color="dark" mode='ios'>SUPPORT US</ion-button>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</ion-content>
