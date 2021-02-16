@@ -12,22 +12,22 @@
         <h3>We'd Love to Hear From You</h3>
         <h4>Contact us today, and get reply with in 24 hours!</h4>
         <fieldset>
-          <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+          <input #name placeholder="Your name" type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-          <input placeholder="Your Email Address" type="email" tabindex="2" required>
+          <input #email placeholder="Your Email Address" type="email" tabindex="2" required>
         </fieldset>
         <fieldset>
-          <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+          <input #phone placeholder="Your Phone Number" type="tel" tabindex="3" required>
         </fieldset>
         <fieldset>
-          <input placeholder="Your Web Site starts with http://" type="url" tabindex="4" required>
+          <input #website placeholder="web url if no web simply add no web" type="url" tabindex="4" required>
         </fieldset>
         <fieldset>
-          <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+          <textarea #message placeholder="Type your Message Here...." tabindex="5" required></textarea>
         </fieldset>
         <fieldset>
-          <ion-button color="none" style="background: #0cf;" expand='block'>Submit
+          <ion-button (click)="getValue()" color="none" style="background: #0cf;" expand='block'>Submit
           </ion-button>
         </fieldset>
       </form>
