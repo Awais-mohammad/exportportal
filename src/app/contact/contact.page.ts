@@ -20,10 +20,7 @@ export class ContactPage implements OnInit {
 
   ) { }
 
-  ngOnInit() {
-
-  }
-
+  notification: boolean = false;
 
   getValue() {
 
@@ -62,17 +59,21 @@ export class ContactPage implements OnInit {
         senderPhone,
         senderMessage,
       }).then(() => {
-        alert('form sent')
         this.name.nativeElement.value = ''
         this.email.nativeElement.value = ''
         this.website.nativeElement.value = ''
         this.phone.nativeElement.value = ''
         this.message.nativeElement.value = ''
-
+        this.notification = true
       }).catch(err => {
         alert(err.message)
       })
     }
   }
+
+  ngOnInit() {
+
+  }
+
 
 }

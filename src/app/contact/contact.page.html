@@ -31,7 +31,9 @@
           </ion-button>
         </fieldset>
       </form>
-
+      <div *ngIf="notification" class="notice success">
+        <p>Form Is Submitted</p>
+      </div>
 
     </div>
     <app-footer></app-footer>
