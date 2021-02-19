@@ -15,11 +15,18 @@ export class HomePage {
     private fireStore: AngularFirestore,
   ) {
     this.getCats();
+    setTimeout(() => {
+      this.getProds("automotive");
+    }, 2000);
   }
 
   width = window.innerWidth;
   categories: any;
   showCats: string[] = [];
+  products: any[] = [];
+  cat: string = "automotive";
+  subCat: string;
+  prodLimits: number = 8;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -27,7 +34,7 @@ export class HomePage {
   }
 
   getCats() {
-    const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data:any) => {
+    const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data: any) => {
       this.categories = data.Df.sn.proto.mapValue.fields;
       console.log(this.categories);
       this.showMore();
@@ -38,14 +45,14 @@ export class HomePage {
   capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-  
+
   showMore() {
     if (!this.showCats) {
       var currDex = 0;
     } else {
       currDex = this.showCats.length;
     }
-    for (var i = currDex; i < currDex + 4; i++) {
+    for (var i = currDex; i < currDex + 5; i++) {
       console.log(this.categories.cats.arrayValue.values[i].stringValue);
       this.showCats.push(this.categories.cats.arrayValue.values[i].stringValue);
     }
@@ -54,6 +61,29 @@ export class HomePage {
   goToPage(path: string) {
     this.router.navigate([path]).then(() => {
     });
+  }
+  changeCat(cat:string) {
+    this.products = [];
+    this.getProds(cat);
+  }
+
+  getProds(cat: string) {
+    console.log(cat);
+    for (var i = 0; i < this.categories[cat].arrayValue.values.length; i++) {
+      const subCat = this.categories[cat].arrayValue.values[i].stringValue;
+      console.log("Checking >>> ",subCat);
+      const getDocs = this.fireStore.collection('products').doc(cat).collection(subCat).get().subscribe((data: any) => {
+        if (data.empty == false) {
+          for (var k = 0; k < data.docs.length; k++) {
+            this.products.push(data.docs[k].Df.sn.proto.mapValue.fields);
+            if (k == data.docs.length - 1) {
+              getDocs.unsubscribe();
+            }
+          }
+        }
+      })
+    }
+    console.log(this.products);
   }
 
   slideOpts = {
