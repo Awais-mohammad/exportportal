@@ -71,11 +71,13 @@ export class HomePage {
     console.log(cat);
     for (var i = 0; i < this.categories[cat].arrayValue.values.length; i++) {
       const subCat = this.categories[cat].arrayValue.values[i].stringValue;
-      console.log("Checking >>> ",subCat);
+      console.log("Checking >>> ", subCat);
       const getDocs = this.fireStore.collection('products').doc(cat).collection(subCat).get().subscribe((data: any) => {
         if (data.empty == false) {
           for (var k = 0; k < data.docs.length; k++) {
-            this.products.push(data.docs[k].Df.sn.proto.mapValue.fields);
+            if (data.docs[k].Df.sn.proto.mapValue.fields != undefined) {
+              this.products.push(data.docs[k].Df.sn.proto.mapValue.fields);
+            }
             if (k == data.docs.length - 1) {
               getDocs.unsubscribe();
             }
@@ -85,6 +87,7 @@ export class HomePage {
     }
     console.log(this.products);
   }
+
 
   slideOpts = {
     grabCursor: true,
