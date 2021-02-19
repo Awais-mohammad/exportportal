@@ -23,11 +23,11 @@
   border-radius: 40px;
 }
 
-.card .card_image img {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
-  object-fit: cover;
+.images {
+  padding-top: 20px;
+  height: 10em;
+  object-fit: contain;
+  width: 100%;
 }
 
 .card .card_title {
@@ -50,9 +50,9 @@
   text-decoration: none;
 }
 
-.header{
-  height:700px;
-  background: url('../../assets/images/back.jpg');
+.header {
+  height: 700px;
+  background: url("../../assets/images/back.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -60,5 +60,4 @@
   .card-list {
     flex-direction: column;
   }
-
 }
