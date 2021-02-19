@@ -1,7 +1,29 @@
 <app-header></app-header>
 
 <ion-content>
-
+    <div class="header">
+        <div class="txt">
+            <ion-label style="font-family: title;font-size: 4em;color: white;"><span
+                class="highlight">Browse</span> Categories</ion-label>
+        </div>
+    </div>
+    <div>
+        <div class="cardsparent">
+            <div *ngFor="let item of showCats" class="card 1">
+                <div class="card_image">
+                    <img src="../../assets/images/cats/{{item}}.jpg" />
+                </div>
+                <div class="card_title title-white">
+                    <p>{{item.toUpperCase()}}</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;" *ngIf="showCats && categories">
+            <ion-button (click)="showMore()" fill="clear" style="font-family: slides;font-size:25px;"
+                *ngIf="showCats.length < categories.cats.arrayValue.values.length">
+                <ion-icon name="add-outline"></ion-icon>Show More
+            </ion-button>
+        </div>
+    </div>
+    <app-footer></app-footer>
 </ion-content>
-
-<app-footer></app-footer>

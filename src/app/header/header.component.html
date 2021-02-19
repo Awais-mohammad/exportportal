@@ -27,13 +27,13 @@
       *ngIf="activePath == 'categories'">
       <span class="hoo activated">Categories</span>
     </ion-button>
-    <ion-button (click)="goToPage('vendors')" fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
-      *ngIf="activePath != 'vendors'">
-      <span class="hoo">Vendors</span>
+    <ion-button (click)="goToPage('exporters-list')" fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
+      *ngIf="activePath != 'exporters-list'">
+      <span class="hoo">Exporters</span>
     </ion-button>
     <ion-button fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
-      *ngIf="activePath == 'vendors'">
-      <span class="hoo activated">Vendors</span>
+      *ngIf="activePath == 'exporters-list'">
+      <span class="hoo activated">Exporters</span>
     </ion-button>
     <ion-button (click)="goToPage('about')" fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"
       *ngIf="activePath != 'about'">

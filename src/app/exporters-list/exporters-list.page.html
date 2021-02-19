@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="header">
+    <div class="txt">
+      <ion-label style="font-family: title;font-size: 4em;color: white;">List of <span class="highlight">
+          Registered</span> Exporters</ion-label>
+
+      <div style="text-align: center;">
+        <ion-searchbar style="display:inline-block;max-width:700px;width: 90%;" mode="ios" color="light"
+          placeholder="Search for exporter..">
+        </ion-searchbar>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <div style="display: inline-block; max-width: 1000px;width:90%;">
+      <div *ngFor="let vendor of vendors">
+        <ion-item mode="ios" button>
+          <ion-icon name="business-outline"></ion-icon>
+          <ion-title style="font-family:title">{{vendor.Name.stringValue}}</ion-title>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</ion-content>

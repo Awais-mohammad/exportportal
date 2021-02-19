@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
   },
+  {
+    path: 'exporters-list',
+    loadChildren: () => import('./exporters-list/exporters-list.module').then( m => m.ExportersListPageModule)
+  },
 
 
  
