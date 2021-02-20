@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'exporters-list',
     loadChildren: () => import('./exporters-list/exporters-list.module').then( m => m.ExportersListPageModule)
   },
+  {
+    path: 'exporter',
+    loadChildren: () => import('./exporter/exporter.module').then( m => m.ExporterPageModule)
+  },
 
 
  

@@ -16,7 +16,7 @@
   <div style="text-align: center;">
     <div style="display: inline-block; max-width: 1000px;width:90%;padding-top: 20px;padding-bottom: 20px;">
       <div *ngFor="let vendor of vendors">
-        <ion-item mode="ios" button color = "none" style = "background: white;">
+        <ion-item mode="ios" button color = "none" style = "background: white;" (click) = "presentModal(vendor.userID.stringValue)">
           <ion-icon name="business-outline"></ion-icon>
           <ion-title style="font-family:title;color:rgb(31, 31, 31)">{{vendor.Name.stringValue}}</ion-title>
         </ion-item>
