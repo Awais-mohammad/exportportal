@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar *ngIf="vendor">
+    <ion-title>{{vendor.Name.stringValue}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="products && products.length > 0">
+    <ion-toolbar style="text-align: center;" color="tertiary" style="z-index: 4;">
+      <div style="font-family: title;font-size: 1.4em;color:rgb(255, 255, 255);text-align: center;">Products</div>
+    </ion-toolbar>
+    <ion-item color="none" style="background: white;" *ngFor="let product of products">
+      <ion-icon name="layers-outline"></ion-icon>
+      <ion-label style = "color:rgb(53, 53, 53);font-family: verdana;">{{product.productName.stringValue}}</ion-label>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand ="full" fill = "outline" color = "success" style = "text-align: center;font-family: title;font-size: 1.2em;">Visit Website</ion-button>
+</ion-footer>
