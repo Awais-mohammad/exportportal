@@ -143,27 +143,34 @@
 
   <!--Products-->
   <div>
+    <ion-toolbar style="text-align: center;" color="tertiary">
+      <h1 style="font-family: title;font-size: 3em;color:rgb(255, 255, 255);text-align: center;">Products</h1>
+    </ion-toolbar>
     <div>
       <ion-grid *ngIf="width>600">
         <ion-row *ngIf="categories">
           <ion-col style="background: white;border-radius: 25px;" size="2">
-            <div *ngFor="let cat of categories.cats.arrayValue.values">
-              <ion-item color="none" mode="ios" button style="font-family:title;font-weight: 600;"
-                (click)="changeCat(cat.stringValue)">
-                {{capitalizeFirstLetter(cat.stringValue)}}
+            <div *ngFor="let cati of categories.cats.arrayValue.values">
+              <ion-item *ngIf = "cat == cati.stringValue" color="none" mode="ios" style="font-family:title;font-weight: 600;color:rgb(2, 91, 255);"
+                (click)="changeCat(cati.stringValue)">
+                {{capitalizeFirstLetter(cati.stringValue)}}
+              </ion-item>
+              <ion-item *ngIf = "cat != cati.stringValue" color="none" mode="ios" button style="font-family:title;font-weight: 600;color:rgb(44, 44, 44);"
+                (click)="changeCat(cati.stringValue)">
+                {{capitalizeFirstLetter(cati.stringValue)}}
               </ion-item>
             </div>
           </ion-col>
           <ion-col style="padding-left:50px;padding-right:50px;text-align: center;" size="10">
             <div *ngIf="products">
-              <ion-card style="width: 300px;display: inline-block;" *ngFor="let product of products;let i = index">
+              <ion-card color="none" style="background:white;width: 300px;display: inline-block;"
+                *ngFor="let product of products;let i = index">
                 <div *ngIf="product">
                   <div class="card_image">
                     <img class="images" src="{{product.imageURL.stringValue}}" />
                   </div>
                   <ion-card-header style="text-align: left;">
-                    <ion-card-subtitle>Fantech inc</ion-card-subtitle>
-                    <ion-card-title style="font-family: title;">{{product.productName.stringValue}}
+                    <ion-card-title style="font-family: title;color:rgb(43, 43, 43)">{{product.productName.stringValue}}
                     </ion-card-title>
                   </ion-card-header>
                   <ion-item color="success" style="font-family: monospace;text-align: center;" button>

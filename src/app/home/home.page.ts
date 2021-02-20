@@ -64,6 +64,7 @@ export class HomePage {
   }
   changeCat(cat:string) {
     this.products = [];
+    this.cat = cat;
     this.getProds(cat);
   }
 
