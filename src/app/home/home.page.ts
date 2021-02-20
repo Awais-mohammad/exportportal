@@ -24,6 +24,7 @@ export class HomePage {
   categories: any;
   showCats: string[] = [];
   products: any[] = [];
+  searchFound: any[] = [];
   cat: string = "automotive";
   subCat: string;
   prodLimits: number = 8;
@@ -62,10 +63,42 @@ export class HomePage {
     this.router.navigate([path]).then(() => {
     });
   }
-  changeCat(cat:string) {
+  changeCat(cat: string) {
     this.products = [];
     this.cat = cat;
     this.getProds(cat);
+  }
+
+  search(event) {
+    console.log(event.detail.value);
+    this.searchFound = [];
+    var found = 0;
+    if (event.detail.value != undefined && event.detail.value != "") {
+      for (var i = 0; i < this.categories['cats'].arrayValue.values.length; i++) {
+        const currentCat = this.categories['cats'].arrayValue.values[i].stringValue;
+        if (currentCat.includes(event.detail.value)) {
+          found = found+1;
+          if (found < 7) {
+            this.searchFound.push({
+              name: currentCat,
+              type: "category"
+            })
+          }
+        }
+        for (var k = 0; k < this.categories[currentCat].arrayValue.values.length; k++) {
+          const subCat = this.categories[currentCat].arrayValue.values[k].stringValue;
+          if (subCat.includes(event.detail.value)) {
+            found = found+1;
+            if (found < 7) {
+              this.searchFound.push({
+                name: subCat,
+                type: "sub-category"
+              })
+            }
+          }
+        }
+      }
+    }
   }
 
   getProds(cat: string) {

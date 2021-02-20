@@ -55,8 +55,17 @@
           font-family: slides; font-size:3em;"><span class="highlight">Finding</span> exporters in <span
               class="highlight">Pakistan</span> has <span class="highlight">never been easier</span>
           </h1>
-          <ion-searchbar mode="ios" color="light" placeholder="Search for product, vendor or category..">
+          <ion-searchbar mode="ios" color="light" debounce="100" (ionChange)="search($event)"
+            placeholder="Search for product, vendor or category..">
           </ion-searchbar>
+          <div *ngIf="searchFound" style = "z-index: 2000;">
+            <div *ngFor="let search of searchFound" style = "z-index: 2000;">
+              <ion-item color = "none" style= "background:rgba(255, 255, 255, 0.877); z-index: 2000;">
+                <ion-label slot = "start" style = "color:black;font-family:impact">{{search.name}}</ion-label>
+                <div  slot = "end" style = "color:rgb(58, 58, 58)">{{search.type}}</div>
+              </ion-item>
+            </div>
+          </div>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -118,8 +127,8 @@
   </div>
 
   <!--Categories-->
-  <div>
-    <ion-toolbar style="text-align: center;" color="tertiary">
+  <div style = "z-index: 4;">
+    <ion-toolbar style="text-align: center;" color="tertiary" style = "z-index: 4;">
       <h1 style="font-family: title;font-size: 3em;color:rgb(255, 255, 255);text-align: center;">Categories</h1>
     </ion-toolbar>
     <div class="cardsparent2">
@@ -151,12 +160,12 @@
         <ion-row *ngIf="categories">
           <ion-col style="background: white;border-radius: 25px;" size="2">
             <div *ngFor="let cati of categories.cats.arrayValue.values">
-              <ion-item *ngIf = "cat == cati.stringValue" color="none" mode="ios" style="font-family:title;font-weight: 600;color:rgb(2, 91, 255);"
-                (click)="changeCat(cati.stringValue)">
+              <ion-item *ngIf="cat == cati.stringValue" color="none" mode="ios"
+                style="font-family:title;font-weight: 600;color:rgb(2, 91, 255);" (click)="changeCat(cati.stringValue)">
                 {{capitalizeFirstLetter(cati.stringValue)}}
               </ion-item>
-              <ion-item *ngIf = "cat != cati.stringValue" color="none" mode="ios" button style="font-family:title;font-weight: 600;color:rgb(44, 44, 44);"
-                (click)="changeCat(cati.stringValue)">
+              <ion-item *ngIf="cat != cati.stringValue" color="none" mode="ios" button
+                style="font-family:title;font-weight: 600;color:rgb(44, 44, 44);" (click)="changeCat(cati.stringValue)">
                 {{capitalizeFirstLetter(cati.stringValue)}}
               </ion-item>
             </div>
