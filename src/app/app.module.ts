@@ -1,3 +1,4 @@
+import { HeaderComponentModule } from './header/header.component.module';
 import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,16 +17,17 @@ import { SharedModule } from './shared/shared.module';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
-    AppRoutingModule, 
-    AngularFirestoreModule, 
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    HeaderComponentModule,
     SharedModule,
   ],
   providers: [
