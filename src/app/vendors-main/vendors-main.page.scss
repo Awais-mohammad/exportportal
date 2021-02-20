@@ -29,7 +29,7 @@
     border-radius: 25px;
     width: 92%;
     height: 50%;
-    background-color: white;
+
     .heading {
         font-family: "Noto Sans JP", sans-serif;
         font-weight: bold;
@@ -104,21 +104,33 @@ ion-input {
 }
 //copyrights 2020 @awaisme.com & ekniazi.com
 .card1 {
-    background: #c31432;
-    background: -webkit-linear-gradient(to top, #240b36, #c31432);
-    background: linear-gradient(to top, #240b36, #c31432);
+    background: #141e30; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243b55, #141e30); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #243b55,
+        #141e30
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 25px;
 }
 .card2 {
-    background: #da4453;
-    background: -webkit-linear-gradient(to top, #89216b, #da4453);
-    background: linear-gradient(to top, #89216b, #da4453);
-
+    background: #2b5876; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4e4376, #2b5876); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #4e4376,
+        #2b5876
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 25px;
 }
 .card3 {
-    background: #c94b4b;
-    background: -webkit-linear-gradient(to top, #4b134f, #c94b4b);
-    background: linear-gradient(to top, #4b134f, #c94b4b);
+    background: #485563; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #29323c, #485563); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #29323c,
+        #485563
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     border-radius: 25px;
 }

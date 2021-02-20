@@ -48,6 +48,7 @@ export class VendorsDashboardPage implements OnInit {
   choosecat(selested: string) {
     this.selectedcat = selested
     alert(this.selectedcat)
+
   }
 
   choosesubcat(selested: string) {
@@ -79,7 +80,7 @@ export class VendorsDashboardPage implements OnInit {
   }
 
   upload() {
-    
+
     this.currentFile = this.selectedFiles.item(0);
     this.uploadFile(this.currentFile,).subscribe(response => {
       if (response instanceof HttpResponse) {
@@ -130,48 +131,81 @@ export class VendorsDashboardPage implements OnInit {
         uploadedBy,
         imageURL
       }).then(() => {
-        alert('product added awaiting approval')
+        this.changeProds()
+        alert('added')
       }).catch(err => {
         alert(err.message)
       })
 
     }
   }
+  showCats: string[] = [];
+  products: any[] = [];
+  cat: string = "automotive";
+  subCat: string;
+  cateegories: any;
+  acategory: any
 
 
-  // temporary: any;
-  // another: any;
-  // other: any;
-  // otheran: any;
+  changeProds() {
+    console.log('method 1 called');
 
-  // createfullfuckingdatabase() {
-  //   this.fireStore.collection('appData').doc('categories').valueChanges().subscribe(res => {
-  //     console.log(res);
-  //     this.temporary = res;
-  //     this.another = this.temporary.cats[this.selectedcat]
-  //     for (var i = 0; i < this.temporary.cats.length; i++) {
-  //       this.other = this.temporary.cats[i]
-  //       this.otheran = this.temporary[this.other]
-  //       console.log(this.otheran);
-  //       for (var u = 0; u < this.otheran.length; u++) {
-  //         this.fireStore.collection('products').doc(this.other).collection(this.otheran[u]).add({
+    const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data: any) => {
+      this.cateegories = data.Df.sn.proto.mapValue.fields;
+      console.log(this.cateegories);
+      this.amethod()
+      cats.unsubscribe();
+    })
 
-  //         }).then(() => {
-  //           console.log('we fucking did it');
+  }
+  amethod() {
 
-  //         })
+    console.log('method 2 called');
+    for (var i = 0; i < this.cateegories['cats'].arrayValue.values.length; i++) {
+      this.getProds2(this.cateegories['cats'].arrayValue.values[i].stringValue);
+    }
+  }
+  getProds2(cat: string) {
 
-  //       }
-  //     }
+    console.log('method 3 called');
+    console.log(cat);
+    for (var i = 0; i < this.cateegories[cat].arrayValue.values.length; i++) {
+      const subCat = this.cateegories[cat].arrayValue.values[i].stringValue;
+      console.log("Checking >>> ", subCat);
+      const getDocs = this.fireStore.collection('products').doc(cat).collection(subCat).get().subscribe((data: any) => {
+        if (data.empty == false) {
+          for (var k = 0; k < data.docs.length; k++) {
+            if (data.docs[k].Df.sn.proto.mapValue.fields != undefined) {
+              console.log(data.docs[k].ref.path);
+              console.log(data.docs[k].Df.sn.proto.mapValue.fields.uploadedBy.stringValue);
+              this.push(data.docs[k].Df.sn.proto.mapValue.fields.uploadedBy.stringValue, data.docs[k].ref.path)
+            }
+            if (k == data.docs.length - 1) {
+              getDocs.unsubscribe();
+            }
+          }
+        }
+      })
+    }
+    console.log(this.products);
+  }
 
-  //   })
-  // }
+  push(docID, path) {
+    const subcolPath = path
+    this.fireStore.collection('vendors').doc(docID).update({
+      products: firebase.firestore.FieldValue.arrayUnion(
+        subcolPath
+      )
+    }).then(() => {
+      console.log('done!!!');
 
-
+    })
+  }
   currentUID: string;
 
   ngOnInit() {
     this.getCats()
+    this.changeProds()
     const authsub = this.auth.authState.subscribe(user => {
       if (user && user.uid) {
         this.currentUID = user.uid
@@ -183,6 +217,7 @@ export class VendorsDashboardPage implements OnInit {
         this.Router.navigate(['home'])
       }
     })
+
   }
 
 }
