@@ -7,16 +7,28 @@
           Registered</span> Exporters</ion-label>
 
       <div style="text-align: center;">
-        <ion-searchbar style="display:inline-block;max-width:700px;width: 90%;" mode="ios" color="light"
-          placeholder="Search for exporter..">
+        <ion-searchbar style="display:inline-block;max-width:700px;width: 90%;" debounce="100"
+          (ionChange)="search($event)" mode="ios" color="light" placeholder="Search for exporter..">
         </ion-searchbar>
+        <div style="text-align: center;">
+          <div *ngIf="searchFound" style="z-index: 2000;" style="display:inline-block;max-width:700px;width: 90%;">
+            <div *ngFor="let search of searchFound" style="z-index: 2000;">
+              <ion-item color="none" style="background:rgba(255, 255, 255, 0.877); z-index: 2000;" button
+                (click)="presentModal(search.ID)">
+                <ion-label slot="start" style="color:black;font-family:impact">{{search.name}}</ion-label>
+                <div slot="end" style="color:rgb(58, 58, 58)">{{search.type}}</div>
+              </ion-item>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div style="text-align: center;">
     <div style="display: inline-block; max-width: 1000px;width:90%;padding-top: 20px;padding-bottom: 20px;">
       <div *ngFor="let vendor of vendors">
-        <ion-item mode="ios" button color = "none" style = "background: white;" (click) = "presentModal(vendor.userID.stringValue)">
+        <ion-item mode="ios" button color="none" style="background: white;"
+          (click)="presentModal(vendor.userID.stringValue)">
           <ion-icon name="business-outline"></ion-icon>
           <ion-title style="font-family:title;color:rgb(31, 31, 31)">{{vendor.Name.stringValue}}</ion-title>
         </ion-item>

@@ -1,21 +1,40 @@
-<ion-header>
-  <ion-toolbar *ngIf="vendor">
-    <ion-title>{{vendor.Name.stringValue}}</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+
+  <ion-toolbar *ngIf="vendor && vendor.Name" color="none" style="background: white;">
+    <h1 slot = "start" style="font-family: title; text-align: left;">{{vendor.Name.stringValue}}</h1>
+    <ion-icon name="close-outline" color = "none" style = "color:black;" slot = "end" size = "large" (click) = "dismiss()"></ion-icon>
+  </ion-toolbar>
+  <div *ngIf="vendor && vendor.companyAdress">
+    <ion-toolbar style="text-align: center;" color="tertiary" style="z-index: 4;">
+      <div style="font-family: title;font-size: 1.4em;color:rgb(255, 255, 255);text-align: center;">Address</div>
+    </ion-toolbar>
+    <ion-card color="none" style="background: white;">
+      <ion-card-header style="font-family: monospace;">{{vendor.companyAdress.stringValue}}</ion-card-header>
+    </ion-card>
+  </div>
+  <div *ngIf="vendor && vendor.companyPhone">
+    <ion-toolbar style="text-align: center;" color="tertiary" style="z-index: 4;">
+      <div style="font-family: title;font-size: 1.4em;color:rgb(255, 255, 255);text-align: center;">Contact Information
+      </div>
+    </ion-toolbar>
+    <ion-card color="none" style="background: white;">
+      <ion-card-header style="font-family: monospace;">{{vendor.companyPhone.stringValue}}</ion-card-header>
+    </ion-card>
+  </div>
   <div *ngIf="products && products.length > 0">
     <ion-toolbar style="text-align: center;" color="tertiary" style="z-index: 4;">
       <div style="font-family: title;font-size: 1.4em;color:rgb(255, 255, 255);text-align: center;">Products</div>
     </ion-toolbar>
     <ion-item color="none" style="background: white;" *ngFor="let product of products">
       <ion-icon name="layers-outline"></ion-icon>
-      <ion-label style = "color:rgb(53, 53, 53);font-family: verdana;">{{product.productName.stringValue}}</ion-label>
+      <ion-label style="color:rgb(53, 53, 53);font-family: verdana;">{{product.productName.stringValue}}</ion-label>
     </ion-item>
   </div>
 </ion-content>
 
-<ion-footer>
-  <ion-button expand ="full" fill = "outline" color = "success" style = "text-align: center;font-family: title;font-size: 1.2em;">Visit Website</ion-button>
+<ion-footer *ngIf = "vendor && vendor.webURL">
+  <a href="{{vendor.webURL.stringValue}}" target="_blank">
+    <ion-button expand="full" fill="outline" color="success"
+      style="text-align: center;font-family: title;font-size: 1.2em;">Visit Website</ion-button>
+  </a>
 </ion-footer>

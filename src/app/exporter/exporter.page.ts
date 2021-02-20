@@ -33,4 +33,8 @@ export class ExporterPage implements OnInit {
     })
   }
 
+  dismiss(){
+    this.modalController.dismiss();
+  }
+
 }

@@ -19,6 +19,8 @@ export class ExportersListPage implements OnInit {
     this.getVendors();
   }
 
+  searchFound: any[] = [];
+
   async presentModal(option) {
     const modal = await this.modalController.create({
       component: ExporterPage,
@@ -44,6 +46,27 @@ export class ExportersListPage implements OnInit {
       console.log(this.vendors);
       cats.unsubscribe();
     })
+  }
+
+  search(event) {
+    console.log(event.detail.value);
+    this.searchFound = [];
+    var found = 0;
+    if (event.detail.value != undefined && event.detail.value != "") {
+      for (var i = 0; i < this.vendors.length; i++) {
+        const currentCat = this.vendors[i].Name.stringValue;
+        if (currentCat.toLowerCase().includes(event.detail.value.toLowerCase())) {
+          found = found+1;
+          if (found < 7) {
+            this.searchFound.push({
+              name: currentCat,
+              type: "exporter",
+              ID: this.vendors[i].userID.stringValue,
+            })
+          }
+        }
+      }
+    }
   }
 
   ngOnInit() {
