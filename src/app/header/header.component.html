@@ -1,42 +1,22 @@
 <ion-menu side="start" content-id="content" class="menu">
-  <div style="text-align: center;margin-top:10px;">
-    <ion-img src="../../assets/images/user.png" style="width: 100px; display: inline-block;"></ion-img>
-    <div *ngIf="anon">
-      <ion-button fill="outline" (click)="presentModal()">Login</ion-button>
-    </div>
-    <div *ngIf="!anon && displayName" style="color: rgb(219, 218, 218);font-family: bangers;">{{displayName}}</div>
-    <div *ngIf="orders">
-      <div style="font-size:1.4em;color:white;text-align: left; padding-top:15px;
-      padding-left:4px;font-family: bangers;" *ngIf = "orders.length >0">Your Orders:</div>
-      <ion-item *ngFor="let order of orders">
-        <ion-label slot='start'>{{order.item.toUpperCase()}}</ion-label>
-        <ion-chip slot='end'>
-          <div style="color:rgb(218, 218, 218);font-size: 0.8em;">{{order.status}}</div>
-        </ion-chip>
-      </ion-item>
-    </div>
-  </div>
   <div>
-    <ion-item *ngFor="let page of pages" color="none">
-      <ion-icon *ngIf="page == 'home'" name="home-outline" color = "light"></ion-icon>
-      <ion-icon *ngIf="page == 'animations'" name="barcode-outline" color = "light"></ion-icon>
-      <ion-icon *ngIf="page == 'products'" name="flame-outline"  color = "light"></ion-icon>
-      <ion-icon *ngIf="page == 'community'" name="people-outline"  color = "light"></ion-icon>
-      <ion-icon *ngIf="page == 'about'" name="skull-outline"  color = "light"></ion-icon>
-      <ion-icon *ngIf="page == 'contact'" name="mail-open-outline"  color = "light"></ion-icon>
-      <ion-label class="mobilePage" *ngIf="activePath != page"  (click)="goToPage(page)">
+    <ion-toolbar color = "danger">
+      <ion-title style = "font-family: title;font-size:2em;">ExportPortal</ion-title>
+    </ion-toolbar>
+    <ion-item *ngFor="let page of pages" color="none" button>
+      <ion-label class="mobilePage" *ngIf="activePath != page" style = "color:white;font-family:impact" (click)="goToPage(page)">
         {{page.toUpperCase()}}
       </ion-label>
-      <ion-label class="mobilePage" *ngIf="activePath == page" style="color:rgb(145, 143, 143);">
+      <ion-label class="mobilePage" *ngIf="activePath == page" style="color:rgb(182, 180, 180);font-family:impact">
         {{page.toUpperCase()}}
       </ion-label>
     </ion-item>
   </div>
 </ion-menu>
 <ion-toolbar color="none" style="background-color: rgba(0, 0, 0, 0.692);position: fixed;z-index: 2;">
-  <ion-icon class="bars" name="menu-outline" size="large" color="dark" slot="start" (click) = "openFirst()"  id = "content"></ion-icon>
+  <ion-icon *ngIf = "width<=600" class="bars" name="menu-outline" size="large" color="dark" slot="start" (click) = "openFirst()"></ion-icon>
   <ion-title slot="start" style="font-family: title; font-size:2em; padding-top:20px;padding-bottom: 20px; color:white">
-    Export<span style="color: rgb(38, 153, 247);">Portal</span>
+    Export<span style="color: rgb(38, 153, 247);" id = "content">Portal</span>
   </ion-title>
   <div slot="end" *ngIf="width > 600" style="padding-right:100px;">
     <ion-button (click)="goToPage('home')" fill="clear" style="color: white; font-size:1.2em; font-family: Impact;"

@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
   width = window.innerWidth;
   activePath: string;
   menuOpen: boolean;
+  pages: any[] = ['home', 'products', 'categories', 'exporters-list', 'about', 'contact'];
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
