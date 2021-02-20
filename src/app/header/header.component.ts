@@ -2,6 +2,8 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { IonContent } from '@ionic/angular';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -10,18 +12,28 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  width = window.innerWidth;
-  activePath: string;
-  pages: any[] = ['home', 'animations', 'products', 'community', 'about', 'contact'];
   constructor(
     private router: Router,
     private afs: AngularFireAuth,
     private firestore: AngularFirestore,
+    private menu: MenuController,
   ) { }
+
+  width = window.innerWidth;
+  activePath: string;
+  menuOpen: boolean;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.width = window.innerWidth;
+  }
+  
+  openFirst() {
+    this.menu.open();
+  }
+
+  closeFirst() {
+    this.menu.close('first');
   }
 
   async checkRoute() {
