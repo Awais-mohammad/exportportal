@@ -1,4 +1,3 @@
-
 <ion-content>
   <div class="header" *ngIf="width">
     <ion-grid style="padding-top:250px;" *ngIf="width>600">
@@ -9,11 +8,12 @@
               <div>
                 <!--<h3 style = "color:white; font-family: bangers;text-align:center;">Coming</h3>-->
                 <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
-                font-family: slides; font-size:3em;">Over <span class="highlight">500+ registered</span> exporters
+                font-family: slides; font-size:3em;font-weight: 800!important;">OVER <span class="highlight">500+
+                    REGISTERED</span> EXPORTERS
                 </h1>
                 <p style="color:white;text-align:center;">
-                  <ion-button style="font-family: general;" color="light" mode="ios"
-                    style="border-radius: 10px;color:white; font-family: title;font-size: 1.3em;"
+                  <ion-button style="font-family: general;" color="none" mode="ios"
+                    style="border:1px white solid;border-radius: 10px;color:white; font-family: title;font-size: 1.3em;"
                     (click)="goToPage('custom-order')">
                     View Vendors</ion-button>
                 </p>
@@ -23,11 +23,11 @@
               <div>
                 <!--<h3 style = "color:white; font-family: bangers;text-align:center;">Coming</h3>-->
                 <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
-                font-family: slides; font-size:3em;">Find exporters by <span class="highlight">category</span>
+                font-family: slides; font-size:3em;">FIND EXPORTERS BY <span class="highlight">CATEGORY</span>
                 </h1>
                 <p style="color:white;text-align:center;">
-                  <ion-button style="font-family: general;" color="light" mode="ios"
-                    style="border-radius: 10px;color:white; font-family: title;font-size: 1.3em;"
+                  <ion-button style="font-family: general;" color="none" mode="ios"
+                    style="border:1px white solid;border-radius: 10px;color:white; font-family: title;font-size: 1.3em;"
                     (click)="goToPage('custom-order')">
                     View Categories</ion-button>
                 </p>
@@ -37,12 +37,12 @@
               <div>
                 <!--<h3 style = "color:white; font-family: bangers;text-align:center;">Coming</h3>-->
                 <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
-                font-family: slides; font-size:3em;"><span class="highlight">Register</span> your export <span
-                    class="highlight">products</span> now
+                font-family: slides; font-size:3em;"><span class="highlight">REGISTER</span> YOUR EXPORT <span
+                    class="highlight">PRODUCTS</span> now
                 </h1>
                 <p style="color:white;text-align:center;">
-                  <ion-button style="font-family: general;" color="light" mode="ios"
-                    style="border-radius: 10px;color:white; font-family: title;font-size: 1.3em;"
+                  <ion-button style="font-family: general;" color="none" mode="ios"
+                    style="border:1px white solid;border-radius: 10px;color:white; font-family: title;font-size: 1.3em;"
                     (click)="goToPage('custom-order')">
                     Register</ion-button>
                 </p>
@@ -52,17 +52,18 @@
         </ion-col>
         <ion-col style="width: 40%;padding-right:10%;">
           <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
-          font-family: slides; font-size:3em;"><span class="highlight">Finding</span> exporters in <span
-              class="highlight">Pakistan</span> has <span class="highlight">never been easier</span>
+          font-family: slides; font-size:3em;"><span class="highlight">FINDING</span> EXPORTERS IN <span
+              class="highlight">PAKISTAN</span> HAS <span class="highlight">NEVER BEEN EASIER</span>
           </h1>
-          <ion-searchbar mode="ios" color="light" debounce="100" (ionChange)="search($event)"
-            placeholder="Search for product, vendor or category..">
+          <ion-searchbar mode="ios" color="none"
+            style="background: rgba(255, 255, 255, 0.836);color:black;border-radius: 25px;" debounce="100"
+            (ionChange)="search($event)" placeholder="Search for product, vendor or category..">
           </ion-searchbar>
-          <div *ngIf="searchFound" style = "z-index: 2000;">
-            <div *ngFor="let search of searchFound" style = "z-index: 2000;">
-              <ion-item color = "none" style= "background:rgba(255, 255, 255, 0.877); z-index: 2000;">
-                <ion-label slot = "start" style = "color:black;font-family:impact">{{search.name}}</ion-label>
-                <div  slot = "end" style = "color:rgb(58, 58, 58)">{{search.type}}</div>
+          <div *ngIf="searchFound" style="z-index: 2000;">
+            <div *ngFor="let search of searchFound" style="z-index: 2000;">
+              <ion-item color="none" style="background:rgba(255, 255, 255, 0.877); z-index: 2000;">
+                <ion-label slot="start" style="color:black;font-family:impact">{{search.name}}</ion-label>
+                <div slot="end" style="color:rgb(58, 58, 58)">{{search.type}}</div>
               </ion-item>
             </div>
           </div>
@@ -72,7 +73,8 @@
     <ion-grid style="padding-top:200px;width:100%;float: right;" *ngIf="width<=600">
       <ion-row>
         <ion-col style="width: 40%;">
-          <ion-searchbar mode="ios" color="light" debounce="100" (ionChange)="search($event)" placeholder="Search for product, vendor or category..">
+          <ion-searchbar mode="ios" color="light" debounce="100" (ionChange)="search($event)"
+            placeholder="Search for product, vendor or category..">
           </ion-searchbar>
         </ion-col>
         <ion-col>
@@ -126,11 +128,41 @@
     </ion-grid>
   </div>
 
+  <!--TOP EXPORTERS-->
+  <div style="z-index: 4;" class="whiteBack">
+    <div class="titleDiv">
+      <div class="subTitle">MEET OUR</div>
+      <div class="mainTitle">TOP EXPORTERS</div>
+    </div>
+    <div style="text-align: center;">
+      <div class="wrapper" *ngFor="let n of numSequence(6); let i = index;">
+        <ion-row>
+          <ion-col class="product-img">
+            <img src="https://d2liqplnt17rh6.cloudfront.net/logoImages/8e7b4483-1b27-4bc4-868b-1b88ced1c19c-661.jpeg" height="190" width="200">
+          </ion-col>
+          <ion-col class="product-info">
+            <div class="product-text">
+              <h1>Gul Ahmad</h1>
+              <h2>by studio and friends</h2>
+              <ion-icon name="star" color = "warning"></ion-icon>
+              <ion-icon name="star" color = "warning"></ion-icon>
+              <ion-icon name="star" color = "warning"></ion-icon>
+              <ion-icon name="star" color = "warning"></ion-icon>
+              <ion-icon name="star" color = "warning"></ion-icon>
+            </div>
+            
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+
   <!--Categories-->
-  <div style = "z-index: 4;">
-    <ion-toolbar style="text-align: center;" color="tertiary" style = "z-index: 4;">
-      <h1 style="font-family: title;font-size: 3em;color:rgb(255, 255, 255);text-align: center;">Categories</h1>
-    </ion-toolbar>
+  <div style="z-index: 4;" class="greyBack">
+    <div class="titleDiv">
+      <div class="subTitle">LISTINGS</div>
+      <div class="mainTitle">BY CATEGOREIS</div>
+    </div>
     <div class="cardsparent2">
       <div *ngFor="let item of showCats" class="card2">
         <div class="card_image2">
@@ -142,7 +174,7 @@
       </div>
     </div>
     <div style="text-align: center;" *ngIf="showCats && categories">
-      <ion-button (click)="showMore()" fill="clear" style="font-family: slides;font-size:25px;"
+      <ion-button (click)="showMore()" fill="clear" style="font-family: slides;font-size:25px;margin:40px;"
         *ngIf="showCats.length < categories.cats.arrayValue.values.length">
         <ion-icon name="add-outline"></ion-icon>Show More
       </ion-button>
@@ -151,20 +183,22 @@
 
 
   <!--Products-->
-  <div>
-    <ion-toolbar style="text-align: center;" color="tertiary">
-      <h1 style="font-family: title;font-size: 3em;color:rgb(255, 255, 255);text-align: center;">Products</h1>
-    </ion-toolbar>
+  <div class="whiteBack">
+    <div class="titleDiv">
+      <div class="subTitle">BROWSE EXPORTERS</div>
+      <div class="mainTitle"> BY CATEGORIES</div>
+    </div>
     <div>
       <ion-grid *ngIf="width>600">
         <ion-row *ngIf="categories">
-          <ion-col style="background: white;border-radius: 25px;" size="2">
-            <div *ngFor="let cati of categories.cats.arrayValue.values">
-              <ion-item *ngIf="cat == cati.stringValue" color="none" mode="ios"
+          <ion-col size="2">
+            <div *ngFor="let cati of categories.cats.arrayValue.values"
+              style="background: white;border-top-right-radius: 25px;border-bottom-right-radius: 25px;">
+              <ion-item *ngIf="cat == cati.stringValue" color="none" mode="ios" lines="none"
                 style="font-family:title;font-weight: 600;color:rgb(2, 91, 255);" (click)="changeCat(cati.stringValue)">
                 {{capitalizeFirstLetter(cati.stringValue)}}
               </ion-item>
-              <ion-item *ngIf="cat != cati.stringValue" color="none" mode="ios" button
+              <ion-item *ngIf="cat != cati.stringValue" color="none" mode="ios" button lines="none"
                 style="font-family:title;font-weight: 600;color:rgb(44, 44, 44);" (click)="changeCat(cati.stringValue)">
                 {{capitalizeFirstLetter(cati.stringValue)}}
               </ion-item>

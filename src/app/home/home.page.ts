@@ -47,6 +47,10 @@ export class HomePage {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  numSequence(n: number): Array<number> { 
+    return Array(n); 
+  } 
+  
   showMore() {
     if (!this.showCats) {
       var currDex = 0;

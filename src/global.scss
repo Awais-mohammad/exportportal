@@ -27,12 +27,12 @@
 
 @font-face {
   font-family: title;
-  src: url("./assets/fonts/Teko-SemiBold.ttf");
+  src: url("./assets/fonts/Roboto-Regular.ttf");
 }
 
 @font-face {
   font-family: slides;
-  src: url("./assets/fonts/Staatliches-Regular.ttf");
+  src: url("./assets/fonts/Roboto-Regular.ttf");
 }
 ion-content {
   --background: rgb(243, 243, 243);
@@ -45,4 +45,32 @@ ion-menu {
 
 .highlight{
   color:#fa761f;
+}
+
+.whiteBack{
+  background:rgb(255, 255, 255);
+}
+
+.greyBack{
+  background:rgb(238, 237, 237);
+}
+
+.titleDiv{
+  padding-top:40px;
+  text-align: center;
+}
+
+.mainTitle{
+  font-family: title;
+  font-size: 60px;
+  font-weight: 700!important;
+  color:rgb(0, 0, 0);
+}
+
+
+.subTitle{
+  font-family: title;
+  font-size: 40px;
+  font-weight: 10!important;
+  color:rgb(71, 71, 71);
 }
