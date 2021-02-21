@@ -1,8 +1,8 @@
 <ion-content>
   <div class="header" *ngIf="width">
-    <ion-grid style="padding-top:250px;" *ngIf="width>600">
+    <ion-grid *ngIf="width>600">
       <ion-row>
-        <ion-col style="width: 60%;">
+        <ion-col style="padding-left:150px;padding-right:150px;padding-top:250px;" size="7">
           <ion-slides [options]="slideOpts">
             <ion-slide>
               <div>
@@ -50,11 +50,15 @@
             </ion-slide>
           </ion-slides>
         </ion-col>
-        <ion-col style="width: 40%;padding-right:10%;">
-          <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
-          font-family: slides; font-size:3em;"><span class="highlight">FINDING</span> EXPORTERS IN <span
-              class="highlight">PAKISTAN</span> HAS <span class="highlight">NEVER BEEN EASIER</span>
+        <ion-col
+          style="padding-left:40px;padding-right:40px;padding-bottom:40px;background:rgba(44, 43, 43, 0.288);border-radius:10px;margin-top:130px;"
+          size="4">
+          <h1 style="color:white; font-weight: 500!important;font-family: title;text-align:center;
+          font-family: slides; font-size:3em;">FINDING EXPORTERS IN PAKISTAN MADE EASIER
           </h1>
+          <div style="text-align: center;padding:35px;">
+            <img src="../../assets/images/truck.png" height="180px" />
+          </div>
           <ion-searchbar mode="ios" color="none"
             style="background: rgba(255, 255, 255, 0.836);color:black;border-radius: 25px;" debounce="100"
             (ionChange)="search($event)" placeholder="Search for product, vendor or category..">
@@ -176,7 +180,7 @@
     </div>
     <div style="text-align: center;" *ngIf="showCats && categories">
       <ion-button (click)="showMore()" fill="clear"
-        style="font-family: slides;font-size:25px;margin:40px;color:rgb(230, 219, 219)"
+        style="font-family: slides;font-size:25px;margin:40px;color:rgb(50, 125, 238)"
         *ngIf="showCats.length < categories.cats.arrayValue.values.length">
         <ion-icon name="add-outline"></ion-icon>Show More
       </ion-button>
@@ -187,8 +191,9 @@
   <!--Products-->
   <div class="whiteBack">
     <div class="titleDiv">
-      <div class="subTitle">BROWSE EXPORTERS</div>
-      <div class="mainTitle"> BY CATEGORIES</div>
+      <div class="mainTitle">BROWSE EXPORTERS</div>
+      <div class=" subTitle" style="
+      margin-bottom:40px;"> BY CATEGORIES</div>
       <div style="font-family: title;color:black;font-size:20px;">Find exporter by clicking on your desired
         category on the left side.</div>
     </div>
@@ -196,19 +201,23 @@
       <ion-grid *ngIf="width>600">
         <ion-row *ngIf="categories">
           <ion-col size="2" style="border-top-right-radius: 25px;border-bottom-right-radius: 25px;">
-            <ion-toolbar>
-              <ion-title style="font-family:title">Categories</ion-title>
-            </ion-toolbar>
-            <div *ngFor="let cati of categories.cats.arrayValue.values" style="background: rgb(250, 250, 250);">
-              <ion-item *ngIf="cat == cati.stringValue" color="none" mode="ios" lines="none"
-                style="font-family:title;font-weight: 600!important;color:rgb(44, 44, 44);">
-                {{capitalizeFirstLetter(cati.stringValue)}}
-              </ion-item>
-              <ion-item *ngIf="cat != cati.stringValue" color="none" mode="ios" button lines="none"
-                style="font-family:title;font-weight: 300!important;color:rgb(80, 80, 80);"
-                (click)="changeCat(cati.stringValue)">
-                {{capitalizeFirstLetter(cati.stringValue)}}
-              </ion-item>
+            <div style=" -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);">
+              <ion-toolbar color="primary">
+                <ion-title style="font-family:title;text-align: center;">CATEGORIES</ion-title>
+              </ion-toolbar>
+              <div *ngFor="let cati of categories.cats.arrayValue.values" style="background: rgb(255, 255, 255);">
+                <ion-item *ngIf="cat == cati.stringValue" color="none" mode="ios"
+                  style="font-family:title;font-weight: 600!important;color:rgb(44, 44, 44);">
+                  {{capitalizeFirstLetter(cati.stringValue)}}
+                </ion-item>
+                <ion-item *ngIf="cat != cati.stringValue" color="none" mode="ios" button lines="none"
+                  style="font-family:title;font-weight: 300!important;color:rgb(80, 80, 80);"
+                  (click)="changeCat(cati.stringValue)">
+                  {{capitalizeFirstLetter(cati.stringValue)}}
+                </ion-item>
+              </div>
             </div>
           </ion-col>
           <ion-col style="padding-left:50px;padding-right:50px;text-align: center;" size="10">
@@ -230,13 +239,16 @@
                     </h2>
                   </div>
                   <div style="position: absolute;bottom:10px;color:black">
-                    <ion-button color = "none" style="border:1px rgb(65, 65, 65) solid;border-radius: 10px;color:rgb(41, 41, 41);">
+                    <ion-button color="none"
+                      style="border:1px rgb(65, 65, 65) solid;border-radius: 10px;color:rgb(41, 41, 41);">
                       <ion-icon name="globe-outline" size="large" color="none"></ion-icon>
                     </ion-button>
-                    <ion-button color = "none" style="border:1px rgb(65, 65, 65) solid;border-radius: 10px;color:rgb(41, 41, 41);">
+                    <ion-button color="none"
+                      style="border:1px rgb(65, 65, 65) solid;border-radius: 10px;color:rgb(41, 41, 41);">
                       <ion-icon name="business-outline" size="large" color="none"></ion-icon>
                     </ion-button>
-                    <ion-button color = "none" style="border:1px rgb(65, 65, 65) solid;border-radius: 10px;color:rgb(41, 41, 41);">
+                    <ion-button color="none"
+                      style="border:1px rgb(65, 65, 65) solid;border-radius: 10px;color:rgb(41, 41, 41);">
                       <ion-icon name="call-outline" size="large" color="none"></ion-icon>
                     </ion-button>
                   </div>
