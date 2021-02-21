@@ -52,7 +52,7 @@ ion-menu {
 }
 
 .greyBack{
-  background:rgb(238, 237, 237);
+  background:rgb(240, 240, 240);
 }
 
 .titleDiv{
@@ -60,7 +60,24 @@ ion-menu {
   text-align: center;
 }
 
-.mainTitle{
+.whiteBack .mainTitle{
+  font-family: title;
+  font-size: 60px;
+  font-weight: 700!important;
+  color:rgb(0, 0, 0);
+  margin-bottom:30px;
+}
+
+
+.whiteBack .subTitle{
+  font-family: title;
+  font-size: 40px;
+  font-weight: 10!important;
+  color:rgb(71, 71, 71);
+}
+
+
+.greyBack .mainTitle{
   font-family: title;
   font-size: 60px;
   font-weight: 700!important;
@@ -68,7 +85,7 @@ ion-menu {
 }
 
 
-.subTitle{
+.greyBack .subTitle{
   font-family: title;
   font-size: 40px;
   font-weight: 10!important;
