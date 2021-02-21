@@ -1,4 +1,3 @@
-
 <ion-content [fullscreen]="true">
 
   <!--HEADERS-->
@@ -320,18 +319,57 @@
                     <ion-col>
                       <div class="paddtop">
                         <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
-                        <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
+                        <ion-input type='email' [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
                       </div>
 
                       <div class="paddtop">
                         <ion-label style="display: flex;justify-content: flex-start;">Company Name</ion-label>
-                        <ion-input [(ngModel)]="username" placeholder='Enter your company name'></ion-input>
+                        <ion-input type='text' [(ngModel)]="username" placeholder='Enter your company name'></ion-input>
                       </div>
 
                       <div class="paddtop">
                         <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
                         <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
                       </div>
+
+                      <div class="paddtop">
+                        <ion-label style="display: flex;justify-content: flex-start;">Company Adress</ion-label>
+                        <ion-input type='text' [(ngModel)]="companyAdress" placeholder='Enter your company name'>
+                        </ion-input>
+                      </div>
+
+                      <div class="paddtop">
+                        <ion-label style="display: flex;justify-content: flex-start;">Phone</ion-label>
+                        <ion-input type='number' [(ngModel)]="companyPhone" placeholder='Enter your password'>
+                        </ion-input>
+                      </div>
+                      <div class="paddtop">
+                        <div *ngIf="cateegories"
+                          style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
+                          <ion-label style="padding: 1em;">CATEGORY</ion-label>
+                          <ion-select mode='ios' [(ngModel)]="selectedcat" (ionChange)="choosecat(selectedcat)">
+                            <ion-select-option *ngFor="let item of cateegories.cats.arrayValue.values"
+                              value="{{item.stringValue}}">
+
+                              {{item.stringValue}}
+                            </ion-select-option>
+                          </ion-select>
+                        </div>
+                      </div>
+                      <div *ngIf="cates" style="display: flex;flex-direction: column;width: 50%;">
+                        <ion-chip *ngFor="let item of cates let i=index">{{item}}
+                          <ion-icon (click)="delete(i)" color="danger" name="close-outline"></ion-icon>
+                        </ion-chip>
+                      </div>
+
+
+                      <div class="paddtop">
+                        <div [innerHtml]='msg'></div>
+                        <label>
+                          <input type="file" (change)="selectFile($event)">
+                        </label>
+                      </div>
+
                     </ion-col>
                   </ion-row>
 
@@ -448,6 +486,41 @@
                   </div>
 
                   <div class="paddtop">
+                    <ion-label style="display: flex;justify-content: flex-start;">Company Adress</ion-label>
+                    <ion-input [(ngModel)]="companyAdress" placeholder='Enter your company name'></ion-input>
+                  </div>
+
+                  <div class="paddtop">
+                    <ion-label style="display: flex;justify-content: flex-start;">Phone</ion-label>
+                    <ion-input [(ngModel)]="companyPhone" placeholder='Enter your password'></ion-input>
+                  </div>
+
+                  <div class="paddtop">
+                    <div *ngIf="cateegories"
+                      style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
+                      <ion-label style="padding: 1em;">CATEGORY</ion-label>
+                      <ion-select mode='ios' [(ngModel)]="selectedcat" (ionChange)="choosecat(selectedcat)">
+                        <ion-select-option *ngFor="let item of cateegories.cats.arrayValue.values"
+                          value="{{item.stringValue}}">
+
+                          {{item.stringValue}}
+                        </ion-select-option>
+                      </ion-select>
+                    </div>
+                  </div>
+                  <div *ngIf="cates" style="display: flex;flex-direction: column;width: 50%;">
+                    <ion-chip *ngFor="let item of cates let i=index">{{item}}
+                      <ion-icon (click)="delete(i)" color="danger" name="close-outline"></ion-icon>
+                    </ion-chip>
+                  </div>
+
+                  <div class="paddtop">
+
+                    <div [innerHtml]='msg'></div>
+                    <label>
+                      <input type="file" (change)="selectFile($event)">
+                    </label>
+
                     <ion-button (click)="register()" style=" max-width: 50vh;" color="dark" expand='block'>
                       <p>CREATE ACCOUNT</p>
                     </ion-button>

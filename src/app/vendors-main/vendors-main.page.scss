@@ -76,12 +76,44 @@ ion-card {
     padding: 30px;
     font-family: "Hammersmith One", sans-serif;
 }
+ion-item {
+    --ion-background-color: white !important;
+    --ion-color: white !important;
+}
+.item,
+.list,
+.item-content,
+.item-complex {
+    --ion-background-color: transparent !important;
+}
 
 ion-input {
     font-size: 10px;
     font-family: "Oxygen", sans-serif;
     border: 2px solid rgba(0, 0, 0, 0.415);
     max-width: 50vh;
+    text-align: left;
+}
+
+.line-input {
+    margin-bottom: 0 !important;
+    ion-item {
+        --border-color: transparent !important;
+        --highlight-height: 0;
+        border:  2px solid rgba(0, 0, 0, 0.415);
+        --padding-start: 0;
+        border-radius: 4px;
+
+        &.item-has-focus {
+            border: 1px solid var(--ion-color-primary);
+        }
+
+        ion-label {
+            color: #807e7e !important;
+            font-weight: 300;
+            font-size: 1rem !important;
+        }
+    }
 }
 
 .span {
