@@ -16,7 +16,7 @@ export class ProductsPage implements OnInit {
     this.getCats();
     setTimeout(() => {
       this.getProds("automotive");
-      this.changeProds();
+
       this.catIndex++;
     }, 2000);
   }
@@ -37,35 +37,9 @@ export class ProductsPage implements OnInit {
   subCat: string;
   catIndex: number = 0;
 
-  changeProds() {
-    for (var i = 0; i < this.categories['cats'].arrayValue.values.length;i++){
-      this.getProds2(this.categories['cats'].arrayValue.values[i].stringValue);
-    }
-  }
 
-  getProds2(cat:string) {
-    console.log(cat);
-    for (var i = 0; i < this.categories[cat].arrayValue.values.length; i++) {
-      const subCat = this.categories[cat].arrayValue.values[i].stringValue;
-      console.log("Checking >>> ", subCat);
-      const getDocs = this.fireStore.collection('products').doc(cat).collection(subCat).get().subscribe((data: any) => {
-        if (data.empty == false) {
-          for (var k = 0; k < data.docs.length; k++) {
-            if (data.docs[k].Df.sn.proto.mapValue.fields != undefined) {
-              console.log(data.docs[k].ref.path);
-              console.log(data.docs[k].Df.sn.proto.mapValue.fields.uploadedBy.stringValue);
-            }
-            if (k == data.docs.length - 1) {
-              getDocs.unsubscribe();
-            }
-          }
-        }
-      })
-    }
-    console.log(this.products);
-  }
 
-  addProduct(){
+  addProduct() {
 
   }
 

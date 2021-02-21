@@ -205,7 +205,7 @@ export class VendorsDashboardPage implements OnInit {
 
   ngOnInit() {
     this.getCats()
-    this.changeProds()
+
     const authsub = this.auth.authState.subscribe(user => {
       if (user && user.uid) {
         this.currentUID = user.uid
