@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ModalController } from '@ionic/angular';
@@ -16,10 +16,19 @@ export class ExportersListPage implements OnInit {
     private fireStore: AngularFirestore,
     public modalController: ModalController,
   ) {
-    this.getVendors();
+    this.getCats();
+    setTimeout(() => {
+      this.getVendors();
+    }, 2000);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.width = window.innerWidth;
   }
 
   searchFound: any[] = [];
+  width = window.innerWidth;
 
   async presentModal(option) {
     const modal = await this.modalController.create({
@@ -37,15 +46,32 @@ export class ExportersListPage implements OnInit {
   }
 
   vendors: any[] = []
+  categories: any;
 
   getVendors() {
-    const cats = this.fireStore.collection('vendors').get().subscribe((data: any) => {
+    const vendors = this.fireStore.collection('vendors').get().subscribe((data: any) => {
       for (var i = 0; i < data.docs.length; i++) {
         this.vendors.push(data.docs[i].Df.sn.proto.mapValue.fields);
       }
       console.log(this.vendors);
+      vendors.unsubscribe();
+    })
+  }
+
+  getCats() {
+    const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data: any) => {
+      this.categories = data.Df.sn.proto.mapValue.fields;
+      console.log(this.categories);
       cats.unsubscribe();
     })
+  }
+
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  numSequence(n: number): Array<number> {
+    return Array(n);
   }
 
   search(event) {
@@ -56,7 +82,7 @@ export class ExportersListPage implements OnInit {
       for (var i = 0; i < this.vendors.length; i++) {
         const currentCat = this.vendors[i].Name.stringValue;
         if (currentCat.toLowerCase().includes(event.detail.value.toLowerCase())) {
-          found = found+1;
+          found = found + 1;
           if (found < 7) {
             this.searchFound.push({
               name: currentCat,

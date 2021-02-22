@@ -20,7 +20,8 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
     (click)="openFirst()"></ion-icon>
   <ion-title slot="start"
     style="font-family:fantasy; font-size:2em; padding-top:20px;padding-bottom: 20px; color:rgb(0, 0, 0)">
-    Export<span style="color: rgb(0, 140, 255); font-weight: bolder;" id="content"><span style="color: rgb(0, 140, 255); font-weight: bolder;">Portal</span></span>
+    Export<span style="color: rgb(0, 140, 255); font-weight: bolder;" id="content"><span
+        style="color: rgb(0, 140, 255); font-weight: bolder;">Portal</span></span>
   </ion-title>
   <div slot="end" *ngIf="width > 600" style="padding-right:100px;">
     <ion-button (click)="goToPage('home')" fill="clear"
@@ -31,13 +32,13 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
       *ngIf="activePath == 'home'">
       <span class="hoo activated">Home</span>
     </ion-button>
-    <ion-button (click)="goToPage('products')" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'products'">
-      <span class="hoo">Products</span>
+    <ion-button (click)="goToPage('exporters-list')" fill="clear"
+      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'exporters-list'">
+      <span class="hoo">Exporters</span>
     </ion-button>
     <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
-      *ngIf="activePath == 'products'">
-      <span class="hoo activated">Products</span>
+      *ngIf="activePath == 'exporters-list'">
+      <span class="hoo activated">Exporters</span>
     </ion-button>
     <ion-button (click)="goToPage('categories')" fill="clear"
       style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'categories'">
@@ -47,13 +48,13 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
       *ngIf="activePath == 'categories'">
       <span class="hoo activated">Categories</span>
     </ion-button>
-    <ion-button (click)="goToPage('exporters-list')" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'exporters-list'">
-      <span class="hoo">Exporters</span>
+    <ion-button (click)="goToPage('products')" fill="clear"
+      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'products'">
+      <span class="hoo">Products</span>
     </ion-button>
     <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
-      *ngIf="activePath == 'exporters-list'">
-      <span class="hoo activated">Exporters</span>
+      *ngIf="activePath == 'products'">
+      <span class="hoo activated">Products</span>
     </ion-button>
     <ion-button (click)="goToPage('about')" fill="clear"
       style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'about'">
