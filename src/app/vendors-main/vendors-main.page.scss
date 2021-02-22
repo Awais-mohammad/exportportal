@@ -1,11 +1,10 @@
 .webheader {
-    height: 500px;
+    height: 650px;
     background: url("../../assets/images/vendorloginpageimage.jpg") no-repeat center center;
     background-size: cover;
     box-shadow: 0px 0px 10px 3px rgb(167, 166, 166);
     position: relative;
     z-index: 1;
-    background-size: cover;
 }
 .mobileheader {
     height: 550px;
@@ -18,27 +17,29 @@
 }
 
 .txt {
-    top: 37%;
+    top: 35%;
     white-space: normal;
     position: relative;
     z-index: 5;
 }
-.card {
+
+.a {
+    border: 2px solid white;
     text-align: center;
-    position: relative;
-    border-radius: 25px;
-    width: 92%;
-    height: 50%;
-
-    .heading {
-        font-family: "Noto Sans JP", sans-serif;
-        font-weight: bold;
-        font-size: 2em;
-
-        padding: 0.5em;
-    }
+    min-width: 18em;
+    max-height: 5.5em;
+    color: white;
+    font-family: title;
+    font-weight: bold;
 }
-
+.a:hover {
+    color: black;
+    background: white;
+    font-family: title;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid black;
+}
 .image-center {
     margin: 0 auto;
 }
@@ -46,6 +47,13 @@ ion-avatar {
     padding-top: 1em;
     height: 8em;
     width: 8em;
+}
+.iconsize {
+    font-size: 50px;
+}
+
+ion-button {
+    font-family: slides;
 }
 .title {
     font-family: "Noto Sans JP", sans-serif;
@@ -100,7 +108,7 @@ ion-input {
     ion-item {
         --border-color: transparent !important;
         --highlight-height: 0;
-        border:  2px solid rgba(0, 0, 0, 0.415);
+        border: 2px solid rgba(0, 0, 0, 0.415);
         --padding-start: 0;
         border-radius: 4px;
 
