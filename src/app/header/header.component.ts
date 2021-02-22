@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
   width = window.innerWidth;
   activePath: string;
   menuOpen: boolean;
+  showOptions:boolean = false;
   pages: any[] = ['home', 'products', 'categories', 'exporters-list', 'about', 'contact'];
 
   @HostListener('window:resize', ['$event'])
@@ -35,6 +36,10 @@ export class HeaderComponent implements OnInit {
 
   closeFirst() {
     this.menu.close('first');
+  }
+
+  showOptions2(){
+    this.showOptions = !this.showOptions;
   }
 
   async checkRoute() {
@@ -52,6 +57,11 @@ export class HeaderComponent implements OnInit {
       console.log(this.currentUserData);
 
     })
+  }
+
+  logout(){
+    this.afs.auth.signOut();
+    this.showOptions = false;
   }
 
   ngOnInit() {

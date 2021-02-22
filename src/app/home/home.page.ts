@@ -17,6 +17,7 @@ export class HomePage {
     this.getCats();
     setTimeout(() => {
       this.getProds("automotive");
+      this.getVendors();
     }, 2000);
   }
 
@@ -34,6 +35,17 @@ export class HomePage {
     this.width = window.innerWidth;
   }
 
+  vendors: any[] = []
+
+  getVendors() {
+    const vendors = this.fireStore.collection('vendors').get().subscribe((data: any) => {
+      for (var i = 0; i < data.docs.length; i++) {
+        this.vendors.push(data.docs[i].Df.sn.proto.mapValue.fields);
+      }
+      console.log(this.vendors);
+      vendors.unsubscribe();
+    })
+  }
   getCats() {
     const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data: any) => {
       this.categories = data.Df.sn.proto.mapValue.fields;

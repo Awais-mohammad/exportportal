@@ -164,7 +164,8 @@
   </div>
 
   <!--Categories-->
-  <div class = "greyBack" style="z-index: 4;background: url('../../assets/images/back.png');background-size: cover;background-position: left;">
+  <div class="greyBack"
+    style="z-index: 4;background: url('../../assets/images/back.png');background-size: cover;background-position: left;">
     <div class="titleDiv">
       <div class="subTitle">LISTINGS</div>
       <div class="mainTitle">BY CATEGOREIS</div>
@@ -190,11 +191,12 @@
 
 
   <!--EXPORTERS BY CAT-->
-  <div class="whiteBack">
+  <div class="greyBack">
     <div class="titleDiv">
-      <div class="mainTitle">BROWSE EXPORTERS</div>
+      <div class="mainTitle" style="color:black;">BROWSE EXPORTERS</div>
       <div class=" subTitle" style="
-      margin-bottom:80px;"> BY CATEGORIES</div>
+      margin-bottom:80px;
+  color:rgb(71, 71, 71);"> BY CATEGORIES</div>
       <div style="font-family: title;color:black;font-size:20px;">Find exporter by clicking on your desired
         category on the left side.</div>
     </div>
@@ -222,37 +224,31 @@
             </div>
           </ion-col>
           <ion-col style="padding-left:50px;padding-right:50px;text-align: center;" size="10">
-            <ion-card *ngFor="let n of numSequence(4); let i = index;" color="none" style="background: white;
+            <ion-card *ngFor="let vendor of vendors; let i = index;" color="none" style="background: white;
             -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
             -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
             box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);margin-bottom:15px;">
-              <ion-row>
+              <ion-row *ngIf = "i > 1 && i < 6">
                 <ion-col class="product-img" size="2" style="text-align: center;">
                   <img
                     src="https://d2liqplnt17rh6.cloudfront.net/logoImages/8e7b4483-1b27-4bc4-868b-1b88ced1c19c-661.jpeg"
                     height="190" width="200">
                 </ion-col>
                 <ion-col class="product-info" size="8">
-                  <div class="product-text">
-                    <h1>Gul Ahmad</h1>
-                    <h2>
-                      <ion-icon name="timer-outline"></ion-icon> 2 years
-                    </h2>
+                  <div class="product-text" *ngIf="vendor.Name">
+                    <h1>{{vendor.Name.stringValue}}</h1>
+                    <div style="color:rgb(37, 37, 37);font-family:title;padding:10px;font-size:15px;"
+                      *ngIf="vendor.companyPhone">
+                      <ion-icon name="call-outline" style="margin-right:10px;"></ion-icon>
+                      {{vendor.companyPhone.stringValue}}
+                    </div>
+                    <div style="color:rgb(37, 37, 37);font-family:title;padding:10px;font-size:15px;"
+                      *ngIf="vendor.companyAdress">
+                      <ion-icon name="business-outline" style="margin-right:10px;"></ion-icon>
+                      {{vendor.companyAdress.stringValue}}
+                    </div>
                   </div>
-                  <div style="position: absolute;bottom:10px;color:black">
-                    <ion-button color="none"
-                      style="border:1px rgb(21, 122, 255) solid;border-radius: 10px;color:rgb(6, 150, 233);">
-                      <ion-icon name="globe-outline" size="large" color="none"></ion-icon>
-                    </ion-button>
-                    <ion-button color="none"
-                      style="border:1px rgb(186, 37, 231) solid;border-radius: 10px;color:rgb(171, 0, 223);">
-                      <ion-icon name="business-outline" size="large" color="none"></ion-icon>
-                    </ion-button>
-                    <ion-button color="none"
-                      style="border:1px rgb(96, 204, 33) solid;border-radius: 10px;color:rgb(108, 219, 3);">
-                      <ion-icon name="call-outline" size="large" color="none"></ion-icon>
-                    </ion-button>
-                  </div>
+
                 </ion-col>
 
                 <ion-col size="2">
@@ -262,33 +258,30 @@
                 </ion-col>
               </ion-row>
             </ion-card>
-            <div *ngIf="products.length == 0">
-              <h1 style="font-family: fantasy;">Nothing to show here..</h1>
-            </div>
           </ion-col>
         </ion-row>
       </ion-grid>
       <ion-grid *ngIf="width<=600">
         <ion-row *ngIf="categories">
           <ion-col style="text-align: center;" size="12">
-            <ion-card *ngFor="let n of numSequence(4); let i = index;" color="none" style="background: white;
+            <ion-card *ngFor="let vendor of vendors; let i = index;" color="none" style="background: white;
             -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
             -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
             box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);margin-bottom:15px;">
-              <ion-row>
+              <ion-row *ngIf = "i < 5">
                 <ion-col class="product-img" size="5">
                   <img
                     src="https://d2liqplnt17rh6.cloudfront.net/logoImages/8e7b4483-1b27-4bc4-868b-1b88ced1c19c-661.jpeg"
                     height="190" width="200">
                 </ion-col>
                 <ion-col size="7">
-                  <div class="product-text">
-                    <h1>Gul Ahmad</h1>
+                  <div class="product-text" style="height:auto;">
+                    <h1>{{vendor.Name.stringValue}}</h1>
                     <h2>
                       <ion-icon name="timer-outline"></ion-icon> 2 years
                     </h2>
                   </div>
-                  <div style="position: absolute;bottom:40px;color:black">
+                  <div style="color:black">
                     <ion-button color="none"
                       style="border:1px rgb(21, 122, 255) solid;border-radius: 10px;color:rgb(6, 150, 233);">
                       <ion-icon name="globe-outline" size="large" color="none"></ion-icon>
@@ -316,7 +309,8 @@
     </div>
   </div>
 
-  <div *ngIf = "width >600" style="display: flex;justify-content: center;align-items: center;padding-top: 3em;padding-bottom:40px;color:rgb(255, 255, 255);background: url('../../assets/images/back.png');background-size: cover;">
+  <div *ngIf="width >600"
+    style="display: flex;justify-content: center;align-items: center;padding-top: 3em;padding-bottom:40px;color:rgb(255, 255, 255);background: url('../../assets/images/back.png');background-size: cover;">
     <div style="width: 70%;">
       <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
         Get the best for your business!
@@ -354,7 +348,9 @@
   </div>
 
 
-  <div style="display: flex;justify-content: center;align-items: center;padding-top: 3em;color:rgb(255, 255, 255);background: url('../../assets/images/back.png');background-size: cover;" *ngIf = "width <=600">
+  <div
+    style="display: flex;justify-content: center;align-items: center;padding-top: 3em;color:rgb(255, 255, 255);background: url('../../assets/images/back.png');background-size: cover;"
+    *ngIf="width <=600">
     <div class="blackcolor" style="width: 70%;">
       <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
         Get the best for your business!
@@ -363,7 +359,8 @@
         Online International Trade on Export Portal has a lot of advantages:
       </h3>
 
-      <div style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;flex-direction: column;">
+      <div
+        style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;flex-direction: column;">
         <div style="width: 100%;">
 
           <ion-icon class="iconsize" name="pricetags-outline"></ion-icon>
