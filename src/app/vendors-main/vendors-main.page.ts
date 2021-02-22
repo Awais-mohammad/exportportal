@@ -30,7 +30,7 @@ export class VendorsMainPage implements OnInit {
   showLogin: boolean = false;
   companyAdress: string;
   companyPhone: number;
-
+  registersection: boolean = false;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -38,7 +38,7 @@ export class VendorsMainPage implements OnInit {
   }
 
   showHideLoginForm() {
-    this.showLogin = !this.showLogin;
+    this.registersection = !this.registersection
   }
 
   currentUserID: string;
