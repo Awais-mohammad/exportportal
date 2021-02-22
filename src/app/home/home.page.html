@@ -181,7 +181,7 @@
     </div>
     <div style="text-align: center;" *ngIf="showCats && categories">
       <ion-button (click)="showMore()" fill="clear"
-        style="font-family: slides;font-size:25px;margin:40px;color:rgb(50, 125, 238)"
+        style="font-family: slides;font-size:25px;margin:40px;color:rgb(211, 211, 211);border:1px white solid;border-radius: 5px;"
         *ngIf="showCats.length < categories.cats.arrayValue.values.length">
         <ion-icon name="add-outline"></ion-icon>Show More
       </ion-button>
@@ -316,7 +316,7 @@
     </div>
   </div>
 
-  <div style="display: flex;justify-content: center;align-items: center;padding-top: 3em;padding-bottom:40px;color:rgb(255, 255, 255);background: url('../../assets/images/back.png');background-size: cover;">
+  <div *ngIf = "width >600" style="display: flex;justify-content: center;align-items: center;padding-top: 3em;padding-bottom:40px;color:rgb(255, 255, 255);background: url('../../assets/images/back.png');background-size: cover;">
     <div style="width: 70%;">
       <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
         Get the best for your business!
@@ -345,6 +345,44 @@
         </div>
 
         <div style="width: 25%;">
+
+          <ion-icon class="iconsize" name="globe-outline"></ion-icon>
+          <p style="font-family: title;font-size: 19px;">World Wide Users</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="display: flex;justify-content: center;align-items: center;padding-top: 3em;color:rgb(255, 255, 255);background: url('../../assets/images/back.png');background-size: cover;" *ngIf = "width <=600">
+    <div class="blackcolor" style="width: 70%;">
+      <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
+        Get the best for your business!
+      </h1>
+      <h3 style="position: relative;top: -0.5em;font-size: 18px;font-family: title;text-align: center;">
+        Online International Trade on Export Portal has a lot of advantages:
+      </h3>
+
+      <div style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;flex-direction: column;">
+        <div style="width: 100%;">
+
+          <ion-icon class="iconsize" name="pricetags-outline"></ion-icon>
+          <p style="font-family: title;font-size: 19px;">Free Registration</p>
+        </div>
+
+        <div style="width: 100%;">
+
+          <ion-icon class="iconsize" name="headset-outline"></ion-icon>
+          <p style="font-family: title;font-size: 19px;">24/7 Online Support</p>
+        </div>
+
+        <div style="width: 100%;">
+
+          <ion-icon class="iconsize" name="cash-outline"></ion-icon>
+          <p style="font-family: title;font-size: 19px;">No Fees</p>
+        </div>
+
+        <div style="width: 100%;">
 
           <ion-icon class="iconsize" name="globe-outline"></ion-icon>
           <p style="font-family: title;font-size: 19px;">World Wide Users</p>
