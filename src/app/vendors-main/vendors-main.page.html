@@ -248,56 +248,7 @@
       <!-- LOGIN SIGNUP FORM For WEB
   <div *ngIf="width > 800" style="text-align: center;">
    
-          <ion-card *ngIf="showLogin" class="fade-in">
-
-            <ion-card-content style="display: flex;justify-content: center;align-items: center;">
-
-              <div>
-
-                <ion-title class="headinone">Sign In To Account</ion-title>
-
-                <ion-title class="headintwo">Don't have an account?
-
-                  <span (click)="showHideLoginForm()" style="color: #09757A;">Sign Up</span>
-
-                </ion-title>
-
-              </div>
-
-              <div style=" padding-top: 7px;" class="fields">
-
-                <ion-row align-items-center>
-                  <ion-col>
-                    <div class="paddtop">
-                      <ion-label style="display: flex;justify-content: flex-start;">Email
-                      </ion-label>
-                      <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
-                    </div>
-
-                    <div class="paddtop">
-                      <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-                      <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
-                    </div>
-                  </ion-col>
-                </ion-row>
-
-                <div class="paddtop">
-                  <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
-                    <p>LOGIN</p>
-                  </ion-button>
-                  <div style="display: flex;">
-                    <ion-checkbox></ion-checkbox>
-                    <ion-label class="padleft">Keep me signed in on this device</ion-label>
-                  </div>
-                </div>
-
-
-              </div>
-
-            </ion-card-content>
-
-
-          </ion-card>
+         
         </ion-col>
       </ion-row>
     </ion-grid>

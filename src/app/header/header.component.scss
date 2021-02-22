@@ -18,7 +18,7 @@ ion-button:hover {
 }
 
 .hoo {
-    padding:5px;
+    padding: 5px;
     transition: 300ms;
 }
 
@@ -30,4 +30,35 @@ ion-button:hover {
 
 .hoo:active {
     color: rgb(255, 255, 255);
+}
+.headinone {
+    font-family: title;
+    font-size: 40px;
+}
+
+.headintwo {
+    font-size: 12px;
+    font-family: "Hammersmith One", sans-serif;
+}
+
+.fields {
+    padding: 30px;
+    font-family: "Hammersmith One", sans-serif;
+}
+.paddtop {
+    padding-top: 20px;
+}
+
+ion-label {
+    color: black !important;
+    font-weight: 300;
+    font-size: 1rem !important;
+}
+
+ion-input {
+    font-size: 10px;
+    font-family: "Oxygen", sans-serif;
+    border: 2px solid rgba(0, 0, 0, 0.415);
+    max-width: 50vh;
+    text-align: left;
 }

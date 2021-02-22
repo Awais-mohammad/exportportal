@@ -72,9 +72,10 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
       *ngIf="activePath == 'contact'">
       <span class="hoo activated">Contact</span>
     </ion-button>
-    <ion-button *ngIf="!loggedIn" (click)="presentModal()" fill="outline"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">Login</ion-button>
-    <ion-button *ngIf="!loggedIn" (click)="goToPage('vendors-main')"  fill="outline"
+    <ion-button (click)="toggleForm()" *ngIf="!loggedIn" fill="clear"
+      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">Login
+    </ion-button>
+    <ion-button *ngIf="!loggedIn" (click)="goToPage('vendors-main')" fill="clear"
       style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">Register</ion-button>
     <ion-button *ngIf="loggedIn && currentUserData" (click)="showOptions2()" fill="outline"
       style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">
@@ -92,4 +93,58 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
     button>
     <ion-icon slot="start" name="log-out-outline" color="danger"></ion-icon>LOGOUT
   </ion-item>
+</div>
+
+<div *ngIf="openLoginForm"
+  style="position:fixed;right:25%;top:20%;z-index:1000;height: 30em;width: 50%;background: white;  ">
+
+  <div style="position: relative;left:94%;top: 3%;">
+    <ion-icon (click)="toggleForm()" color="danger" style="font-size: 30px;" name="close-outline"></ion-icon>
+  </div>
+  <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;padding:30px">
+
+    <div>
+
+      <ion-title class="headinone">Sign In To Account</ion-title>
+
+      <ion-title style="text-align: center;" class="headintwo">Don't have an account?
+
+        <span style="color: #09757A;">Sign Up</span>
+
+      </ion-title>
+
+    </div>
+
+    <div style=" padding-top: 7px;" class="fields">
+
+
+      <div class="paddtop">
+        <ion-label style="display: flex;justify-content: flex-start;">Email
+        </ion-label>
+        <ion-input placeholder='Enter your e-mail'></ion-input>
+      </div>
+
+      <div class="paddtop">
+        <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+        <ion-input placeholder='Enter your password'></ion-input>
+      </div>
+
+
+      <div class="paddtop">
+        <ion-button style=" max-width: 50vh;" color="dark" expand='block'>
+          <p>LOGIN</p>
+        </ion-button>
+        <div style="display: flex;">
+          <ion-checkbox></ion-checkbox>
+          <ion-label class="padleft">Keep me signed in on this device</ion-label>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
 </div>

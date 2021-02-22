@@ -23,14 +23,16 @@ export class HeaderComponent implements OnInit {
   width = window.innerWidth;
   activePath: string;
   menuOpen: boolean;
-  showOptions:boolean = false;
+  showOptions: boolean = false;
   pages: any[] = ['home', 'products', 'categories', 'exporters-list', 'about', 'contact'];
+  openLoginForm: boolean = false;
+
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.width = window.innerWidth;
   }
-  
+
   openFirst() {
     this.menu.open();
   }
@@ -39,7 +41,7 @@ export class HeaderComponent implements OnInit {
     this.menu.close('first');
   }
 
-  showOptions2(){
+  showOptions2() {
     this.showOptions = !this.showOptions;
   }
 
@@ -60,11 +62,15 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  logout(){
+  logout() {
     this.afs.auth.signOut();
     this.showOptions = false;
   }
 
+  toggleForm() {
+    this.openLoginForm = !this.openLoginForm
+  }
+  
   ngOnInit() {
     this.checkRoute();
     const authsub = this.afs.authState.subscribe(user => {
