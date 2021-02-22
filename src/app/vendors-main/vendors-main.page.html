@@ -1,41 +1,31 @@
 <ion-content [fullscreen]="true">
 
-  <!--web view-->
-  <div *ngIf="width > 800" style="position: relative;top: -1.3em;">
-    <!--web header-->
-    <div class="webheader">
-      <div style="padding-right: 5em;text-align: left;left: 10em;max-width: 65%;" class="txt">
-        <h1 style="color: white;font-weight: bold;font-size: 50px;font-family: title;">
-          THINK LOCAL, SELL GLOBAL
-          START TRADING ONLINE INTERNATIONALLY
-        </h1>
-        <div style="max-width: 65%;">
-          <p style="color: #E0E0E0;font-weight: 18px;position: relative;left: 10px;">
-            Our comprehensive global trade hub has everything you need to trade safely and securely. Empowered by our
-            proprietary blockchain technology, Export Portal prioritizes security, transparency, cost-effectiveness, and
-            ease-of-use.
-          </p>
-        </div>
-      </div>
-      <div style="top: 42%;position: relative;left: 10em;">
-        <h1 style="font-family: title;color: white;font-size: 18px;">REGISTER WITH US TODAY - IT'S FREE!</h1>
-
-        <div style="display: flex;flex-wrap: wrap;">
-
-          <div class="a">
-            <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a User</p>
-            <div>
-              <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </ion-button>
-
-            </div>
+  <div *ngIf="!registersection">
+    <!--web view-->
+    <div *ngIf="width > 800" style="position: relative;top: -1.3em;">
+      <!--web header-->
+      <div class="webheader">
+        <div style="padding-right: 5em;text-align: left;left: 10em;max-width: 65%;" class="txt">
+          <h1 style="color: white;font-weight: bold;font-size: 50px;font-family: title;">
+            THINK LOCAL, SELL GLOBAL
+            START TRADING ONLINE INTERNATIONALLY
+          </h1>
+          <div style="max-width: 65%;">
+            <p style="color: #E0E0E0;font-weight: 18px;position: relative;left: 10px;">
+              Our comprehensive global trade hub has everything you need to trade safely and securely. Empowered by our
+              proprietary blockchain technology, Export Portal prioritizes security, transparency, cost-effectiveness,
+              and
+              ease-of-use.
+            </p>
           </div>
+        </div>
+        <div style="top: 42%;position: relative;left: 10em;">
+          <h1 style="font-family: title;color: white;font-size: 18px;">REGISTER WITH US TODAY - IT'S FREE!</h1>
 
-          <div style="padding-left: 1em;">
+          <div style="display: flex;flex-wrap: wrap;">
 
             <div class="a">
-              <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Vendor</p>
+              <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a User</p>
               <div>
                 <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
                   <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -43,218 +33,692 @@
 
               </div>
             </div>
-          </div>
-          <div style="padding-left: 1em;">
 
-            <div class="a">
-              <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Deliverer</p>
-              <div>
-                <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </ion-button>
+            <div style="padding-left: 1em;">
 
+              <div class="a">
+                <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Vendor</p>
+                <div>
+                  <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </ion-button>
+
+                </div>
               </div>
             </div>
-          </div>
-          <div style="padding-left: 1em;">
+            <div style="padding-left: 1em;">
 
-            <div class="a">
-              <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Business Person</p>
-              <div>
-                <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </ion-button>
+              <div class="a">
+                <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Deliverer</p>
+                <div>
+                  <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </ion-button>
 
+                </div>
               </div>
+            </div>
+            <div style="padding-left: 1em;">
+
+              <div class="a">
+                <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Business Person</p>
+                <div>
+                  <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </ion-button>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <!--END OF WEB HEADER-->
+
+
+      <!--COntent started-->
+      <!--For web-->
+      <div style="background: white;">
+        <div style="display: flex;margin: 0;padding: 0;">
+
+          <div style="width: 50%;">
+            <img style="width: 100%;" src="../../assets/images/buyyer.jpg" alt="">
+          </div>
+
+          <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
+            <div class="blackcolor" style="text-align: center;">
+              <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">BUYER</h1>
+              <p style="font-family: title;font-size: 18px;">
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Secure trade process
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Secure trade process
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Secure trade process
+              </p>
+
+
+              <ion-button style="border-radius: 1px;background: blue;" color="none">NO REGISTRATION</ion-button>
+
+
             </div>
           </div>
 
+
         </div>
 
-      </div>
-    </div>
-    <!--END OF WEB HEADER-->
+        <div style="display: flex;margin: 0;padding: 0;position: relative;top: -3px;">
 
 
-    <!--COntent started-->
-    <!--For web-->
-    <div style="background: white;">
-      <div style="display: flex;margin: 0;padding: 0;">
-
-        <div style="width: 50%;">
-          <img style="width: 100%;" src="../../assets/images/buyyer.jpg" alt="">
-        </div>
-
-        <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
-          <div class="blackcolor" style="text-align: center;">
-            <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">BUYER</h1>
-            <p style="font-family: title;font-size: 18px;">
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Secure trade process
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Secure trade process
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Secure trade process
-            </p>
+          <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
+            <div class="blackcolor" style="text-align: center;">
+              <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">SELLER</h1>
+              <p style="font-family: title;font-size: 18px;">
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Safe and easy deals
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                B2B opportunities
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Worldwide customers
+              </p>
 
 
-            <ion-button style="border-radius: 1px;background: blue;" color="none">NO REGISTRATION</ion-button>
+              <ion-button (click)="showHideLoginForm()" style="border-radius: 1px;background: blue;" color="none">
+                REGISTER</ion-button>
 
-
+            </div>
           </div>
-        </div>
-
-
-      </div>
-
-      <div style="display: flex;margin: 0;padding: 0;position: relative;top: -3px;">
-
-
-        <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
-          <div class="blackcolor" style="text-align: center;">
-            <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">SELLER</h1>
-            <p style="font-family: title;font-size: 18px;">
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Safe and easy deals
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              B2B opportunities
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Worldwide customers
-            </p>
-
-
-            <ion-button style="border-radius: 1px;background: blue;" color="none">REGISTER</ion-button>
-
+          <div style="width: 50%;">
+            <img style="width: 100%;" src="../../assets/images/seller.jpg" alt="">
           </div>
-        </div>
-        <div style="width: 50%;">
-          <img style="width: 100%;" src="../../assets/images/seller.jpg" alt="">
-        </div>
 
 
-      </div>
-
-      <div style="display: flex;margin: 0;padding: 0;position: relative;top: -5px;">
-
-        <div style="width: 50%;">
-          <img style="width: 100%;" src="../../assets/images/manufacturer.jpg" alt="">
         </div>
 
-        <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
-          <div class="blackcolor" style="text-align: center;">
-            <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">MANUFACTURER</h1>
-            <p style="font-family: title;font-size: 18px;">
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Sales distribution
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              New market potential
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Diverse product lines
-            </p>
+        <div style="display: flex;margin: 0;padding: 0;position: relative;top: -5px;">
 
-
-            <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
-
+          <div style="width: 50%;">
+            <img style="width: 100%;" src="../../assets/images/manufacturer.jpg" alt="">
           </div>
-        </div>
+
+          <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
+            <div class="blackcolor" style="text-align: center;">
+              <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">MANUFACTURER</h1>
+              <p style="font-family: title;font-size: 18px;">
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Sales distribution
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                New market potential
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Diverse product lines
+              </p>
 
 
-
-      </div>
-      <!--eveinhi-->
-      <div style="display: flex;margin: 0;padding: 0;position: relative;top: -5px;">
-
-
-        <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
-          <div class="blackcolor" style="text-align:center;">
-            <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">FRIEGHT FORWORDER</h1>
-            <p style="font-family: title;font-size: 18px;">
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Business opportunities
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Trusted sellers
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Global customer base
-            </p>
-
-
-            <div style="text-align: center;">
               <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
+
+            </div>
+          </div>
+
+
+
+        </div>
+        <!--eveinhi-->
+        <div style="display: flex;margin: 0;padding: 0;position: relative;top: -5px;">
+
+
+          <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
+            <div class="blackcolor" style="text-align:center;">
+              <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">FRIEGHT FORWORDER
+              </h1>
+              <p style="font-family: title;font-size: 18px;">
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Business opportunities
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Trusted sellers
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Global customer base
+              </p>
+
+
+              <div style="text-align: center;">
+                <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
+              </div>
+
+            </div>
+          </div>
+
+          <div style="width: 50%;">
+            <img style="width: 100%;" src="../../assets/images/frieght.jpg" alt="">
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div style="display: flex;justify-content: center;align-items: center;padding-top: 3em;">
+        <div class="blackcolor" style="width: 70%;">
+          <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
+            Get the best for your business!
+          </h1>
+          <h3 style="position: relative;top: -0.5em;font-size: 18px;font-family: title;text-align: center;">
+            Online International Trade on Export Portal has a lot of advantages:
+          </h3>
+
+          <div style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;">
+            <div style="width: 25%;">
+
+              <ion-icon class="iconsize" name="pricetags-outline"></ion-icon>
+              <p style="font-family: title;font-size: 19px;">Free Registration</p>
+            </div>
+
+            <div style="width: 25%;">
+
+              <ion-icon class="iconsize" name="headset-outline"></ion-icon>
+              <p style="font-family: title;font-size: 19px;">24/7 Online Support</p>
+            </div>
+
+            <div style="width: 25%;">
+
+              <ion-icon class="iconsize" name="cash-outline"></ion-icon>
+              <p style="font-family: title;font-size: 19px;">No Fees</p>
+            </div>
+
+            <div style="width: 25%;">
+
+              <ion-icon class="iconsize" name="globe-outline"></ion-icon>
+              <p style="font-family: title;font-size: 19px;">World Wide Users</p>
             </div>
 
           </div>
+
+        </div>
+      </div>
+
+      <!-- LOGIN SIGNUP FORM For WEB
+  <div *ngIf="width > 800" style="text-align: center;">
+   
+          <ion-card *ngIf="showLogin" class="fade-in">
+
+            <ion-card-content style="display: flex;justify-content: center;align-items: center;">
+
+              <div>
+
+                <ion-title class="headinone">Sign In To Account</ion-title>
+
+                <ion-title class="headintwo">Don't have an account?
+
+                  <span (click)="showHideLoginForm()" style="color: #09757A;">Sign Up</span>
+
+                </ion-title>
+
+              </div>
+
+              <div style=" padding-top: 7px;" class="fields">
+
+                <ion-row align-items-center>
+                  <ion-col>
+                    <div class="paddtop">
+                      <ion-label style="display: flex;justify-content: flex-start;">Email
+                      </ion-label>
+                      <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
+                    </div>
+
+                    <div class="paddtop">
+                      <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+                      <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
+                    </div>
+                  </ion-col>
+                </ion-row>
+
+                <div class="paddtop">
+                  <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
+                    <p>LOGIN</p>
+                  </ion-button>
+                  <div style="display: flex;">
+                    <ion-checkbox></ion-checkbox>
+                    <ion-label class="padleft">Keep me signed in on this device</ion-label>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </ion-card-content>
+
+
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  LOGIN SIGNUP FORM For Mobile
+  <div *ngIf="width < 800" style="text-align: center;">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="11">
+          <ion-card *ngIf="!showLogin" class="fade-in">
+
+            <ion-card-content style="text-align: center;">
+
+              <div>
+
+                <ion-title class="headinone">Create An Account</ion-title>
+
+                <ion-title class="headintwo">Already have an account?
+
+                  <span (click)="showHideLoginForm()" style="color: #09757A;">Sign in</span>
+
+                </ion-title>
+
+              </div>
+
+              <div style=" padding-top: 7px;position: relative;left: 1.5em;" class="fields">
+
+                <div class="paddtop">
+                  <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
+                  <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
+                </div>
+
+                <div class="paddtop">
+                  <ion-label style="display: flex;justify-content: flex-start;">Company Name</ion-label>
+                  <ion-input [(ngModel)]="username" placeholder='Enter your company name'></ion-input>
+                </div>
+
+                <div class="paddtop">
+                  <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+                  <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
+                </div>
+
+                <div class="paddtop">
+                  <ion-label style="display: flex;justify-content: flex-start;">Company Adress</ion-label>
+                  <ion-input [(ngModel)]="companyAdress" placeholder='Enter your company name'></ion-input>
+                </div>
+
+                <div class="paddtop">
+                  <ion-label style="display: flex;justify-content: flex-start;">Phone</ion-label>
+                  <ion-input [(ngModel)]="companyPhone" placeholder='Enter your password'></ion-input>
+                </div>
+
+                <div class="paddtop">
+                  <div *ngIf="cateegories"
+                    style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
+                    <ion-label style="padding: 1em;">CATEGORY</ion-label>
+                    <ion-select mode='ios' [(ngModel)]="selectedcat" (ionChange)="choosecat(selectedcat)">
+                      <ion-select-option *ngFor="let item of cateegories.cats.arrayValue.values"
+                        value="{{item.stringValue}}">
+
+                        {{item.stringValue}}
+                      </ion-select-option>
+                    </ion-select>
+                  </div>
+                </div>
+                <div *ngIf="cates" style="display: flex;flex-direction: column;width: 50%;">
+                  <ion-chip *ngFor="let item of cates let i=index">{{item}}
+                    <ion-icon (click)="delete(i)" color="danger" name="close-outline"></ion-icon>
+                  </ion-chip>
+                </div>
+
+                <div class="paddtop">
+
+                  <div [innerHtml]='msg'></div>
+                  <label>
+                    <input type="file" (change)="selectFile($event)">
+                  </label>
+
+                  <ion-button (click)="register()" style=" max-width: 50vh;" color="dark" expand='block'>
+                    <p>CREATE ACCOUNT</p>
+                  </ion-button>
+                  <ion-label style="width:30px;white-space: normal;" class="terms">By creating an account, you agree
+                    <br> to EXPORT PORTAL's
+                    <span class="span">Terms &
+                      Conditions</span> and
+                    <span class="span">Privacy Policy</span>
+                  </ion-label>
+                </div>
+
+
+              </div>
+
+            </ion-card-content>
+
+
+          </ion-card>
+
+          <ion-card *ngIf="showLogin" class="fade-in">
+
+            <ion-card-content style="text-align: center;">
+
+              <div>
+
+                <ion-title class="headinone">SIGN IN YOUR ACCOUNT</ion-title>
+
+                <ion-title class="headintwo">Don't Have An Account?
+
+                  <span (click)="showHideLoginForm()" style="color: #09757A;">Sign Up</span>
+
+                </ion-title>
+
+              </div>
+
+              <div style=" padding-top: 7px;position: relative;left: 1.5em;" class="fields">
+
+                <div class="paddtop">
+                  <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
+                  <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
+                </div>
+
+                <div class="paddtop">
+                  <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+                  <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
+                </div>
+
+                <div class="paddtop">
+                  <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
+                    <p>LOGIN</p>
+                  </ion-button>
+                  <div style="display: flex;">
+                    <ion-checkbox></ion-checkbox>
+                    <ion-label class="padleft">Keep me signed in on this device</ion-label>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </ion-card-content>
+
+
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div
+    style="display: flex;justify-content: center;align-items: center;text-align: center;font-weight: bold;font-family: 'Truculenta', sans-serif;padding: 5em;">
+    <div style="width: 50%;">
+      EXPORT<span style="color: #09757A;">PORTAL</span> is here to support your business through the
+      challenging times. Join Today! In this global crisis, Export Portal helps SMEs find simple yet workable trade
+      solutions. Reliable Platform. Get Assistance. Easy And Safe Deals.
+      <br>
+      <ion-button color="dark" mode='ios'>SUPPORT US</ion-button>
+    </div>
+  </div>
+  -->
+    </div>
+
+    <!--mobile view-->
+    <div *ngIf="width <800" style="position: relative;top: -1.3em;">
+      <div class="mobileheader">
+        <div
+          style="padding-right: 5em;text-align: center;text-align: center;display: flex;justify-content: center;align-items: center;flex-direction: column;"
+          class="txtmob">
+          <h1 style="padding-left: 20%;color: white;font-weight: bold;font-size: 30px;font-family: title;">
+            THINK LOCAL, SELL GLOBAL
+            <br>
+            START TRADING ONLINE INTERNATIONALLY
+          </h1>
         </div>
 
-        <div style="width: 50%;">
-          <img style="width: 100%;" src="../../assets/images/frieght.jpg" alt="">
-        </div>
+        <div style="top: 10%;position: relative;">
+          <h1 style="font-family: title;color: white;font-size: 18px;text-align: center;">REGISTER WITH US TODAY - IT'S
+            FREE!</h1>
 
+          <div style="display: flex;flex-wrap: wrap;flex-direction: column;padding: 1em;">
+
+            <div>
+              <div class="a">
+                <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a User</p>
+                <div>
+                  <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </ion-button>
+
+                </div>
+              </div>
+            </div>
+
+            <div style="padding-top: 10px;">
+
+              <div class="a">
+                <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Vendor</p>
+                <div>
+                  <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </ion-button>
+
+                </div>
+              </div>
+            </div>
+            <div style="padding-top: 10px;">
+
+              <div class="a">
+                <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Deliverer</p>
+                <div>
+                  <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </ion-button>
+
+                </div>
+              </div>
+            </div>
+            <div style="padding-top: 10px;">
+
+              <div class="a">
+                <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Business Person</p>
+                <div>
+                  <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                  </ion-button>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div style="background: white;position: relative;top: -5em;">
+        <div style="display: flex;margin: 0;padding: 0;flex-direction: column;">
+
+          <div style="width: 100%;">
+            <img style="width: 100%;" src="../../assets/images/buyyer.jpg" alt="">
+          </div>
+
+          <div style="width: 100%;justify-content: center;align-items: center;display: flex;">
+            <div class="blackcolor" style="text-align: center;">
+              <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">BUYER</h1>
+              <p style="font-family: title;font-size: 18px;">
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Secure trade process
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Secure trade process
+                <br>
+                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                Secure trade process
+              </p>
+
+
+              <ion-button style="border-radius: 1px;background: blue;" color="none">NO REGISTRATION</ion-button>
+
+
+            </div>
+          </div>
+
+          <div style="display: flex;margin: 0;padding: 0;position: relative;top: 10px;flex-direction: column;">
+
+            <div style="width: 100%;">
+              <img style="width: 100%;" src="../../assets/images/manufacturer.jpg" alt="">
+            </div>
+
+            <div style="width: 100%;justify-content: center;align-items: center;display: flex;">
+              <div class="blackcolor" style="text-align: center;">
+                <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">MANUFACTURER</h1>
+                <p style="font-family: title;font-size: 18px;">
+                  <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                  Sales distribution
+                  <br>
+                  <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                  New market potential
+                  <br>
+                  <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                  Diverse product lines
+                </p>
+
+
+                <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
+
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div style="display: flex;margin: 0;padding: 0;position: relative;top: 10px;flex-direction: column;">
+
+            <div style="width: 100%;">
+              <img style="width: 100%;" src="../../assets/images/frieght.jpg" alt="">
+            </div>
+
+            <div style="width: 100%;justify-content: center;align-items: center;">
+              <div class="blackcolor" style="text-align:center;">
+                <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">FRIEGHT FORWORDER
+                </h1>
+                <p style="font-family: title;font-size: 18px;">
+                  <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                  Business opportunities
+                  <br>
+                  <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                  Trusted sellers
+                  <br>
+                  <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                  Global customer base
+                </p>
+
+
+                <div style="text-align: center;">
+                  <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
+                </div>
+
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+          <div style="display: flex;margin: 0;padding: 0;position: relative;top: 10px;flex-direction: column;">
+
+            <div style="width: 100%;">
+              <img style="width: 100%;" src="../../assets/images/seller.jpg" alt="">
+            </div>
+            <div style="width: 100%;justify-content: center;align-items: center;display: flex;">
+              <div class="blackcolor" style="text-align: center;">
+                <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">SELLER</h1>
+                <p style="font-family: title;font-size: 18px;">
+                  <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                  Safe and easy deals
+                  <br>
+                  <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                  B2B opportunities
+                  <br>
+                  <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
+                  Worldwide customers
+                </p>
+
+
+                <ion-button style="border-radius: 1px;background: blue;position: relative;top: -5px;  " color="none">
+                  REGISTER</ion-button>
+
+              </div>
+            </div>
+
+
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
 
-    <div style="display: flex;justify-content: center;align-items: center;padding-top: 3em;">
-      <div class="blackcolor" style="width: 70%;">
-        <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
-          Get the best for your business!
-        </h1>
-        <h3 style="position: relative;top: -0.5em;font-size: 18px;font-family: title;text-align: center;">
-          Online International Trade on Export Portal has a lot of advantages:
-        </h3>
+      <div style="display: flex;justify-content: center;align-items: center;padding-top: 3em;">
+        <div class="blackcolor" style="width: 70%;">
+          <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
+            Get the best for your business!
+          </h1>
+          <h3 style="position: relative;top: -0.5em;font-size: 18px;font-family: title;text-align: center;">
+            Online International Trade on Export Portal has a lot of advantages:
+          </h3>
 
-        <div style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;">
-          <div style="width: 25%;">
+          <div
+            style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;flex-direction: column;">
+            <div style="width: 100%;">
 
-            <ion-icon class="iconsize" name="pricetags-outline"></ion-icon>
-            <p style="font-family: title;font-size: 19px;">Free Registration</p>
-          </div>
+              <ion-icon class="iconsize" name="pricetags-outline"></ion-icon>
+              <p style="font-family: title;font-size: 19px;">Free Registration</p>
+            </div>
 
-          <div style="width: 25%;">
+            <div style="width: 100%;">
 
-            <ion-icon class="iconsize" name="headset-outline"></ion-icon>
-            <p style="font-family: title;font-size: 19px;">24/7 Online Support</p>
-          </div>
+              <ion-icon class="iconsize" name="headset-outline"></ion-icon>
+              <p style="font-family: title;font-size: 19px;">24/7 Online Support</p>
+            </div>
 
-          <div style="width: 25%;">
+            <div style="width: 100%;">
 
-            <ion-icon class="iconsize" name="cash-outline"></ion-icon>
-            <p style="font-family: title;font-size: 19px;">No Fees</p>
-          </div>
+              <ion-icon class="iconsize" name="cash-outline"></ion-icon>
+              <p style="font-family: title;font-size: 19px;">No Fees</p>
+            </div>
 
-          <div style="width: 25%;">
+            <div style="width: 100%;">
 
-            <ion-icon class="iconsize" name="globe-outline"></ion-icon>
-            <p style="font-family: title;font-size: 19px;">World Wide Users</p>
+              <ion-icon class="iconsize" name="globe-outline"></ion-icon>
+              <p style="font-family: title;font-size: 19px;">World Wide Users</p>
+            </div>
+
           </div>
 
         </div>
-
       </div>
-    </div>
 
-    <!-- LOGIN SIGNUP FORM For WEB
-    <div *ngIf="width > 800" style="text-align: center;">
+    </div>
+  </div>
+
+  <div *ngIf="registersection">
+
+    <div
+      style="display: flex;justify-content: center;align-items: center;background: white;flex-direction: column;position: relative;top: 5em;">
       <ion-grid>
         <ion-row>
           <ion-col offset="0.5" size="11">
             <ion-card *ngIf="!showLogin" class="fade-in">
 
-              <ion-card-content style="display: flex;justify-content: center;align-items: center;">
+              <ion-card-content
+                style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
 
                 <div>
 
                   <ion-title class="headinone">Create An Account</ion-title>
 
-                  <ion-title class="headintwo">Already have an account?
+                  <ion-title style="text-align: center;" class="headintwo">Already have an account?
 
                     <span (click)="showHideLoginForm()" style="color: #09757A;">Sign in</span>
 
@@ -340,284 +804,109 @@
 
 
             </ion-card>
-
-            <ion-card *ngIf="showLogin" class="fade-in">
-
-              <ion-card-content style="display: flex;justify-content: center;align-items: center;">
-
-                <div>
-
-                  <ion-title class="headinone">Sign In To Account</ion-title>
-
-                  <ion-title class="headintwo">Don't have an account?
-
-                    <span (click)="showHideLoginForm()" style="color: #09757A;">Sign Up</span>
-
-                  </ion-title>
-
-                </div>
-
-                <div style=" padding-top: 7px;" class="fields">
-
-                  <ion-row align-items-center>
-                    <ion-col>
-                      <div class="paddtop">
-                        <ion-label style="display: flex;justify-content: flex-start;">Email
-                        </ion-label>
-                        <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
-                      </div>
-
-                      <div class="paddtop">
-                        <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-                        <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
-                      </div>
-                    </ion-col>
-                  </ion-row>
-
-                  <div class="paddtop">
-                    <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
-                      <p>LOGIN</p>
-                    </ion-button>
-                    <div style="display: flex;">
-                      <ion-checkbox></ion-checkbox>
-                      <ion-label class="padleft">Keep me signed in on this device</ion-label>
-                    </div>
-                  </div>
-
-
-                </div>
-
-              </ion-card-content>
-
-
-            </ion-card>
           </ion-col>
         </ion-row>
       </ion-grid>
     </div>
 
-    LOGIN SIGNUP FORM For Mobile
-    <div *ngIf="width < 800" style="text-align: center;">
-      <ion-grid>
-        <ion-row>
-          <ion-col size="11">
-            <ion-card *ngIf="!showLogin" class="fade-in">
-
-              <ion-card-content style="text-align: center;">
-
-                <div>
-
-                  <ion-title class="headinone">Create An Account</ion-title>
-
-                  <ion-title class="headintwo">Already have an account?
-
-                    <span (click)="showHideLoginForm()" style="color: #09757A;">Sign in</span>
-
-                  </ion-title>
-
-                </div>
-
-                <div style=" padding-top: 7px;position: relative;left: 1.5em;" class="fields">
-
-                  <div class="paddtop">
-                    <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
-                    <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
-                  </div>
-
-                  <div class="paddtop">
-                    <ion-label style="display: flex;justify-content: flex-start;">Company Name</ion-label>
-                    <ion-input [(ngModel)]="username" placeholder='Enter your company name'></ion-input>
-                  </div>
-
-                  <div class="paddtop">
-                    <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-                    <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
-                  </div>
-
-                  <div class="paddtop">
-                    <ion-label style="display: flex;justify-content: flex-start;">Company Adress</ion-label>
-                    <ion-input [(ngModel)]="companyAdress" placeholder='Enter your company name'></ion-input>
-                  </div>
-
-                  <div class="paddtop">
-                    <ion-label style="display: flex;justify-content: flex-start;">Phone</ion-label>
-                    <ion-input [(ngModel)]="companyPhone" placeholder='Enter your password'></ion-input>
-                  </div>
-
-                  <div class="paddtop">
-                    <div *ngIf="cateegories"
-                      style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
-                      <ion-label style="padding: 1em;">CATEGORY</ion-label>
-                      <ion-select mode='ios' [(ngModel)]="selectedcat" (ionChange)="choosecat(selectedcat)">
-                        <ion-select-option *ngFor="let item of cateegories.cats.arrayValue.values"
-                          value="{{item.stringValue}}">
-
-                          {{item.stringValue}}
-                        </ion-select-option>
-                      </ion-select>
-                    </div>
-                  </div>
-                  <div *ngIf="cates" style="display: flex;flex-direction: column;width: 50%;">
-                    <ion-chip *ngFor="let item of cates let i=index">{{item}}
-                      <ion-icon (click)="delete(i)" color="danger" name="close-outline"></ion-icon>
-                    </ion-chip>
-                  </div>
-
-                  <div class="paddtop">
-
-                    <div [innerHtml]='msg'></div>
-                    <label>
-                      <input type="file" (change)="selectFile($event)">
-                    </label>
-
-                    <ion-button (click)="register()" style=" max-width: 50vh;" color="dark" expand='block'>
-                      <p>CREATE ACCOUNT</p>
-                    </ion-button>
-                    <ion-label style="width:30px;white-space: normal;" class="terms">By creating an account, you agree
-                      <br> to EXPORT PORTAL's
-                      <span class="span">Terms &
-                        Conditions</span> and
-                      <span class="span">Privacy Policy</span>
-                    </ion-label>
-                  </div>
+    <div *ngIf="width > 800 && registersection" style="display: flex;position: relative;top: 1em;">
+      <div style="width: 40%;">
+        <img src="../../assets/images/registerperson.png" alt="">
 
 
-                </div>
-
-              </ion-card-content>
-
-
-            </ion-card>
-
-            <ion-card *ngIf="showLogin" class="fade-in">
-
-              <ion-card-content style="text-align: center;">
-
-                <div>
-
-                  <ion-title class="headinone">SIGN IN YOUR ACCOUNT</ion-title>
-
-                  <ion-title class="headintwo">Don't Have An Account?
-
-                    <span (click)="showHideLoginForm()" style="color: #09757A;">Sign Up</span>
-
-                  </ion-title>
-
-                </div>
-
-                <div style=" padding-top: 7px;position: relative;left: 1.5em;" class="fields">
-
-                  <div class="paddtop">
-                    <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
-                    <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
-                  </div>
-
-                  <div class="paddtop">
-                    <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-                    <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
-                  </div>
-
-                  <div class="paddtop">
-                    <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
-                      <p>LOGIN</p>
-                    </ion-button>
-                    <div style="display: flex;">
-                      <ion-checkbox></ion-checkbox>
-                      <ion-label class="padleft">Keep me signed in on this device</ion-label>
-                    </div>
-                  </div>
-
-
-                </div>
-
-              </ion-card-content>
-
-
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-
-    <div
-      style="display: flex;justify-content: center;align-items: center;text-align: center;font-weight: bold;font-family: 'Truculenta', sans-serif;padding: 5em;">
-      <div style="width: 50%;">
-        EXPORT<span style="color: #09757A;">PORTAL</span> is here to support your business through the
-        challenging times. Join Today! In this global crisis, Export Portal helps SMEs find simple yet workable trade
-        solutions. Reliable Platform. Get Assistance. Easy And Safe Deals.
-        <br>
-        <ion-button color="dark" mode='ios'>SUPPORT US</ion-button>
       </div>
-    </div>
-    -->
-  </div>
+      <div style="text-align: right;width: 50%;padding-top: 10em;">
+        <p style="font-size: 18px;font-family: title;">
+          Start manufacturing internationally on the safest eCommerce platform.
+        </p>
+        <h1 style="font-family: title;font-weight: bold;font-size: 40px;">
 
-  <!--mobile view-->
-  <div *ngIf="width <800" style="position: relative;top: -1.3em;">
-    <div class="mobileheader">
-      <div
-        style="padding-right: 5em;text-align: center;text-align: center;display: flex;justify-content: center;align-items: center;flex-direction: column;"
-        class="txtmob">
-        <h1 style="padding-left: 20%;color: white;font-weight: bold;font-size: 30px;font-family: title;">
-          THINK LOCAL, SELL GLOBAL
-          <br>
-          START TRADING ONLINE INTERNATIONALLY
+          GET THE BEST FOR YOUR BUSINESS!
         </h1>
+        <p style="font-size: 16px;font-family: title;text-align:center;font-weight: bold;">
+          We Provide
+        </p>
+        <p style="font-size: 16px;font-family: title;text-align: center;">
+          <ion-icon name="people-outline"></ion-icon>
+          CUSTOMERS WORLDWIDE
+
+          <br>
+          <ion-icon name="car-outline"></ion-icon>
+          SHIPPING ASSISTANCE
+
+          <br>
+          <ion-icon name="headset-outline"></ion-icon>
+          LEGAL ASSISTANCE
+        </p>
       </div>
+    </div>
 
-      <div style="top: 10%;position: relative;">
-        <h1 style="font-family: title;color: white;font-size: 18px;text-align: center;">REGISTER WITH US TODAY - IT'S
-          FREE!</h1>
+    <div *ngIf="width < 800 && registersection"
+      style="display: flex;position: relative;top: 1em;flex-direction: column;">
+      <div style="width: 100%;">
+        <img src="../../assets/images/registerperson.png" alt="">
 
-        <div style="display: flex;flex-wrap: wrap;flex-direction: column;padding: 1em;">
 
-          <div>
-            <div class="a">
-              <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a User</p>
-              <div>
-                <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </ion-button>
+      </div>
+      <div style="text-align: center;width: 100%;padding-top: 10em;">
+        <p style="font-size: 18px;font-family: title;">
+          Start manufacturing internationally on the safest eCommerce platform.
+        </p>
+        <h1 style="font-family: title;font-weight: bold;font-size: 40px;">
 
-              </div>
-            </div>
+          GET THE BEST FOR YOUR BUSINESS!
+        </h1>
+        <p style="font-size: 16px;font-family: title;text-align:center;font-weight: bold;">
+          We Provide
+        </p>
+        <p style="font-size: 16px;font-family: title;text-align: center;">
+          <ion-icon name="people-outline"></ion-icon>
+          CUSTOMERS WORLDWIDE
+
+          <br>
+          <ion-icon name="car-outline"></ion-icon>
+          SHIPPING ASSISTANCE
+
+          <br>
+          <ion-icon name="headset-outline"></ion-icon>
+          LEGAL ASSISTANCE
+        </p>
+      </div>
+    </div>
+
+    <div *ngIf="width > 800 && registersection"
+      style="display: flex;justify-content: center;align-items: center;padding-top: 3em;background: white;">
+      <div class="blackcolor" style="width: 70%;">
+        <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
+          Get the best for your business!
+        </h1>
+        <h3 style="position: relative;top: -0.5em;font-size: 18px;font-family: title;text-align: center;">
+          Online International Trade on Export Portal has a lot of advantages:
+        </h3>
+
+        <div style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;">
+          <div style="width: 25%;">
+
+            <ion-icon class="iconsize" name="pricetags-outline"></ion-icon>
+            <p style="font-family: title;font-size: 19px;">Free Registration</p>
           </div>
 
-          <div style="padding-top: 10px;">
+          <div style="width: 25%;">
 
-            <div class="a">
-              <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Vendor</p>
-              <div>
-                <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </ion-button>
-
-              </div>
-            </div>
+            <ion-icon class="iconsize" name="headset-outline"></ion-icon>
+            <p style="font-family: title;font-size: 19px;">24/7 Online Support</p>
           </div>
-          <div style="padding-top: 10px;">
 
-            <div class="a">
-              <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Deliverer</p>
-              <div>
-                <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </ion-button>
+          <div style="width: 25%;">
 
-              </div>
-            </div>
+            <ion-icon class="iconsize" name="cash-outline"></ion-icon>
+            <p style="font-family: title;font-size: 19px;">No Fees</p>
           </div>
-          <div style="padding-top: 10px;">
 
-            <div class="a">
-              <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Business Person</p>
-              <div>
-                <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </ion-button>
+          <div style="width: 25%;">
 
-              </div>
-            </div>
+            <ion-icon class="iconsize" name="globe-outline"></ion-icon>
+            <p style="font-family: title;font-size: 19px;">World Wide Users</p>
           </div>
 
         </div>
@@ -625,134 +914,8 @@
       </div>
     </div>
 
-    <div style="background: white;position: relative;top: -5em;">
-      <div style="display: flex;margin: 0;padding: 0;flex-direction: column;">
-
-        <div style="width: 100%;">
-          <img style="width: 100%;" src="../../assets/images/buyyer.jpg" alt="">
-        </div>
-
-        <div style="width: 100%;justify-content: center;align-items: center;display: flex;">
-          <div class="blackcolor" style="text-align: center;">
-            <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">BUYER</h1>
-            <p style="font-family: title;font-size: 18px;">
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Secure trade process
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Secure trade process
-              <br>
-              <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-              Secure trade process
-            </p>
-
-
-            <ion-button style="border-radius: 1px;background: blue;" color="none">NO REGISTRATION</ion-button>
-
-
-          </div>
-        </div>
-
-        <div style="display: flex;margin: 0;padding: 0;position: relative;top: 10px;flex-direction: column;">
-
-          <div style="width: 100%;">
-            <img style="width: 100%;" src="../../assets/images/manufacturer.jpg" alt="">
-          </div>
-
-          <div style="width: 100%;justify-content: center;align-items: center;display: flex;">
-            <div class="blackcolor" style="text-align: center;">
-              <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">MANUFACTURER</h1>
-              <p style="font-family: title;font-size: 18px;">
-                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-                Sales distribution
-                <br>
-                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-                New market potential
-                <br>
-                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-                Diverse product lines
-              </p>
-
-
-              <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
-
-            </div>
-          </div>
-
-
-
-        </div>
-
-        <div style="display: flex;margin: 0;padding: 0;position: relative;top: 10px;flex-direction: column;">
-
-          <div style="width: 100%;">
-            <img style="width: 100%;" src="../../assets/images/frieght.jpg" alt="">
-          </div>
-
-          <div style="width: 100%;justify-content: center;align-items: center;">
-            <div class="blackcolor" style="text-align:center;">
-              <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">FRIEGHT FORWORDER
-              </h1>
-              <p style="font-family: title;font-size: 18px;">
-                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-                Business opportunities
-                <br>
-                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-                Trusted sellers
-                <br>
-                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-                Global customer base
-              </p>
-
-
-              <div style="text-align: center;">
-                <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
-              </div>
-
-            </div>
-          </div>
-
-
-
-        </div>
-
-
-        <div style="display: flex;margin: 0;padding: 0;position: relative;top: 10px;flex-direction: column;">
-
-          <div style="width: 100%;">
-            <img style="width: 100%;" src="../../assets/images/seller.jpg" alt="">
-          </div>
-          <div style="width: 100%;justify-content: center;align-items: center;display: flex;">
-            <div class="blackcolor" style="text-align: center;">
-              <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">SELLER</h1>
-              <p style="font-family: title;font-size: 18px;">
-                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-                Safe and easy deals
-                <br>
-                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-                B2B opportunities
-                <br>
-                <ion-icon color="primary" style="position:relative;top: 3px;" name="checkmark-outline"></ion-icon>
-                Worldwide customers
-              </p>
-
-
-              <ion-button style="border-radius: 1px;background: blue;position: relative;top: -5px;  " color="none">
-                REGISTER</ion-button>
-
-            </div>
-          </div>
-
-
-
-        </div>
-
-      </div>
-  
-    </div>
-
-
-      <div style="display: flex;justify-content: center;align-items: center;padding-top: 3em;">
+    <div *ngIf="width < 800 && registersection">
+      <div style="display: flex;justify-content: center;align-items: center;padding-top: 3em;background: white;">
         <div class="blackcolor" style="width: 70%;">
           <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
             Get the best for your business!
@@ -760,37 +923,38 @@
           <h3 style="position: relative;top: -0.5em;font-size: 18px;font-family: title;text-align: center;">
             Online International Trade on Export Portal has a lot of advantages:
           </h3>
-  
-          <div style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;flex-direction: column;">
+
+          <div
+            style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;flex-direction: column;">
             <div style="width: 100%;">
-  
+
               <ion-icon class="iconsize" name="pricetags-outline"></ion-icon>
               <p style="font-family: title;font-size: 19px;">Free Registration</p>
             </div>
-  
+
             <div style="width: 100%;">
-  
+
               <ion-icon class="iconsize" name="headset-outline"></ion-icon>
               <p style="font-family: title;font-size: 19px;">24/7 Online Support</p>
             </div>
-  
+
             <div style="width: 100%;">
-  
+
               <ion-icon class="iconsize" name="cash-outline"></ion-icon>
               <p style="font-family: title;font-size: 19px;">No Fees</p>
             </div>
-  
+
             <div style="width: 100%;">
-  
+
               <ion-icon class="iconsize" name="globe-outline"></ion-icon>
               <p style="font-family: title;font-size: 19px;">World Wide Users</p>
             </div>
-  
+
           </div>
-  
+
         </div>
       </div>
-    
+    </div>
   </div>
   <app-footer></app-footer>
 </ion-content>
