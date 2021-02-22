@@ -7,7 +7,7 @@
     z-index: 1;
 }
 .mobileheader {
-    height: 550px;
+    height: 850px;
     background: url("../../assets/images/vendorloginpageimage.jpg") no-repeat scroll center center;
     width: 100%;
     object-fit: fill;
@@ -18,6 +18,14 @@
 
 .txt {
     top: 35%;
+    white-space: normal;
+    position: relative;
+    z-index: 5;
+}
+
+.txtmob {
+    top: 11%;
+    text-align: center;
     white-space: normal;
     position: relative;
     z-index: 5;
