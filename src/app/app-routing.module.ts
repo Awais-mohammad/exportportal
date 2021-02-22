@@ -46,6 +46,10 @@ const routes: Routes = [
     path: 'exporter',
     loadChildren: () => import('./exporter/exporter.module').then( m => m.ExporterPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 
 
  
