@@ -1,4 +1,5 @@
 import { Component, OnInit,HostListener } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +8,9 @@ import { Component, OnInit,HostListener } from '@angular/core';
 })
 export class AboutPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    ) { }
   width = window.innerWidth;
 
   @HostListener('window:resize', ['$event'])
@@ -16,6 +19,24 @@ export class AboutPage implements OnInit {
   }
   
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.titleService.setTitle("About us - Export Portal");
+    try {
+      document.querySelector("meta[name='description']").remove();
+    } catch (e) {
+    }
+    try {
+      document.querySelector("meta[name='keywords']").remove();
+    } catch (e) {
+
+    }
+
+    var keywords = document.createElement('meta');
+    keywords.name = "keywords";
+    keywords.content = "export portal, export portal pakistan, exportportal pk, exporters list pakistan, pakistan exporters ";
+    document.getElementsByTagName('head')[0].appendChild(keywords);
   }
 
 }

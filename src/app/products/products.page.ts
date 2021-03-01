@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products',
@@ -15,6 +16,7 @@ export class ProductsPage implements OnInit {
     private router: Router,
     private fireStore: AngularFirestore,
     private modalController: ModalController,
+    private titleService: Title,
 
   ) {
     this.getCats();
@@ -106,6 +108,24 @@ export class ProductsPage implements OnInit {
       })
     }
     console.log(this.products);
+  }
+
+  ionViewWillEnter() {
+    this.titleService.setTitle("Products - Export Portal");
+    try {
+      document.querySelector("meta[name='description']").remove();
+    } catch (e) {
+    }
+    try {
+      document.querySelector("meta[name='keywords']").remove();
+    } catch (e) {
+
+    }
+
+    var keywords = document.createElement('meta');
+    keywords.name = "keywords";
+    keywords.content = "export portal, export portal pakistan, exportportal pk, exporters list pakistan, pakistan exporters, pakistan exported products ";
+    document.getElementsByTagName('head')[0].appendChild(keywords);
   }
 
 }

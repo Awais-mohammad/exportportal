@@ -3,6 +3,7 @@ import { ExporterPage } from './../exporter/exporter.page';
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomePage {
     private router: Router,
     private fireStore: AngularFirestore,
     private modal: ModalController,
+    private titleService: Title,
 
   ) {
     this.getCats();
@@ -171,6 +173,28 @@ export class HomePage {
         console.log('vendors on top', this.topvendors);
       }
     })
+  }
+
+  ionViewWillEnter() {
+    this.titleService.setTitle("Export Portal - Pakistan's largest export database");
+    try {
+      document.querySelector("meta[name='description']").remove();
+    } catch (e) {
+    }
+    try {
+      document.querySelector("meta[name='keywords']").remove();
+    } catch (e) {
+
+    }
+    var description = document.createElement('meta');
+    description.name = "description";
+    description.content = "Export portal for all the major exporters in Pakistan with contact details and available products lsited accordingly.";
+    document.getElementsByTagName('head')[0].appendChild(description);
+
+    var keywords = document.createElement('meta');
+    keywords.name = "keywords";
+    keywords.content = "export portal, export portal pakistan, exportportal pk, exporters list pakistan, pakistan exporters ";
+    document.getElementsByTagName('head')[0].appendChild(keywords);
   }
 
   // getProds(cat: string) {

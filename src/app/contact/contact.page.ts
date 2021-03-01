@@ -2,6 +2,8 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app'
+import { Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.page.html',
@@ -16,7 +18,8 @@ export class ContactPage implements OnInit {
 
   constructor(
     private firebaseauth: AngularFireAuth,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private titleService: Title,
 
   ) { }
 
@@ -75,5 +78,22 @@ export class ContactPage implements OnInit {
 
   }
 
+  ionViewWillEnter() {
+    this.titleService.setTitle("Contact us - Export Portal");
+    try {
+      document.querySelector("meta[name='description']").remove();
+    } catch (e) {
+    }
+    try {
+      document.querySelector("meta[name='keywords']").remove();
+    } catch (e) {
+
+    }
+
+    var keywords = document.createElement('meta');
+    keywords.name = "keywords";
+    keywords.content = "export portal, export portal pakistan, exportportal contact, exporters list pakistan, pakistan exporters ";
+    document.getElementsByTagName('head')[0].appendChild(keywords);
+  }
 
 }

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ModalController } from '@ionic/angular';
 import { ExporterPage } from '../exporter/exporter.page';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-exporters-list',
@@ -15,6 +16,7 @@ export class ExportersListPage implements OnInit {
     private router: Router,
     private fireStore: AngularFirestore,
     public modalController: ModalController,
+    private titleService: Title,
   ) {
     this.getCats();
     setTimeout(() => {
@@ -144,6 +146,24 @@ export class ExportersListPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.titleService.setTitle("Exporters list - Export Portal");
+    try {
+      document.querySelector("meta[name='description']").remove();
+    } catch (e) {
+    }
+    try {
+      document.querySelector("meta[name='keywords']").remove();
+    } catch (e) {
+
+    }
+
+    var keywords = document.createElement('meta');
+    keywords.name = "keywords";
+    keywords.content = "export portal, export portal pakistan, exportportal pk, exporters list pakistan, pakistan exporters ";
+    document.getElementsByTagName('head')[0].appendChild(keywords);
   }
 
 }
