@@ -1,3 +1,4 @@
+import { ExporterPage } from './../exporter/exporter.page';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, OnInit, HostListener } from '@angular/core';
@@ -5,6 +6,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase/app';
 import { HttpClient, HttpRequest, HttpEvent, HttpResponse, HttpEventType } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LoadingController, ToastController, ModalController } from '@ionic/angular';
 
 
 @Component({
@@ -19,6 +21,10 @@ export class VendorsDashboardPage implements OnInit {
     private http: HttpClient,
     private auth: AngularFireAuth,
     private Router: Router,
+    public loadingController: LoadingController,
+    public toastControll: ToastController,
+    private modal: ModalController,
+
   ) { }
 
   categories: any;
@@ -29,12 +35,52 @@ export class VendorsDashboardPage implements OnInit {
   width = window.innerWidth;
   prodName: string;
   prodDescription: string;
+  showproductFrom: boolean = false;
+  loadermsg: string;
+  loaderID: string;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.width = window.innerWidth;
   }
 
+
+  //loading
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: this.loadermsg,
+      spinner: 'dots',
+      id: this.loaderID,
+      mode: "ios",
+
+    });
+    await loading.present();
+  }
+  //show toast
+  async presentToast() {
+    const toast = await this.toastControll.create({
+      //  message: this.msg,
+      duration: 2000,
+      position: 'bottom',
+      mode: 'ios',
+      color: 'dark',
+    });
+    toast.present();
+  }
+  async openProfilePage() {
+
+    console.log('current userID', this.currentUID);
+
+    const model = await this.modal.create({
+      component: ExporterPage,
+      cssClass: "my-custom-modal-css",
+      id: "displayshop",
+      componentProps: {
+        ExporterID: this.currentUID
+      },
+    });
+    return await model.present();
+  }
   getCats() {
     this.fireStore.collection('appData').doc('categories').valueChanges().subscribe((data: any) => {
       this.categories = data;
@@ -51,6 +97,9 @@ export class VendorsDashboardPage implements OnInit {
 
   }
 
+  showHideProdcutsAdditionForm() {
+    this.showproductFrom = !this.showproductFrom
+  }
   choosesubcat(selested: string) {
     this.subCats = selested
     alert(this.subCats)
@@ -62,7 +111,7 @@ export class VendorsDashboardPage implements OnInit {
   uploadFile(file: File): Observable<HttpEvent<{}>> {
     const formdata: FormData = new FormData();
     formdata.append('file', file);
-    const req = new HttpRequest('POST', 'http://134.122.2.23/uploadimage.php', formdata, {
+    const req = new HttpRequest('POST', 'https://134.122.2.23/uploadimage.php', formdata, {
       reportProgress: true,
       responseType: 'text'
     });
@@ -72,11 +121,15 @@ export class VendorsDashboardPage implements OnInit {
 
   imageURL: string;
   selectFile(event) {
+
     this.selectedFiles = event.target.files;
+    this.loaderID = 'upimg'
+    this.loadermsg = 'FETCHING!!!!!'
+    this.presentLoading()
     console.log(this.selectedFiles[0].name);
-    this.imageURL = 'http://134.122.2.23/vendors/' + this.selectedFiles[0].name
+    this.imageURL = 'https://134.122.2.23/vendors/' + this.selectedFiles[0].name
     console.log(this.imageURL);
-    //  this.upload()
+    this.upload()
   }
 
   upload() {
@@ -85,6 +138,7 @@ export class VendorsDashboardPage implements OnInit {
     this.uploadFile(this.currentFile,).subscribe(response => {
       if (response instanceof HttpResponse) {
         alert(response.body);
+        this.loadingController.dismiss('upimg')
       }
     });
     return;
@@ -111,11 +165,11 @@ export class VendorsDashboardPage implements OnInit {
     else if (!this.prodName) {
       alert('add description of product')
     }
-    else if (!this.selectedFiles) {
+    else if (!this.imageURL) {
       alert('choose an image')
     }
     else {
-      this.upload()
+
       const docID = this.getDocID(this.selectedcat, this.subCats)
       const productName = this.prodName
       const productDescription = this.prodDescription
@@ -131,8 +185,20 @@ export class VendorsDashboardPage implements OnInit {
         uploadedBy,
         imageURL
       }).then(() => {
-        this.changeProds()
-        alert('added')
+
+        const prodDocID = firebase.firestore().collection('vendors').doc(this.currentUID).collection('products').doc().id;
+        const docID = prodDocID
+        this.fireStore.collection('vendors').doc(this.currentUID).collection('products').doc(prodDocID).set({
+          docID,
+          productName,
+          productDescription,
+          addedAt,
+          uploadedBy,
+          imageURL
+        }).then(hi => {
+          alert('data added')
+        })
+
       }).catch(err => {
         alert(err.message)
       })
@@ -202,6 +268,19 @@ export class VendorsDashboardPage implements OnInit {
     })
   }
   currentUID: string;
+  document: any;
+  getProducts() {
+    this.fireStore.collection('vendors').doc(this.currentUID).collection('products').get().subscribe(dat => {
+      if (dat.empty) {
+        alert('ahmmm nothing found')
+      }
+      else {
+        this.document = dat
+        console.log('knfowe', this.document);
+
+      }
+    })
+  }
 
   ngOnInit() {
     this.getCats()
@@ -210,7 +289,7 @@ export class VendorsDashboardPage implements OnInit {
       if (user && user.uid) {
         this.currentUID = user.uid
         console.log('user logged in with id' + this.currentUID);
-
+        this.getProducts()
       }
       else {
         console.log('no user loogged in');

@@ -20,30 +20,38 @@ export class ExportersListPage implements OnInit {
     setTimeout(() => {
       this.getVendors();
     }, 2000);
+    this.getTopVendors()
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.width = window.innerWidth;
   }
+  temp: any;
+
+  getexporter(category: string) {
+    console.log('category for exporter:', category);
+    this.fireStore.collection('products').doc(category).valueChanges().subscribe((data: any) => {
+
+      if (data) {
+        if (data.vendors) {
+          console.log(data.vendors);
+          this.temp = data.vendors
+        }
+        else {
+
+        }
+      }
+      else {
+
+      }
+    })
+  }
 
   searchFound: any[] = [];
   width = window.innerWidth;
 
-  async presentModal(option) {
-    const modal = await this.modalController.create({
-      component: ExporterPage,
-      swipeToClose: true,
-      mode: "ios",
-      componentProps: {
-        option: option,
-      }
-    })
-    modal.onDidDismiss().then(() => {
 
-    })
-    return await modal.present();
-  }
 
   vendors: any[] = []
   categories: any;
@@ -73,7 +81,47 @@ export class ExportersListPage implements OnInit {
   numSequence(n: number): Array<number> {
     return Array(n);
   }
+  cat;
+  showMore() {
 
+  }
+
+  topvendors: any;
+
+  getTopVendors() {
+    this.fireStore.collection('vendors', querry => querry.where('top', '==', true).orderBy('timestamp', 'asc')).get().subscribe(res => {
+      if (res.empty) {
+
+
+      }
+      else {
+
+        this.topvendors = res.docs
+        console.log('vendors on top', this.topvendors);
+      }
+    })
+  }
+  products: any[]
+  async openProfilePage(profileID: string) {
+
+    console.log('current userID', profileID);
+
+    const model = await this.modalController.create({
+      component: ExporterPage,
+      cssClass: "my-custom-modal-css",
+      id: "displayshop",
+      componentProps: {
+        ExporterID: profileID
+      },
+    });
+    return await model.present();
+  }
+
+  changeCat(cat: string) {
+    this.products = [];
+    this.cat = cat;
+    this.getexporter(cat);
+  }
   search(event) {
     console.log(event.detail.value);
     this.searchFound = [];

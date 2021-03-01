@@ -5,6 +5,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase/app';
 import { HttpClient, HttpRequest, HttpEvent, HttpResponse, HttpEventType } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LoadingController, ToastController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-vendors-main',
@@ -18,6 +19,8 @@ export class VendorsMainPage implements OnInit {
     private firebaseauth: AngularFireAuth,
     private router: Router,
     private http: HttpClient,
+    public loadingController: LoadingController,
+    public toastControll: ToastController,
 
   ) { }
 
@@ -31,6 +34,9 @@ export class VendorsMainPage implements OnInit {
   companyAdress: string;
   companyPhone: number;
   registersection: boolean = false;
+  webURL: string;
+  loadermsg: string;
+  loaderID: string;
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -39,6 +45,29 @@ export class VendorsMainPage implements OnInit {
 
   showHideLoginForm() {
     this.registersection = !this.registersection
+  }
+
+  //loading
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: this.loadermsg,
+      spinner: 'dots',
+      id: this.loaderID,
+      mode: "ios",
+
+    });
+    await loading.present();
+  }
+  //show toast
+  async presentToast() {
+    const toast = await this.toastControll.create({
+      //  message: this.msg,
+      duration: 2000,
+      position: 'bottom',
+      mode: 'ios',
+      color: 'dark',
+    });
+    toast.present();
   }
 
   currentUserID: string;
@@ -69,8 +98,13 @@ export class VendorsMainPage implements OnInit {
     else if (!this.imageURL) {
       alert('bharway image daal')
     }
+    else if (!this.webURL) {
+      alert('website cannot be ledt blank')
+    }
     else {
-      alert('yu made it asshole')
+
+      this.email = this.email.toLocaleLowerCase()
+
       this.firebaseauth.auth.createUserWithEmailAndPassword(this.email, this.password).then(user => {
         this.firebaseauth.auth.signInWithEmailAndPassword(this.email, this.password).then(() => {
           const authsub = this.firebaseauth.authState.subscribe(cuser => {
@@ -79,10 +113,12 @@ export class VendorsMainPage implements OnInit {
             const timestamp = new Date()
             const name = this.username.toLocaleLowerCase()
             const phone = this.companyPhone
-            const adress = this.companyAdress
+            const adress = this.companyAdress.toLocaleLowerCase()
             const accountstatus = 'approved'
             const category = this.cates;
+            const companyEmail = this.email.toLocaleLowerCase()
             const imageURL = this.imageURL
+            const websiteURL = this.webURL
             this.firestore.collection('vendors').doc(this.currentUserID).set({
               userID,
               timestamp,
@@ -91,9 +127,14 @@ export class VendorsMainPage implements OnInit {
               adress,
               accountstatus,
               category,
-
+              companyEmail,
+              imageURL,
+              websiteURL
             }).then(() => {
-              alert('tadaa')
+              alert('user created')
+              this.restoperation()
+            }).catch(err => {
+              alert(JSON.stringify(err.message))
             })
           })
         })
@@ -103,6 +144,111 @@ export class VendorsMainPage implements OnInit {
   cateegories: any;
   selectedcat;
   cates: any = [];
+
+
+  restoperation() {
+    alert('ok lets see')
+    const userID = this.currentUserID;
+    const timestamp = new Date()
+    const name = this.username.toLocaleLowerCase()
+    const phone = this.companyPhone
+    const adress = this.companyAdress.toLocaleLowerCase()
+    const accountstatus = 'approved'
+    const category = this.cates;
+    const companyEmail = this.email.toLocaleLowerCase()
+    const imageURL = this.imageURL
+    const websiteURL = this.webURL
+    for (var i = 0; i < this.cates.length; i++) {
+      console.log('check cat', this.cates[i]);
+
+      this.firestore.collection('products').doc(this.cates[i]).get().subscribe(res => {
+        if (res.exists) {
+          console.log('data found', this.cates[i]);
+
+          this.yesexists()
+        }
+        else {
+          console.log('data not found', this.cates[i]);
+          this.notexists()
+        }
+      })
+
+    }
+  }
+  yesexists() {
+
+    for (var i = 0; i < this.cates[i].length; i++) {
+      const userID = this.currentUserID;
+      const timestamp = new Date()
+      const name = this.username.toLocaleLowerCase()
+      const phone = this.companyPhone
+      const adress = this.companyAdress.toLocaleLowerCase()
+      const accountstatus = 'approved'
+      const category = this.cates;
+      const companyEmail = this.email.toLocaleLowerCase()
+      const imageURL = this.imageURL
+      const websiteURL = this.webURL
+      this.firestore.collection('products').doc(this.cates[i]).update({
+        vendors: firebase.firestore.FieldValue.arrayUnion(
+          {
+            userID,
+            timestamp,
+            name,
+            phone,
+            adress,
+            accountstatus,
+            category,
+            companyEmail,
+            imageURL,
+            websiteURL
+          }
+        )
+      }).then(() => {
+        alert('vendor regisetered')
+      }).catch(err => {
+        alert(JSON.stringify(err.message))
+
+      })
+    }
+  }
+
+  notexists() {
+    for (var i = 0; i < this.cates.length; i++) {
+      console.log('check cat', this.cates[i]);
+
+      const userID = this.currentUserID;
+      const timestamp = new Date()
+      const name = this.username.toLocaleLowerCase()
+      const phone = this.companyPhone
+      const adress = this.companyAdress.toLocaleLowerCase()
+      const accountstatus = 'approved'
+      const category = this.cates;
+      const companyEmail = this.email.toLocaleLowerCase()
+      const imageURL = this.imageURL
+      const websiteURL = this.webURL
+      this.firestore.collection('products').doc(this.cates[i]).set({
+        vendors: firebase.firestore.FieldValue.arrayUnion(
+          {
+            userID,
+            timestamp,
+            name,
+            phone,
+            adress,
+            accountstatus,
+            category,
+            companyEmail,
+            imageURL,
+            websiteURL
+          }
+        )
+      }).then(() => {
+        alert('vendor regisetered')
+      }).catch(err => {
+        alert(JSON.stringify(err.message))
+
+      })
+    }
+  }
 
   choosecat(selected: string) {
     this.selectedcat = selected
@@ -158,6 +304,9 @@ export class VendorsMainPage implements OnInit {
   imageURL: string;
   selectFile(event) {
     this.selectedFiles = event.target.files;
+    this.loaderID = 'upimg'
+    this.loadermsg = 'FETCHING!!!!!'
+    this.presentLoading()
     console.log(this.selectedFiles[0].name);
     this.imageURL = 'https://134.122.2.23/vendors/' + this.selectedFiles[0].name
     console.log(this.imageURL);
@@ -170,6 +319,7 @@ export class VendorsMainPage implements OnInit {
     this.uploadFile(this.currentFile,).subscribe(response => {
       if (response instanceof HttpResponse) {
         alert(response.body);
+        this.loadingController.dismiss('upimg')
       }
     });
     return;

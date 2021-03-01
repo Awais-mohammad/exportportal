@@ -6,7 +6,7 @@ import { ExporterPage } from '../exporter/exporter.page';
 import { LoginPage } from '../login/login.page';
 
 @NgModule({
-  declarations: [ExporterPage,],
+  declarations: [ExporterPage],
   imports: [IonicModule,
     FormsModule,
     CommonModule,

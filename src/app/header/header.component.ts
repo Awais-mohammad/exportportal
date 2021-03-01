@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
     private afs: AngularFireAuth,
     private firestore: AngularFirestore,
     private menu: MenuController,
+    private firebaseauth: AngularFireAuth,
   ) { }
 
   width = window.innerWidth;
@@ -26,6 +27,9 @@ export class HeaderComponent implements OnInit {
   showOptions: boolean = false;
   pages: any[] = ['home', 'products', 'categories', 'exporters-list', 'about', 'contact'];
   openLoginForm: boolean = false;
+  email: string;
+  password: string;
+  currentUserID: string;
 
 
   @HostListener('window:resize', ['$event'])
@@ -70,7 +74,7 @@ export class HeaderComponent implements OnInit {
   toggleForm() {
     this.openLoginForm = !this.openLoginForm
   }
-  
+
   ngOnInit() {
     this.checkRoute();
     const authsub = this.afs.authState.subscribe(user => {
@@ -91,6 +95,30 @@ export class HeaderComponent implements OnInit {
       console.log(this.activePath);
       this.menu.close();
     });
+  }
+
+  login() {
+
+    if (!this.email) {
+      alert('Field cannot be left blank')
+    }
+    else if (!this.password) {
+
+      alert('Field cannot be left blank')
+    }
+    else {
+      this.firebaseauth.auth.signInWithEmailAndPassword(this.email, this.password).then(user => {
+        console.log('user logged in')
+        this.firebaseauth.authState.subscribe(res => {
+          this.currentUserID = res.uid
+          console.log('user id is' + this.currentUserID);
+          this.router.navigate(['vendors-dashboard'])
+          this.openLoginForm = !this.openLoginForm;
+        })
+      }).catch(err => {
+        alert(JSON.stringify(err.message))
+      })
+    }
   }
 
 }

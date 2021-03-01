@@ -139,16 +139,16 @@
       <div class="subTitle">MEET OUR</div>
       <div class="mainTitle" style="margin-bottom:40px;">TOP EXPORTERS</div>
     </div>
-    <div style="text-align: center;">
-      <div class="wrapper" *ngFor="let n of numSequence(6); let i = index;">
+    <div *ngIf="topvendors" style="text-align: center;">
+      <div class="wrapper" *ngFor="let item of topvendors">
         <ion-row>
           <ion-col class="product-img">
-            <img src="https://d2liqplnt17rh6.cloudfront.net/logoImages/8e7b4483-1b27-4bc4-868b-1b88ced1c19c-661.jpeg"
+            <img style="object-fit: contain;" src="{{item.Df.sn.proto.mapValue.fields.imageURL.stringValue}}"
               height="190" width="200">
           </ion-col>
           <ion-col class="product-info">
             <div class="product-text">
-              <h1>Gul Ahmad</h1>
+              <h1>{{item.Df.sn.proto.mapValue.fields.name.stringValue}}</h1>
               <h2>by studio and friends</h2>
               <ion-icon name="star" color="warning"></ion-icon>
               <ion-icon name="star" color="warning"></ion-icon>
@@ -200,8 +200,11 @@
       <div style="font-family: title;color:black;font-size:20px;">Find exporter by clicking on your desired
         category on the left side.</div>
     </div>
+
     <div>
+
       <ion-grid *ngIf="width>600">
+
         <ion-row *ngIf="categories">
           <ion-col size="2" style="border-top-right-radius: 25px;border-bottom-right-radius: 25px;">
             <div style=" -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
@@ -223,36 +226,34 @@
               </div>
             </div>
           </ion-col>
-          <ion-col style="padding-left:50px;padding-right:50px;text-align: center;" size="10">
-            <ion-card *ngFor="let vendor of vendors; let i = index;" color="none" style="background: white;
+          <ion-col *ngIf="temp" style="padding-left:50px;padding-right:50px;text-align: center;" size="10">
+            <ion-card *ngFor="let item of temp;" color="none" style="background: white;
             -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
             -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
             box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);margin-bottom:15px;">
-              <ion-row *ngIf = "i > 1 && i < 6">
+              <ion-row>
                 <ion-col class="product-img" size="2" style="text-align: center;">
-                  <img
-                    src="https://d2liqplnt17rh6.cloudfront.net/logoImages/8e7b4483-1b27-4bc4-868b-1b88ced1c19c-661.jpeg"
-                    height="190" width="200">
+                  <img style="object-fit: contain;" src="{{item.imageURL}}" height="190" width="200">
                 </ion-col>
                 <ion-col class="product-info" size="8">
-                  <div class="product-text" *ngIf="vendor.Name">
-                    <h1>{{vendor.Name.stringValue}}</h1>
+                  <div class="product-text" *ngIf="item.name">
+                    <h1>{{item.name}}</h1>
                     <div style="color:rgb(37, 37, 37);font-family:title;padding:10px;font-size:15px;"
-                      *ngIf="vendor.companyPhone">
+                      *ngIf="item.phone">
                       <ion-icon name="call-outline" style="margin-right:10px;"></ion-icon>
-                      {{vendor.companyPhone.stringValue}}
+                      {{item.phone}}
                     </div>
                     <div style="color:rgb(37, 37, 37);font-family:title;padding:10px;font-size:15px;"
-                      *ngIf="vendor.companyAdress">
+                      *ngIf="item.adress">
                       <ion-icon name="business-outline" style="margin-right:10px;"></ion-icon>
-                      {{vendor.companyAdress.stringValue}}
+                      {{item.adress}}
                     </div>
                   </div>
 
                 </ion-col>
 
                 <ion-col size="2">
-                  <ion-button color="none" mode="ios"
+                  <ion-button (click)="openProfilePage(item.userID)" color="none" mode="ios"
                     style="border:1px rgb(23, 119, 230) solid;border-radius: 10px;color:rgb(33, 126, 233); font-family: title;margin-top:30%;position:relative">
                     View Exporter</ion-button>
                 </ion-col>
@@ -261,22 +262,21 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+
       <ion-grid *ngIf="width<=600">
         <ion-row *ngIf="categories">
           <ion-col style="text-align: center;" size="12">
-            <ion-card *ngFor="let vendor of vendors; let i = index;" color="none" style="background: white;
+            <ion-card *ngFor="let vendor of temp;" color="none" style="background: white;
             -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
             -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
             box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);margin-bottom:15px;">
-              <ion-row *ngIf = "i < 5">
+              <ion-row>
                 <ion-col class="product-img" size="5">
-                  <img
-                    src="https://d2liqplnt17rh6.cloudfront.net/logoImages/8e7b4483-1b27-4bc4-868b-1b88ced1c19c-661.jpeg"
-                    height="190" width="200">
+                  <img style="object-fit: contain;" src="{{vendor.imageURL}}" height="190" width="200">
                 </ion-col>
                 <ion-col size="7">
                   <div class="product-text" style="height:auto;">
-                    <h1>{{vendor.Name.stringValue}}</h1>
+                    <h1>{{vendor.name}}</h1>
                     <h2>
                       <ion-icon name="timer-outline"></ion-icon> 2 years
                     </h2>
@@ -299,7 +299,7 @@
               </ion-row>
             </ion-card>
             <div>
-              <ion-button fill="clear" style="font-family: slides;font-size:25px;" (click)="showMore()">
+              <ion-button fill="clear" style="font-family: slides;font-size:25px;" (click)="changeCat()">
                 <ion-icon name="add-outline"></ion-icon>Show More
               </ion-button>
             </div>

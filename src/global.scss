@@ -40,61 +40,57 @@ ion-content {
 
 ion-menu {
   --width: 300px;
-  --background: #020202e1;
+  --background: white;
 }
 
-.highlight{
-  color:#ff7e06;
+.highlight {
+  color: #ff7e06;
 }
 
-.whiteBack{
-  padding-top:40px;
-  background:rgb(255, 255, 255);
-  padding-bottom:60px;
+.whiteBack {
+  padding-top: 40px;
+  background: rgb(255, 255, 255);
+  padding-bottom: 60px;
 }
 
-.greyBack{
-  padding-top:40px;
-  background:rgb(240, 240, 240);
-  padding-bottom:60px;
+.greyBack {
+  padding-top: 40px;
+  background: rgb(240, 240, 240);
+  padding-bottom: 60px;
 }
 
-.titleDiv{
-  padding-top:40px;
+.titleDiv {
+  padding-top: 40px;
   text-align: center;
 }
 
-.whiteBack .mainTitle{
+.whiteBack .mainTitle {
   font-family: title;
   font-size: 40px;
-  font-weight: 700!important;
-  color:rgb(0, 0, 0);
+  font-weight: 700 !important;
+  color: rgb(0, 0, 0);
 }
 
-
-.whiteBack .subTitle{
+.whiteBack .subTitle {
   font-family: title;
   font-size: 30px;
-  font-weight: 10!important;
-  color:rgb(71, 71, 71);
+  font-weight: 10 !important;
+  color: rgb(71, 71, 71);
 }
 
-
-.greyBack .mainTitle{
+.greyBack .mainTitle {
   font-family: title;
   font-size: 40px;
-  font-weight: 700!important;
-  color:rgb(255, 255, 255);
+  font-weight: 700 !important;
+  color: rgb(255, 255, 255);
 }
 
-
-.greyBack .subTitle{
+.greyBack .subTitle {
   font-family: title;
   font-size: 30px;
-  font-weight: 10!important;
-  color:rgb(224, 224, 224);
+  font-weight: 10 !important;
+  color: rgb(224, 224, 224);
 }
-
 
 .wrapper {
   display: inline-block;
@@ -138,12 +134,12 @@ ion-menu {
 
 .product-text h1,
 .product-price-btn p {
-  font-family: 'Bentham', serif;
+  font-family: "Bentham", serif;
 }
 
 .product-text h2 {
   font-size: 13px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   color: #d2d2d2;
@@ -152,4 +148,8 @@ ion-menu {
 
 .iconsize {
   font-size: 50px;
+}
+.my-custom-modal-css .modal-wrapper {
+  height: 100%;
+  width: 100%;
 }

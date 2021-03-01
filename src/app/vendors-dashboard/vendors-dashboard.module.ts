@@ -1,3 +1,4 @@
+import { ExporterPage } from './../exporter/exporter.page';
 import { HeaderComponentModule } from './../header/header.component.module';
 import { FooterComponentModule } from './../footer/footer.component.module';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ import { VendorsDashboardPage } from './vendors-dashboard.page';
     HeaderComponentModule,
     VendorsDashboardPageRoutingModule
   ],
-  declarations: [VendorsDashboardPage]
+  declarations: [VendorsDashboardPage],
+  entryComponents: [ExporterPage]
 })
 export class VendorsDashboardPageModule { }

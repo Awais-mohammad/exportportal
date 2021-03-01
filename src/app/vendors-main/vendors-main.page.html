@@ -245,169 +245,6 @@
         </div>
       </div>
 
-      <!-- LOGIN SIGNUP FORM For WEB
-  <div *ngIf="width > 800" style="text-align: center;">
-   
-         
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-
-  LOGIN SIGNUP FORM For Mobile
-  <div *ngIf="width < 800" style="text-align: center;">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="11">
-          <ion-card *ngIf="!showLogin" class="fade-in">
-
-            <ion-card-content style="text-align: center;">
-
-              <div>
-
-                <ion-title class="headinone">Create An Account</ion-title>
-
-                <ion-title class="headintwo">Already have an account?
-
-                  <span (click)="showHideLoginForm()" style="color: #09757A;">Sign in</span>
-
-                </ion-title>
-
-              </div>
-
-              <div style=" padding-top: 7px;position: relative;left: 1.5em;" class="fields">
-
-                <div class="paddtop">
-                  <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
-                  <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
-                </div>
-
-                <div class="paddtop">
-                  <ion-label style="display: flex;justify-content: flex-start;">Company Name</ion-label>
-                  <ion-input [(ngModel)]="username" placeholder='Enter your company name'></ion-input>
-                </div>
-
-                <div class="paddtop">
-                  <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-                  <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
-                </div>
-
-                <div class="paddtop">
-                  <ion-label style="display: flex;justify-content: flex-start;">Company Adress</ion-label>
-                  <ion-input [(ngModel)]="companyAdress" placeholder='Enter your company name'></ion-input>
-                </div>
-
-                <div class="paddtop">
-                  <ion-label style="display: flex;justify-content: flex-start;">Phone</ion-label>
-                  <ion-input [(ngModel)]="companyPhone" placeholder='Enter your password'></ion-input>
-                </div>
-
-                <div class="paddtop">
-                  <div *ngIf="cateegories"
-                    style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
-                    <ion-label style="padding: 1em;">CATEGORY</ion-label>
-                    <ion-select mode='ios' [(ngModel)]="selectedcat" (ionChange)="choosecat(selectedcat)">
-                      <ion-select-option *ngFor="let item of cateegories.cats.arrayValue.values"
-                        value="{{item.stringValue}}">
-
-                        {{item.stringValue}}
-                      </ion-select-option>
-                    </ion-select>
-                  </div>
-                </div>
-                <div *ngIf="cates" style="display: flex;flex-direction: column;width: 50%;">
-                  <ion-chip *ngFor="let item of cates let i=index">{{item}}
-                    <ion-icon (click)="delete(i)" color="danger" name="close-outline"></ion-icon>
-                  </ion-chip>
-                </div>
-
-                <div class="paddtop">
-
-                  <div [innerHtml]='msg'></div>
-                  <label>
-                    <input type="file" (change)="selectFile($event)">
-                  </label>
-
-                  <ion-button (click)="register()" style=" max-width: 50vh;" color="dark" expand='block'>
-                    <p>CREATE ACCOUNT</p>
-                  </ion-button>
-                  <ion-label style="width:30px;white-space: normal;" class="terms">By creating an account, you agree
-                    <br> to EXPORT PORTAL's
-                    <span class="span">Terms &
-                      Conditions</span> and
-                    <span class="span">Privacy Policy</span>
-                  </ion-label>
-                </div>
-
-
-              </div>
-
-            </ion-card-content>
-
-
-          </ion-card>
-
-          <ion-card *ngIf="showLogin" class="fade-in">
-
-            <ion-card-content style="text-align: center;">
-
-              <div>
-
-                <ion-title class="headinone">SIGN IN YOUR ACCOUNT</ion-title>
-
-                <ion-title class="headintwo">Don't Have An Account?
-
-                  <span (click)="showHideLoginForm()" style="color: #09757A;">Sign Up</span>
-
-                </ion-title>
-
-              </div>
-
-              <div style=" padding-top: 7px;position: relative;left: 1.5em;" class="fields">
-
-                <div class="paddtop">
-                  <ion-label style="display: flex;justify-content: flex-start;">Email</ion-label>
-                  <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
-                </div>
-
-                <div class="paddtop">
-                  <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-                  <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
-                </div>
-
-                <div class="paddtop">
-                  <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
-                    <p>LOGIN</p>
-                  </ion-button>
-                  <div style="display: flex;">
-                    <ion-checkbox></ion-checkbox>
-                    <ion-label class="padleft">Keep me signed in on this device</ion-label>
-                  </div>
-                </div>
-
-
-              </div>
-
-            </ion-card-content>
-
-
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-
-  <div
-    style="display: flex;justify-content: center;align-items: center;text-align: center;font-weight: bold;font-family: 'Truculenta', sans-serif;padding: 5em;">
-    <div style="width: 50%;">
-      EXPORT<span style="color: #09757A;">PORTAL</span> is here to support your business through the
-      challenging times. Join Today! In this global crisis, Export Portal helps SMEs find simple yet workable trade
-      solutions. Reliable Platform. Get Assistance. Easy And Safe Deals.
-      <br>
-      <ion-button color="dark" mode='ios'>SUPPORT US</ion-button>
-    </div>
-  </div>
-  -->
     </div>
 
     <!--mobile view-->
@@ -697,6 +534,11 @@
                       </div>
 
                       <div class="paddtop">
+                        <ion-label style="display: flex;justify-content: flex-start;">WEBSITE</ion-label>
+                        <ion-input [(ngModel)]="webURL" placeholder='https://'></ion-input>
+                      </div>
+
+                      <div class="paddtop">
                         <ion-label style="display: flex;justify-content: flex-start;">Company Adress</ion-label>
                         <ion-input type='text' [(ngModel)]="companyAdress" placeholder='Enter your company name'>
                         </ion-input>
@@ -707,6 +549,9 @@
                         <ion-input type='number' [(ngModel)]="companyPhone" placeholder='Enter your password'>
                         </ion-input>
                       </div>
+
+                   
+                      
                       <div class="paddtop">
                         <div *ngIf="cateegories"
                           style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">

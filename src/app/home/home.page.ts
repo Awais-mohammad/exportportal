@@ -1,3 +1,5 @@
+import { ModalController } from '@ionic/angular';
+import { ExporterPage } from './../exporter/exporter.page';
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -13,12 +15,15 @@ export class HomePage {
   constructor(
     private router: Router,
     private fireStore: AngularFirestore,
+    private modal: ModalController,
+
   ) {
     this.getCats();
     setTimeout(() => {
-      this.getProds("automotive");
+      this.getexporter("automotive");
       this.getVendors();
     }, 2000);
+    this.getTopVendors()
   }
 
   width = window.innerWidth;
@@ -55,14 +60,29 @@ export class HomePage {
     })
   }
 
+  async openProfilePage(profileID: string) {
+
+    console.log('current userID', profileID);
+
+    const model = await this.modal.create({
+      component: ExporterPage,
+      cssClass: "my-custom-modal-css",
+      id: "displayshop",
+      componentProps: {
+        ExporterID: profileID
+      },
+    });
+    return await model.present();
+  }
+
   capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  numSequence(n: number): Array<number> { 
-    return Array(n); 
-  } 
-  
+  numSequence(n: number): Array<number> {
+    return Array(n);
+  }
+
   showMore() {
     if (!this.showCats) {
       var currDex = 0;
@@ -82,7 +102,27 @@ export class HomePage {
   changeCat(cat: string) {
     this.products = [];
     this.cat = cat;
-    this.getProds(cat);
+    this.getexporter(cat);
+  }
+  temp: any;
+
+  getexporter(category: string) {
+    console.log('category for exporter:', category);
+    this.fireStore.collection('products').doc(category).valueChanges().subscribe((data: any) => {
+
+      if (data) {
+        if (data.vendors) {
+          console.log(data.vendors);
+          this.temp = data.vendors
+        }
+        else {
+
+        }
+      }
+      else {
+
+      }
+    })
   }
 
   search(event) {
@@ -93,7 +133,7 @@ export class HomePage {
       for (var i = 0; i < this.categories['cats'].arrayValue.values.length; i++) {
         const currentCat = this.categories['cats'].arrayValue.values[i].stringValue;
         if (currentCat.includes(event.detail.value)) {
-          found = found+1;
+          found = found + 1;
           if (found < 7) {
             this.searchFound.push({
               name: currentCat,
@@ -104,7 +144,7 @@ export class HomePage {
         for (var k = 0; k < this.categories[currentCat].arrayValue.values.length; k++) {
           const subCat = this.categories[currentCat].arrayValue.values[k].stringValue;
           if (subCat.includes(event.detail.value)) {
-            found = found+1;
+            found = found + 1;
             if (found < 7) {
               this.searchFound.push({
                 name: subCat,
@@ -117,26 +157,43 @@ export class HomePage {
     }
   }
 
-  getProds(cat: string) {
-    console.log(cat);
-    for (var i = 0; i < this.categories[cat].arrayValue.values.length; i++) {
-      const subCat = this.categories[cat].arrayValue.values[i].stringValue;
-      console.log("Checking >>> ", subCat);
-      const getDocs = this.fireStore.collection('products').doc(cat).collection(subCat).get().subscribe((data: any) => {
-        if (data.empty == false) {
-          for (var k = 0; k < data.docs.length; k++) {
-            if (data.docs[k].Df.sn.proto.mapValue.fields != undefined) {
-              this.products.push(data.docs[k].Df.sn.proto.mapValue.fields);
-            }
-            if (k == data.docs.length - 1) {
-              getDocs.unsubscribe();
-            }
-          }
-        }
-      })
-    }
-    console.log(this.products);
+  topvendors: any;
+
+  getTopVendors() {
+    this.fireStore.collection('vendors', querry => querry.where('top', '==', true).orderBy('timestamp', 'asc')).get().subscribe(res => {
+      if (res.empty) {
+
+
+      }
+      else {
+
+        this.topvendors = res.docs
+        console.log('vendors on top', this.topvendors);
+      }
+    })
   }
+
+  // getProds(cat: string) {
+  //   console.log(cat);
+  //   for (var i = 0; i < this.categories[cat].arrayValue.values.length; i++) {
+  //     const subCat = this.categories[cat].arrayValue.values[i].stringValue;
+  //     console.log("Checking >>> ", subCat);
+  //     const getDocs = this.fireStore.collection('products').doc(cat).collection(subCat).get().subscribe((data: any) => {
+  //       if (data.empty == false) {
+  //         for (var k = 0; k < data.docs.length; k++) {
+  //           if (data.docs[k].Df.sn.proto.mapValue.fields != undefined) {
+  //             this.products.push(data.docs[k].Df.sn.proto.mapValue.fields);
+  //           }
+  //           if (k == data.docs.length - 1) {
+  //             getDocs.unsubscribe();
+  //             alert('no products found')
+  //           }
+  //         }
+  //       }
+  //     })
+  //   }
+  //   console.log('products are', this.products);
+  // }
 
 
   slideOpts = {

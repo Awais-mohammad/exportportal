@@ -1,19 +1,20 @@
-<ion-menu side="start" content-id="content" class="menu">
+<ion-menu style="background: white;" side="start" content-id="content" class="menu">
   <div>
-    <ion-toolbar color="danger">
+    <ion-toolbar color="success">
       <ion-title style="font-family:fantasy;font-size:2em;font-weight:bolder;">EXPORTPORTAL</ion-title>
     </ion-toolbar>
     <ion-item *ngFor="let page of pages" color="none" button>
-      <ion-label class="mobilePage" *ngIf="activePath != page" style="color:white;font-family:impact"
+      <ion-label class="mobilePage" *ngIf="activePath != page" style="color:black;font-family:impact"
         (click)="goToPage(page)">
         {{page.toUpperCase()}}
       </ion-label>
-      <ion-label class="mobilePage" *ngIf="activePath == page" style="color:rgb(182, 180, 180);font-family:impact">
+      <ion-label class="mobilePage" *ngIf="activePath == page" style="color:black;font-family:impact">
         {{page.toUpperCase()}}
       </ion-label>
     </ion-item>
   </div>
 </ion-menu>
+
 <ion-toolbar color="none" style="background-color: rgba(255, 255, 255, 0.979);position: fixed;z-index: 2; border-bottom:1px solid rgba(0, 0, 0, 0.274);
 box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
   <ion-icon *ngIf="width<=600" class="bars" name="menu-outline" size="large" color="dark" slot="start"
@@ -80,13 +81,13 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
     <ion-button *ngIf="loggedIn && currentUserData" (click)="showOptions2()" fill="outline"
       style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">
       <ion-icon name="person-outline"></ion-icon>
-      {{currentUserData.Name}}
+      {{currentUserData.name}}
     </ion-button>
   </div>
 </ion-toolbar>
 <div style="position:fixed;right:100px;top:70px;z-index:1000;" *ngIf="showOptions">
   <ion-item color="none" style="background:rgb(255, 255, 255);color:rgb(0, 68, 255);font-family: title;"
-    (click)="goToPage('vendors-main')" mode="ios" button>
+    (click)="goToPage('vendors-dashboard')" mode="ios" button>
     <ion-icon slot="start" name="person-outline" color="primary"></ion-icon>DASHBOARD
   </ion-item>
   <ion-item color="none" style="background:white;color:rgb(255, 0, 0);font-family: title;" (click)="logout()" mode="ios"
@@ -95,7 +96,7 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
   </ion-item>
 </div>
 
-<div *ngIf="openLoginForm"
+<div *ngIf="openLoginForm && width > 1100"
   style="position:fixed;right:25%;top:20%;z-index:1000;height: 30em;width: 50%;background: white;  ">
 
   <div style="position: relative;left:94%;top: 3%;">
@@ -121,17 +122,71 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
       <div class="paddtop">
         <ion-label style="display: flex;justify-content: flex-start;">Email
         </ion-label>
-        <ion-input placeholder='Enter your e-mail'></ion-input>
+        <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
       </div>
 
       <div class="paddtop">
         <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-        <ion-input placeholder='Enter your password'></ion-input>
+        <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
       </div>
 
 
       <div class="paddtop">
-        <ion-button style=" max-width: 50vh;" color="dark" expand='block'>
+        <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
+          <p>LOGIN</p>
+        </ion-button>
+        <div style="display: flex;">
+          <ion-checkbox></ion-checkbox>
+          <ion-label class="padleft">Keep me signed in on this device</ion-label>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+</div>
+
+<div *ngIf="openLoginForm && width < 1100"
+  style="position:fixed;top:20%;z-index:1000;height: 30em;width: 85%;left: 8%;background: white;  ">
+
+  <div style="text-align: right;">
+    <ion-icon (click)="toggleForm()" color="danger" style="font-size: 30px;" name="close-outline"></ion-icon>
+  </div>
+  <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+
+    <div>
+
+      <h1 style="text-align: center;" class="headinone">Sign In To Account</h1>
+
+      <h2 style="text-align: center;" class="headintwo">Don't have an account?
+
+        <span style="color: #09757A;">Sign Up</span>
+
+      </h2>
+
+    </div>
+
+    <div style=" padding-top: 7px;" class="fields">
+
+
+      <div class="paddtop">
+        <ion-label style="display: flex;justify-content: flex-start;">Email
+        </ion-label>
+        <ion-input [(ngModel)]="email" placeholder='Enter your e-mail'></ion-input>
+      </div>
+
+      <div class="paddtop">
+        <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
+        <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
+      </div>
+
+
+      <div class="paddtop">
+        <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
           <p>LOGIN</p>
         </ion-button>
         <div style="display: flex;">
