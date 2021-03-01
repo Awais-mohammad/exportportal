@@ -1,3 +1,5 @@
+import { ExporterPage } from './../exporter/exporter.page';
+import { ModalController } from '@ionic/angular';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -12,6 +14,8 @@ export class ProductsPage implements OnInit {
   constructor(
     private router: Router,
     private fireStore: AngularFirestore,
+    private modalController: ModalController,
+
   ) {
     this.getCats();
     setTimeout(() => {
@@ -36,6 +40,21 @@ export class ProductsPage implements OnInit {
   cat: string = "automotive";
   subCat: string;
   catIndex: number = 0;
+
+  async openProfilePage(profileID: string) {
+
+    console.log('current userID', profileID);
+
+    const model = await this.modalController.create({
+      component: ExporterPage,
+      cssClass: "my-custom-modal-css",
+      id: "displayshop",
+      componentProps: {
+        ExporterID: profileID
+      },
+    });
+    return await model.present();
+  }
 
 
 

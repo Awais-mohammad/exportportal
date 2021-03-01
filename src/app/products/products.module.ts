@@ -1,3 +1,4 @@
+import { ExporterPage } from './../exporter/exporter.page';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +20,7 @@ import { FooterComponentModule } from '../footer/footer.component.module';
     HeaderComponentModule,
     FooterComponentModule,
   ],
-  declarations: [ProductsPage]
+  declarations: [ProductsPage],
+  entryComponents: [ExporterPage]
 })
-export class ProductsPageModule {}
+export class ProductsPageModule { }
