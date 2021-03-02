@@ -26,12 +26,6 @@ export class ContactPage implements OnInit {
   notification: boolean = false;
 
   getValue() {
-
-    console.log(this.email.nativeElement.value);
-    console.log(this.name.nativeElement.value);
-    console.log(this.phone.nativeElement.value);
-    console.log(this.message.nativeElement.value);
-    console.log(this.website.nativeElement.value);
     if (!this.email.nativeElement.value) {
       alert('invalid field........')
     }

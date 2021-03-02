@@ -49,23 +49,18 @@ export class HomePage {
       for (var i = 0; i < data.docs.length; i++) {
         this.vendors.push(data.docs[i].Df.sn.proto.mapValue.fields);
       }
-      console.log(this.vendors);
       vendors.unsubscribe();
     })
   }
   getCats() {
     const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data: any) => {
       this.categories = data.Df.sn.proto.mapValue.fields;
-      console.log(this.categories);
       this.showMore();
       cats.unsubscribe();
     })
   }
 
   async openProfilePage(profileID: string) {
-
-    console.log('current userID', profileID);
-
     const model = await this.modal.create({
       component: ExporterPage,
       cssClass: "my-custom-modal-css",
@@ -92,7 +87,6 @@ export class HomePage {
       currDex = this.showCats.length;
     }
     for (var i = currDex; i < currDex + 5; i++) {
-      console.log(this.categories.cats.arrayValue.values[i].stringValue);
       this.showCats.push(this.categories.cats.arrayValue.values[i].stringValue);
     }
   }
@@ -109,12 +103,10 @@ export class HomePage {
   temp: any;
 
   getexporter(category: string) {
-    console.log('category for exporter:', category);
     this.fireStore.collection('products').doc(category).valueChanges().subscribe((data: any) => {
 
       if (data) {
         if (data.vendors) {
-          console.log(data.vendors);
           this.temp = data.vendors
         }
         else {
@@ -128,7 +120,6 @@ export class HomePage {
   }
 
   search(event) {
-    console.log(event.detail.value);
     this.searchFound = [];
     var found = 0;
     if (event.detail.value != undefined && event.detail.value != "") {
@@ -170,7 +161,6 @@ export class HomePage {
       else {
 
         this.topvendors = res.docs
-        console.log('vendors on top', this.topvendors);
       }
     })
   }

@@ -27,7 +27,6 @@ export class CategoriesPage implements OnInit {
   getCats() {
     const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data: any) => {
       this.categories = data.Df.sn.proto.mapValue.fields;
-      console.log(this.categories);
       this.showMore();
       cats.unsubscribe();
     })
@@ -44,7 +43,6 @@ export class CategoriesPage implements OnInit {
       currDex = this.showCats.length;
     }
     for (var i = currDex; i < currDex + 5; i++) {
-      console.log(this.categories.cats.arrayValue.values[i].stringValue);
       this.showCats.push(this.categories.cats.arrayValue.values[i].stringValue);
     }
   }

@@ -166,16 +166,13 @@ export class VendorsMainPage implements OnInit {
     const imageURL = this.imageURL
     const websiteURL = this.webURL
     for (var i = 0; i < this.cates.length; i++) {
-      console.log('check cat', this.cates[i]);
 
       this.firestore.collection('products').doc(this.cates[i]).get().subscribe(res => {
         if (res.exists) {
-          console.log('data found', this.cates[i]);
 
           this.yesexists()
         }
         else {
-          console.log('data not found', this.cates[i]);
           this.notexists()
         }
       })
@@ -221,7 +218,6 @@ export class VendorsMainPage implements OnInit {
 
   notexists() {
     for (var i = 0; i < this.cates.length; i++) {
-      console.log('check cat', this.cates[i]);
 
       const userID = this.currentUserID;
       const timestamp = new Date()
@@ -277,8 +273,6 @@ export class VendorsMainPage implements OnInit {
   getCategories() {
     const cats = this.firestore.collection('appData').doc('categories').get().subscribe((data: any) => {
       this.cateegories = data.Df.sn.proto.mapValue.fields;
-      console.log('lylo', this.cateegories);
-      console.log('dekho', this.cateegories.cats.arrayValue.values[0].stringValue);
 
       cats.unsubscribe();
     })
@@ -286,10 +280,8 @@ export class VendorsMainPage implements OnInit {
 
   login() {
     this.firebaseauth.auth.signInWithEmailAndPassword(this.email, this.password).then(user => {
-      console.log('user logged in')
       this.firebaseauth.authState.subscribe(res => {
         this.currentUserID = res.uid
-        console.log('user id is' + this.currentUserID);
         this.router.navigate(['vendors-dashboard'])
       })
     })
@@ -314,9 +306,7 @@ export class VendorsMainPage implements OnInit {
     this.loaderID = 'upimg'
     this.loadermsg = 'FETCHING!!!!!'
     this.presentLoading()
-    console.log(this.selectedFiles[0].name);
-    this.imageURL = 'https://134.122.2.23/vendors/' + this.selectedFiles[0].name
-    console.log(this.imageURL);
+    this.imageURL = 'https://134.122.2.23/vendors/' + this.selectedFiles[0].name;
     this.upload()
   }
 

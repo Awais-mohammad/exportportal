@@ -61,7 +61,6 @@ export class HeaderComponent implements OnInit {
   getcurrentUserData() {
     this.firestore.collection('vendors').doc(this.currentUID).valueChanges().subscribe(data => {
       this.currentUserData = data;
-      console.log(this.currentUserData);
 
     })
   }
@@ -96,7 +95,6 @@ export class HeaderComponent implements OnInit {
   goToPage(path: string) {
     this.router.navigate([path]).then(() => {
       this.activePath = this.router.url.slice(1, this.router.url.length);
-      console.log(this.activePath);
       this.menu.close();
     });
   }
@@ -112,13 +110,11 @@ export class HeaderComponent implements OnInit {
     }
     else {
       this.firebaseauth.auth.signInWithEmailAndPassword(this.email, this.password).then(user => {
-        console.log('user logged in')
 
         this.firebaseauth.authState.subscribe(res => {
           if (res) {
             if (res && res.uid) {
               this.currentUserID = res.uid
-              console.log('user id is' + this.currentUserID);
               this.router.navigate(['vendors-dashboard'])
               this.openLoginForm = !this.openLoginForm;
             }

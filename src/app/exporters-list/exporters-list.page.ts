@@ -32,12 +32,10 @@ export class ExportersListPage implements OnInit {
   temp: any;
 
   getexporter(category: string) {
-    console.log('category for exporter:', category);
     this.fireStore.collection('products').doc(category).valueChanges().subscribe((data: any) => {
 
       if (data) {
         if (data.vendors) {
-          console.log(data.vendors);
           this.temp = data.vendors
         }
         else {
@@ -63,7 +61,6 @@ export class ExportersListPage implements OnInit {
       for (var i = 0; i < data.docs.length; i++) {
         this.vendors.push(data.docs[i].Df.sn.proto.mapValue.fields);
       }
-      console.log(this.vendors);
       vendors.unsubscribe();
     })
   }
@@ -71,7 +68,6 @@ export class ExportersListPage implements OnInit {
   getCats() {
     const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data: any) => {
       this.categories = data.Df.sn.proto.mapValue.fields;
-      console.log(this.categories);
       cats.unsubscribe();
     })
   }
@@ -99,14 +95,12 @@ export class ExportersListPage implements OnInit {
       else {
 
         this.topvendors = res.docs
-        console.log('vendors on top', this.topvendors);
       }
     })
   }
   products: any[]
   async openProfilePage(profileID: string) {
 
-    console.log('current userID', profileID);
 
     const model = await this.modalController.create({
       component: ExporterPage,
@@ -125,13 +119,11 @@ export class ExportersListPage implements OnInit {
     this.getexporter(cat);
   }
   search(event) {
-    console.log(event.detail.value);
     this.searchFound = [];
     var found = 0;
     if (event.detail.value != undefined && event.detail.value != "") {
       for (var i = 0; i < this.vendors.length; i++) {
         const currentCat = this.vendors[i].name.stringValue;
-        console.log(this.vendors[i].userID, "test");
 
         if (currentCat) {
           found = found + 1;

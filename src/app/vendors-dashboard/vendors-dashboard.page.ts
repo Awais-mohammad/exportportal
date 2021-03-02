@@ -69,7 +69,6 @@ export class VendorsDashboardPage implements OnInit {
   }
   async openProfilePage() {
 
-    console.log('current userID', this.currentUID);
 
     const model = await this.modal.create({
       component: ExporterPage,
@@ -84,7 +83,6 @@ export class VendorsDashboardPage implements OnInit {
   getCats() {
     this.fireStore.collection('appData').doc('categories').valueChanges().subscribe((data: any) => {
       this.categories = data;
-      console.log(this.categories);
       this.temp = data
       this.cats = this.categories.cats;
 
@@ -126,9 +124,7 @@ export class VendorsDashboardPage implements OnInit {
     this.loaderID = 'upimg'
     this.loadermsg = 'FETCHING!!!!!'
     this.presentLoading()
-    console.log(this.selectedFiles[0].name);
     this.imageURL = 'https://134.122.2.23/vendors/' + this.selectedFiles[0].name
-    console.log(this.imageURL);
     this.upload()
   }
 
@@ -214,11 +210,9 @@ export class VendorsDashboardPage implements OnInit {
 
 
   changeProds() {
-    console.log('method 1 called');
 
     const cats = this.fireStore.collection('appData').doc('categories').get().subscribe((data: any) => {
       this.cateegories = data.Df.sn.proto.mapValue.fields;
-      console.log(this.cateegories);
       this.amethod()
       cats.unsubscribe();
     })
@@ -226,24 +220,17 @@ export class VendorsDashboardPage implements OnInit {
   }
   amethod() {
 
-    console.log('method 2 called');
     for (var i = 0; i < this.cateegories['cats'].arrayValue.values.length; i++) {
       this.getProds2(this.cateegories['cats'].arrayValue.values[i].stringValue);
     }
   }
   getProds2(cat: string) {
-
-    console.log('method 3 called');
-    console.log(cat);
     for (var i = 0; i < this.cateegories[cat].arrayValue.values.length; i++) {
       const subCat = this.cateegories[cat].arrayValue.values[i].stringValue;
-      console.log("Checking >>> ", subCat);
       const getDocs = this.fireStore.collection('products').doc(cat).collection(subCat).get().subscribe((data: any) => {
         if (data.empty == false) {
           for (var k = 0; k < data.docs.length; k++) {
             if (data.docs[k].Df.sn.proto.mapValue.fields != undefined) {
-              console.log(data.docs[k].ref.path);
-              console.log(data.docs[k].Df.sn.proto.mapValue.fields.uploadedBy.stringValue);
               this.push(data.docs[k].Df.sn.proto.mapValue.fields.uploadedBy.stringValue, data.docs[k].ref.path)
             }
             if (k == data.docs.length - 1) {
@@ -253,7 +240,6 @@ export class VendorsDashboardPage implements OnInit {
         }
       })
     }
-    console.log(this.products);
   }
 
   push(docID, path) {
@@ -263,7 +249,6 @@ export class VendorsDashboardPage implements OnInit {
         subcolPath
       )
     }).then(() => {
-      console.log('done!!!');
 
     })
   }
@@ -276,7 +261,6 @@ export class VendorsDashboardPage implements OnInit {
       }
       else {
         this.document = dat
-        console.log('knfowe', this.document);
 
       }
     })
@@ -288,11 +272,9 @@ export class VendorsDashboardPage implements OnInit {
     const authsub = this.auth.authState.subscribe(user => {
       if (user && user.uid) {
         this.currentUID = user.uid
-        console.log('user logged in with id' + this.currentUID);
         this.getProducts()
       }
       else {
-        console.log('no user loogged in');
         this.Router.navigate(['home'])
       }
     })
