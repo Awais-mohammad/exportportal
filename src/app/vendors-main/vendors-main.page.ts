@@ -1,11 +1,12 @@
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase/app';
 import { HttpClient, HttpRequest, HttpEvent, HttpResponse, HttpEventType } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoadingController, ToastController, ModalController } from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-vendors-main',
@@ -13,7 +14,7 @@ import { LoadingController, ToastController, ModalController } from '@ionic/angu
   styleUrls: ['./vendors-main.page.scss'],
 })
 export class VendorsMainPage implements OnInit {
-
+  @ViewChild(IonContent) content: IonContent;
   constructor(
     private firestore: AngularFirestore,
     private firebaseauth: AngularFireAuth,
@@ -45,6 +46,7 @@ export class VendorsMainPage implements OnInit {
 
   showHideLoginForm() {
     this.registersection = !this.registersection
+    this.scrollTo('form')
   }
 
   //loading
@@ -74,6 +76,11 @@ export class VendorsMainPage implements OnInit {
   generateDocID() {
     const ID = firebase.firestore().collection('vendors').doc().id;
     return ID;
+  }
+
+  scrollTo(elementId: string) {
+    let yOffset = document.getElementById(elementId).offsetTop;
+    this.content.scrollToPoint(0, yOffset, 5000)
   }
 
   register() {

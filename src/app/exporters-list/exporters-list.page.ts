@@ -130,8 +130,10 @@ export class ExportersListPage implements OnInit {
     var found = 0;
     if (event.detail.value != undefined && event.detail.value != "") {
       for (var i = 0; i < this.vendors.length; i++) {
-        const currentCat = this.vendors[i].Name.stringValue;
-        if (currentCat.toLowerCase().includes(event.detail.value.toLowerCase())) {
+        const currentCat = this.vendors[i].name.stringValue;
+        console.log(this.vendors[i].userID, "test");
+
+        if (currentCat) {
           found = found + 1;
           if (found < 7) {
             this.searchFound.push({
@@ -142,6 +144,7 @@ export class ExportersListPage implements OnInit {
           }
         }
       }
+
     }
   }
 

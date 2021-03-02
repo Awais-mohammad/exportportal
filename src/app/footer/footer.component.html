@@ -1,4 +1,4 @@
-<ion-footer style="position: relative;z-index: 2;">
+<ion-footer style="position: relative; z-index: 2;">
 
     <div class="footer-distributed">
 
@@ -7,31 +7,35 @@
             <h3>Export<span>Portal</span></h3>
 
             <p class="footer-links" style="color:rgb(158, 157, 157)">
-                <a href="#" class="link-1">Home</a>
+                <a (click)="goToPage('home')">Home</a>
 
-                <a href="#">About Us</a>
 
-                <a href="#">Contact Us</a>
+                <a (click)="goToPage('exporters-list')">Exporters</a>
 
-                <a href="#">Categories</a>
 
-                <a href="#">Another</a>
+                <a (click)="goToPage('categories')">Categories</a>
 
-                <a href="#">Another</a>
+                <a (click)="goToPage('about')">About Us</a>
+
+                <a (click)="goToPage('contact')">Contact Us</a>
+
+
+                <a (click)="goToPage('vendors-main')">Register</a>
             </p>
 
-            <p class="footer-company-name" style="color: rgb(78, 78, 78);">COPYRIGHTS © EXPORTPORTAL 2020 All Rights
+            <p class="footer-company-name" style="color: rgb(78, 78, 78);">COPYRIGHTS © 2020 EXPORTPORTAL All Rights
                 Reserved</p>
         </div>
 
         <div class="footer-center">
 
-            <div>
+            <div style="text-align: center;display: flex;justify-content: center;align-items: center;">
 
                 <ion-input placeholder="Join Our Newsletter"></ion-input>
             </div>
 
-            <div style="padding: 1em;color:rgb(158, 157, 157)">
+            <div
+                style="padding: 1em;color:rgb(158, 157, 157);display: flex;justify-content: center;align-items: center;flex-direction: column;">
                 <p style="color:rgb(158, 157, 157)">
                     <ion-icon name="call-outline"></ion-icon>
                     +923254489521
