@@ -19,11 +19,7 @@
 box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
   <ion-icon *ngIf="width<=600" class="bars" name="menu-outline" size="large" color="dark" slot="start"
     (click)="openFirst()"></ion-icon>
-  <ion-title slot="start"
-    style="font-family:fantasy; font-size:2em; padding-top:20px;padding-bottom: 20px; color:rgb(0, 0, 0)">
-    Export<span style="color: rgb(0, 140, 255); font-weight: bolder;" id="content"><span
-        style="color: rgb(0, 140, 255); font-weight: bolder;">Portal</span></span>
-  </ion-title>
+  <img src = "../../assets/images/logo.png" height = "100px" style = "margin-left:10px"/>
   <div slot="end" *ngIf="width > 600" style="padding-right:100px;">
     <ion-button (click)="goToPage('home')" fill="clear"
       style="color: rgb(7, 7, 7); font-size:1.2em; font-family: title;" *ngIf="activePath != 'home'">
