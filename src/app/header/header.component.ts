@@ -68,13 +68,17 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.afs.auth.signOut();
+    this.goToPage('home')
+
     this.showOptions = false;
   }
 
   toggleForm() {
     this.openLoginForm = !this.openLoginForm
+    if (this.toggleForm) {
+      this.menu.close()
+    }
   }
-
   ngOnInit() {
     this.checkRoute();
     const authsub = this.afs.authState.subscribe(user => {
@@ -109,12 +113,18 @@ export class HeaderComponent implements OnInit {
     else {
       this.firebaseauth.auth.signInWithEmailAndPassword(this.email, this.password).then(user => {
         console.log('user logged in')
+
         this.firebaseauth.authState.subscribe(res => {
-          this.currentUserID = res.uid
-          console.log('user id is' + this.currentUserID);
-          this.router.navigate(['vendors-dashboard'])
-          this.openLoginForm = !this.openLoginForm;
+          if (res) {
+            if (res && res.uid) {
+              this.currentUserID = res.uid
+              console.log('user id is' + this.currentUserID);
+              this.router.navigate(['vendors-dashboard'])
+              this.openLoginForm = !this.openLoginForm;
+            }
+          }
         })
+
       }).catch(err => {
         alert(JSON.stringify(err.message))
       })

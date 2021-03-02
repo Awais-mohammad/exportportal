@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ModalController } from '@ionic/angular';
@@ -13,6 +14,7 @@ export class ExporterPage implements OnInit {
   constructor(
     private fireStore: AngularFirestore,
     public modalController: ModalController,
+    private router: Router,
   ) {
 
   }
@@ -107,6 +109,10 @@ export class ExporterPage implements OnInit {
     console.log(this.products);
   }
 
+
+  goToPage(path: string) {
+    this.router.navigate([path])
+  }
 
   dismiss() {
     this.modalController.dismiss();

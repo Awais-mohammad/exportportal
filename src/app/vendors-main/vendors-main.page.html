@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content id="form" [fullscreen]="true">
 
   <div *ngIf="!registersection">
     <!--web view-->
@@ -24,7 +24,7 @@
 
           <div style="display: flex;flex-wrap: wrap;">
 
-            <div class="a">
+            <div (click)="scrollTo('user')" class="a">
               <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a User</p>
               <div>
                 <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
@@ -36,7 +36,7 @@
 
             <div style="padding-left: 1em;">
 
-              <div class="a">
+              <div (click)="scrollTo('seller')" class="a">
                 <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Vendor</p>
                 <div>
                   <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
@@ -48,7 +48,7 @@
             </div>
             <div style="padding-left: 1em;">
 
-              <div class="a">
+              <div (click)="scrollTo('manufacturer')" class="a">
                 <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Deliverer</p>
                 <div>
                   <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
@@ -87,7 +87,7 @@
             <img style="width: 100%;" src="../../assets/images/buyyer.jpg" alt="">
           </div>
 
-          <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
+          <div id='user' style="width: 50%;justify-content: center;align-items: center;display: flex;">
             <div class="blackcolor" style="text-align: center;">
               <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">BUYER</h1>
               <p style="font-family: title;font-size: 18px;">
@@ -102,7 +102,8 @@
               </p>
 
 
-              <ion-button style="border-radius: 1px;background: blue;" color="none">NO REGISTRATION</ion-button>
+              <ion-button disabled="true" style="border-radius: 1px;background: blue;" color="none">NO REGISTRATION
+              </ion-button>
 
 
             </div>
@@ -111,7 +112,7 @@
 
         </div>
 
-        <div style="display: flex;margin: 0;padding: 0;position: relative;top: -3px;">
+        <div id='seller' style="display: flex;margin: 0;padding: 0;position: relative;top: -3px;">
 
 
           <div style="width: 50%;justify-content: center;align-items: center;display: flex;">
@@ -141,7 +142,7 @@
 
         </div>
 
-        <div style="display: flex;margin: 0;padding: 0;position: relative;top: -5px;">
+        <div id="manufacturer" style="display: flex;margin: 0;padding: 0;position: relative;top: -5px;">
 
           <div style="width: 50%;">
             <img style="width: 100%;" src="../../assets/images/manufacturer.jpg" alt="">
@@ -162,7 +163,8 @@
               </p>
 
 
-              <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
+              <ion-button disabled="true" style="border-radius: 1px;background: blue;" color="none">COMING SOON
+              </ion-button>
 
             </div>
           </div>
@@ -191,7 +193,8 @@
 
 
               <div style="text-align: center;">
-                <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
+                <ion-button disabled="true" style="border-radius: 1px;background: blue;" color="none">COMING SOON
+                </ion-button>
               </div>
 
             </div>
@@ -267,7 +270,7 @@
           <div style="display: flex;flex-wrap: wrap;flex-direction: column;padding: 1em;">
 
             <div>
-              <div class="a">
+              <div (click)="scrollTo('user')" class="a">
                 <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a User</p>
                 <div>
                   <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
@@ -280,7 +283,7 @@
 
             <div style="padding-top: 10px;">
 
-              <div class="a">
+              <div (click)="scrollTo('vendor')" class="a">
                 <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Vendor</p>
                 <div>
                   <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
@@ -292,7 +295,7 @@
             </div>
             <div style="padding-top: 10px;">
 
-              <div class="a">
+              <div (click)="scrollTo('c')" class="a">
                 <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Deliverer</p>
                 <div>
                   <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
@@ -304,7 +307,7 @@
             </div>
             <div style="padding-top: 10px;">
 
-              <div class="a">
+              <div (click)="scrollTo('d')" class="a">
                 <p style="font-family: title;font-size: 20px;font-weight: bold;">I'm a Business Person</p>
                 <div>
                   <ion-button style="padding: 0;position: relative;top: -2em;" fill='clear'>NEXT
@@ -327,7 +330,7 @@
             <img style="width: 100%;" src="../../assets/images/buyyer.jpg" alt="">
           </div>
 
-          <div style="width: 100%;justify-content: center;align-items: center;display: flex;">
+          <div id='user' style="width: 100%;justify-content: center;align-items: center;display: flex;">
             <div class="blackcolor" style="text-align: center;">
               <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">BUYER</h1>
               <p style="font-family: title;font-size: 18px;">
@@ -342,7 +345,8 @@
               </p>
 
 
-              <ion-button style="border-radius: 1px;background: blue;" color="none">NO REGISTRATION</ion-button>
+              <ion-button disabled="true" style="border-radius: 1px;background: blue;" color="none">NO REGISTRATION
+              </ion-button>
 
 
             </div>
@@ -354,7 +358,7 @@
               <img style="width: 100%;" src="../../assets/images/manufacturer.jpg" alt="">
             </div>
 
-            <div style="width: 100%;justify-content: center;align-items: center;display: flex;">
+            <div id='c' style="width: 100%;justify-content: center;align-items: center;display: flex;">
               <div class="blackcolor" style="text-align: center;">
                 <h1 style="font-weight: bold;font-size: 33px;font-family: title;text-align: center;">MANUFACTURER</h1>
                 <p style="font-family: title;font-size: 18px;">
@@ -369,7 +373,8 @@
                 </p>
 
 
-                <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
+                <ion-button disabled="true" style="border-radius: 1px;background: blue;" color="none">COMING SOON
+                </ion-button>
 
               </div>
             </div>
@@ -380,7 +385,7 @@
 
           <div style="display: flex;margin: 0;padding: 0;position: relative;top: 10px;flex-direction: column;">
 
-            <div style="width: 100%;">
+            <div id="d" style="width: 100%;">
               <img style="width: 100%;" src="../../assets/images/frieght.jpg" alt="">
             </div>
 
@@ -401,7 +406,8 @@
 
 
                 <div style="text-align: center;">
-                  <ion-button style="border-radius: 1px;background: blue;" color="none">COMING SOON</ion-button>
+                  <ion-button disabled="true" style="border-radius: 1px;background: blue;" color="none">COMING SOON
+                  </ion-button>
                 </div>
 
               </div>
@@ -412,7 +418,8 @@
           </div>
 
 
-          <div style="display: flex;margin: 0;padding: 0;position: relative;top: 10px;flex-direction: column;">
+          <div id="vendor"
+            style="display: flex;margin: 0;padding: 0;position: relative;top: 10px;flex-direction: column;">
 
             <div style="width: 100%;">
               <img style="width: 100%;" src="../../assets/images/seller.jpg" alt="">
@@ -506,9 +513,9 @@
 
                   <ion-title class="headinone">Create An Account</ion-title>
 
-                  <ion-title style="text-align: center;" class="headintwo">Already have an account?
+                  <ion-title style="text-align: center;" class="headintwo">Not Now?
 
-                    <span (click)="showHideLoginForm()" style="color: #09757A;">Sign in</span>
+                    <span (click)="showHideLoginForm()" style="color: #09757A;">BACK</span>
 
                   </ion-title>
 
@@ -530,7 +537,7 @@
 
                       <div class="paddtop">
                         <ion-label style="display: flex;justify-content: flex-start;">Password</ion-label>
-                        <ion-input [(ngModel)]="password" placeholder='Enter your password'></ion-input>
+                        <ion-input [(ngModel)]="password" type='password' placeholder='Enter your password'></ion-input>
                       </div>
 
                       <div class="paddtop">
@@ -550,8 +557,8 @@
                         </ion-input>
                       </div>
 
-                   
-                      
+
+
                       <div class="paddtop">
                         <div *ngIf="cateegories"
                           style="display: flex;justify-content: space-between;padding: 0; border: 2px solid rgba(0, 0, 0, 0.415);">
