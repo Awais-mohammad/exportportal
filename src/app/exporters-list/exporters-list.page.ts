@@ -87,7 +87,7 @@ export class ExportersListPage implements OnInit {
   topvendors: any;
 
   getTopVendors() {
-    this.fireStore.collection('vendors', querry => querry.where('top', '==', true).orderBy('timestamp', 'asc')).get().subscribe(res => {
+    this.fireStore.collection('vendors', querry => querry.where('top', '==', true).where('accountstatus', '==', 'approved').orderBy('timestamp', 'asc')).get().subscribe(res => {
       if (res.empty) {
 
 

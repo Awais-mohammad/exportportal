@@ -32,9 +32,9 @@
 
 <ion-toolbar color="none" style="background-color: rgba(255, 255, 255, 0.979);position: fixed;z-index: 2; border-bottom:1px solid rgba(0, 0, 0, 0.274);
 box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
-  <ion-icon *ngIf="width<=600" class="bars" name="menu-outline" size="large" color="dark" slot="start"
-    (click)="openFirst()"></ion-icon>
-  <img src = "../../assets/images/logo.png" height = "100px" style = "margin-left:10px"/>
+  <ion-icon *ngIf="width<=600" class="bars" name="menu-outline" size="large" color="dark"
+    style="border: 2px solid white;" slot="start" (click)="openFirst()"></ion-icon>
+  <img src="../../assets/images/logo.png" height="100px" style="margin-left:10px" />
   <div slot="end" *ngIf="width > 600" style="padding-right:100px;">
     <ion-button (click)="goToPage('home')" fill="clear"
       style="color: rgb(7, 7, 7); font-size:1.2em; font-family: title;" *ngIf="activePath != 'home'">
@@ -108,7 +108,7 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
 </div>
 
 <div *ngIf="openLoginForm && width > 1100"
-  style="position:fixed;right:25%;top:20%;z-index:1000;height: 30em;width: 50%;background: white;  ">
+  style="position:fixed;right:25%;top:20%;z-index:1000;height: 30em;width: 50%;background: white; color: black;box-shadow: rgba(0, 0, 0, 0.596);box-sizing: border-box;border: 1px solid black; ">
 
   <div style="position: relative;left:94%;top: 3%;">
     <ion-icon (click)="toggleForm()" color="danger" style="font-size: 30px;" name="close-outline"></ion-icon>
@@ -117,11 +117,11 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
 
     <div>
 
-      <ion-title class="headinone">Sign In To Account</ion-title>
+      <ion-title style="color: black;" class="headinone">Sign In To Account</ion-title>
 
-      <ion-title style="text-align: center;" class="headintwo">Don't have an account?
+      <ion-title style="text-align: center;color: black;" class="headintwo">Don't have an account?
 
-        <span style="color: #09757A;">Sign Up</span>
+        <span (click)="goToPage('vendors-main')" style="color: #09757A;">Sign Up</span>
 
       </ion-title>
 
@@ -143,11 +143,12 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
 
 
       <div class="paddtop">
-        <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
+        <ion-button (click)="login()" style=" max-width: 50vh;" color="none"
+          style="background-color: black;color: white;" expand='block'>
           <p>LOGIN</p>
         </ion-button>
         <div style="display: flex;">
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox style="--background: white;--border-color:black"></ion-checkbox>
           <ion-label class="padleft">Keep me signed in on this device</ion-label>
         </div>
       </div>
@@ -162,7 +163,7 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
 </div>
 
 <div *ngIf="openLoginForm && width < 1100"
-  style="position:fixed;top:20%;z-index:1000;height: 30em;width: 85%;left: 8%;background: white;  ">
+  style="position:fixed;top:20%;z-index:1000;height: 30em;width: 85%;left: 8%;background: white; background: white; color: black;box-shadow: rgba(0, 0, 0, 0.596);box-sizing: border-box;border: 1px solid black; ">
 
   <div style="text-align: right;">
     <ion-icon (click)="toggleForm()" color="danger" style="font-size: 30px;" name="close-outline"></ion-icon>
@@ -171,11 +172,11 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
 
     <div>
 
-      <h1 style="text-align: center;" class="headinone">Sign In To Account</h1>
+      <h1 style="text-align: center;color: black;" class="headinone">Sign In To Account</h1>
 
-      <h2 style="text-align: center;" class="headintwo">Don't have an account?
+      <h2 style="text-align: center;color: black;" class="headintwo">Don't have an account?
 
-        <span style="color: #09757A;">Sign Up</span>
+        <span (click)="goToPage('vendors-main')" style="color: #09757A;">Sign Up</span>
 
       </h2>
 
@@ -197,11 +198,12 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
 
 
       <div class="paddtop">
-        <ion-button (click)="login()" style=" max-width: 50vh;" color="dark" expand='block'>
+        <ion-button (click)="login()" style=" max-width: 50vh;" color="none"
+          style="background-color: black;color: white;" expand='block'>
           <p>LOGIN</p>
         </ion-button>
         <div style="display: flex;">
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox style="--background: white;--border-color:black"></ion-checkbox>
           <ion-label class="padleft">Keep me signed in on this device</ion-label>
         </div>
       </div>

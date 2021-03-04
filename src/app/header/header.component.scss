@@ -1,13 +1,14 @@
 .bars {
     margin-left: 30px;
-    background: rgb(255, 255, 255);
-    border-radius: 10%;
-    transition: 0.2s;
+  background: black;
 }
+
 .bars:hover {
     background: rgb(175, 175, 175);
 }
-
+span:hover {
+    cursor: pointer;
+}
 ion-button:hover {
     --color: rgb(0, 0, 0);
 }

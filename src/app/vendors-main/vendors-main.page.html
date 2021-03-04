@@ -439,7 +439,8 @@
                 </p>
 
 
-                <ion-button style="border-radius: 1px;background: blue;position: relative;top: -5px;  " color="none">
+                <ion-button (click)="showHideLoginForm()"
+                  style="border-radius: 1px;background: blue;position: relative;top: -5px;  " color="none">
                   REGISTER</ion-button>
 
               </div>
@@ -504,7 +505,7 @@
       <ion-grid>
         <ion-row>
           <ion-col offset="0.5" size="11">
-            <ion-card *ngIf="!showLogin" class="fade-in">
+            <ion-card style="background: white;" *ngIf="!showLogin" class="fade-in">
 
               <ion-card-content
                 style="display: flex;justify-content: center;align-items: center;flex-direction: column;">

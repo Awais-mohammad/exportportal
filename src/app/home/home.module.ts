@@ -1,4 +1,4 @@
-import { SidemenuComponentmodule } from './../sidemenu/sidemenu.component.module';
+
 import { FooterComponentModule } from './../footer/footer.component.module';
 import { FooterComponent } from './../footer/footer.component';
 import { NgModule } from '@angular/core';
@@ -18,7 +18,7 @@ import { ExporterPage } from './../exporter/exporter.page';
     HomePageRoutingModule,
     HeaderComponentModule,
     FooterComponentModule,
-    SidemenuComponentmodule,
+   
 
   ],
   declarations: [HomePage],

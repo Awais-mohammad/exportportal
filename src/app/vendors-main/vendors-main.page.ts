@@ -126,6 +126,7 @@ export class VendorsMainPage implements OnInit {
             const companyEmail = this.email.toLocaleLowerCase()
             const imageURL = this.imageURL
             const websiteURL = this.webURL
+            const top = true
             this.firestore.collection('vendors').doc(this.currentUserID).set({
               userID,
               timestamp,
@@ -136,9 +137,10 @@ export class VendorsMainPage implements OnInit {
               category,
               companyEmail,
               imageURL,
-              websiteURL
+              websiteURL,
+              top,
             }).then(() => {
-              alert('user created')
+            
               this.restoperation()
             }).catch(err => {
               alert(JSON.stringify(err.message))
@@ -154,17 +156,7 @@ export class VendorsMainPage implements OnInit {
 
 
   restoperation() {
-    alert('ok lets see')
-    const userID = this.currentUserID;
-    const timestamp = new Date()
-    const name = this.username.toLocaleLowerCase()
-    const phone = this.companyPhone
-    const adress = this.companyAdress.toLocaleLowerCase()
-    const accountstatus = 'approved'
-    const category = this.cates;
-    const companyEmail = this.email.toLocaleLowerCase()
-    const imageURL = this.imageURL
-    const websiteURL = this.webURL
+  
     for (var i = 0; i < this.cates.length; i++) {
 
       this.firestore.collection('products').doc(this.cates[i]).get().subscribe(res => {
@@ -191,12 +183,12 @@ export class VendorsMainPage implements OnInit {
       const category = this.cates;
       const companyEmail = this.email.toLocaleLowerCase()
       const imageURL = this.imageURL
+      const top = true
       const websiteURL = this.webURL
       this.firestore.collection('products').doc(this.cates[i]).update({
         vendors: firebase.firestore.FieldValue.arrayUnion(
           {
             userID,
-            timestamp,
             name,
             phone,
             adress,
@@ -204,7 +196,8 @@ export class VendorsMainPage implements OnInit {
             category,
             companyEmail,
             imageURL,
-            websiteURL
+            websiteURL,
+            top,
           }
         )
       }).then(() => {
@@ -229,11 +222,11 @@ export class VendorsMainPage implements OnInit {
       const companyEmail = this.email.toLocaleLowerCase()
       const imageURL = this.imageURL
       const websiteURL = this.webURL
+      const top = true
       this.firestore.collection('products').doc(this.cates[i]).set({
         vendors: firebase.firestore.FieldValue.arrayUnion(
           {
             userID,
-            timestamp,
             name,
             phone,
             adress,
@@ -241,7 +234,8 @@ export class VendorsMainPage implements OnInit {
             category,
             companyEmail,
             imageURL,
-            websiteURL
+            websiteURL,
+            top
           }
         )
       }).then(() => {
@@ -255,18 +249,18 @@ export class VendorsMainPage implements OnInit {
 
   choosecat(selected: string) {
     this.selectedcat = selected
-    alert(this.selectedcat)
+  
     if (this.selectedcat) {
       this.cates.push(this.selectedcat)
     }
     else {
-      alert('lol')
+    
     }
   }
 
 
   delete(index) {
-    alert('cliecked' + index)
+  
     this.cates.splice(index, 1)
   }
 
@@ -292,7 +286,7 @@ export class VendorsMainPage implements OnInit {
   uploadFile(file: File): Observable<HttpEvent<{}>> {
     const formdata: FormData = new FormData();
     formdata.append('file', file);
-    const req = new HttpRequest('POST', 'https://134.122.2.23/uploadimage.php', formdata, {
+    const req = new HttpRequest('POST', 'https://www.exportportal.site/uploadimage.php', formdata, {
       reportProgress: true,
       responseType: 'text'
     });
@@ -306,7 +300,9 @@ export class VendorsMainPage implements OnInit {
     this.loaderID = 'upimg'
     this.loadermsg = 'FETCHING!!!!!'
     this.presentLoading()
-    this.imageURL = 'https://134.122.2.23/vendors/' + this.selectedFiles[0].name;
+    this.imageURL = 'https://exportportal.site/vendors/' + this.selectedFiles[0].name;
+   
+
     this.upload()
   }
 

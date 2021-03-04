@@ -91,7 +91,7 @@ export class VendorsDashboardPage implements OnInit {
 
   choosecat(selested: string) {
     this.selectedcat = selested
-    alert(this.selectedcat)
+    
 
   }
 
@@ -100,7 +100,7 @@ export class VendorsDashboardPage implements OnInit {
   }
   choosesubcat(selested: string) {
     this.subCats = selested
-    alert(this.subCats)
+  
   }
 
   selectedFiles: FileList;
@@ -109,7 +109,7 @@ export class VendorsDashboardPage implements OnInit {
   uploadFile(file: File): Observable<HttpEvent<{}>> {
     const formdata: FormData = new FormData();
     formdata.append('file', file);
-    const req = new HttpRequest('POST', 'https://134.122.2.23/uploadimage.php', formdata, {
+    const req = new HttpRequest('POST', 'https://www.exportportal.site/uploadimage.php', formdata, {
       reportProgress: true,
       responseType: 'text'
     });
@@ -124,7 +124,7 @@ export class VendorsDashboardPage implements OnInit {
     this.loaderID = 'upimg'
     this.loadermsg = 'FETCHING!!!!!'
     this.presentLoading()
-    this.imageURL = 'https://134.122.2.23/vendors/' + this.selectedFiles[0].name
+    this.imageURL = 'https://www.exportportal.site/vendors/' + this.selectedFiles[0].name
     this.upload()
   }
 
@@ -257,7 +257,7 @@ export class VendorsDashboardPage implements OnInit {
   getProducts() {
     this.fireStore.collection('vendors').doc(this.currentUID).collection('products').get().subscribe(dat => {
       if (dat.empty) {
-        alert('ahmmm nothing found')
+       
       }
       else {
         this.document = dat
