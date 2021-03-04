@@ -138,7 +138,7 @@
     </div>
     <div *ngIf="topvendors" style="text-align: center;">
       <div class="wrapper" *ngFor="let item of topvendors">
-        <ion-row>
+        <ion-row class="a" (click)="openProfilePage(item.Df.sn.proto.mapValue.fields.userID.stringValue)">
           <ion-col class="product-img">
             <img style="object-fit: contain;" src="{{item.Df.sn.proto.mapValue.fields.imageURL.stringValue}}"
               height="190" width="200">

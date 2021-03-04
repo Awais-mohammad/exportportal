@@ -32,7 +32,7 @@
     </div>
     <div *ngIf="topvendors" style="text-align: center;">
       <div class="wrapper" *ngFor="let item of topvendors">
-        <ion-row>
+        <ion-row class="a" (click)="openProfilePage(item.Df.sn.proto.mapValue.fields.userID.stringValue)">
           <ion-col class="product-img">
             <img style="object-fit: contain;" src="{{item.Df.sn.proto.mapValue.fields.imageURL.stringValue}}"
               height="190" width="200">
@@ -40,7 +40,7 @@
           <ion-col class="product-info">
             <div class="product-text">
               <h1>{{item.Df.sn.proto.mapValue.fields.name.stringValue}}</h1>
-              <h2>by studio and friends</h2>
+              <h2>Top Rated Exporters At ExportPortal</h2>
               <ion-icon name="star" color="warning"></ion-icon>
               <ion-icon name="star" color="warning"></ion-icon>
               <ion-icon name="star" color="warning"></ion-icon>
