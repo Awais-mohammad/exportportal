@@ -1,4 +1,14 @@
-<ion-content>
+
+<ion-content id = "content">
+  <div style = "position: fixed;bottom:80px;right:30px;z-index:999">
+    <ion-button (click) = "scrollToTop()">
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button (click) = "scrollToBot()">
+      <ion-icon name="arrow-down-outline"></ion-icon>
+    </ion-button>
+  </div>
   <div class="page">
     <div class="webheader">
       <div class="txt">
@@ -1382,7 +1392,6 @@
         </ul>
       </div>
     </div>
-
     <app-footer></app-footer>
   </div>
 
