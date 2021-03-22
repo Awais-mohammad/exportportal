@@ -1,0 +1,18 @@
+#content { margin: 50px; } 
+a { text-decoration: none; }  
+ 
+.expandable {
+  background: #fff;
+  color: #000;   
+  line-height: 50px;
+
+  transition: all .5s ease-in-out;
+  height: 0;
+  display:none;
+ }
+ 
+ .expandable:target {
+    display:block;
+  height: auto;
+}
+ 

@@ -34,7 +34,7 @@
 box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
   <ion-icon *ngIf="width<=600" class="bars" name="menu-outline" size="large" color="dark"
     style="border: 2px solid white;" slot="start" (click)="openFirst()"></ion-icon>
-  <img src="../../assets/images/logo.png" height="100px" style="margin-left:10px" />
+  <img src="../../assets/images/logo.png" height="90px" style="margin-left:10px;padding:10px;" />
   <div slot="end" *ngIf="width > 600" style="padding-right:100px;">
     <ion-button (click)="goToPage('home')" fill="clear"
       style="color: rgb(7, 7, 7); font-size:1.2em; font-family: title;" *ngIf="activePath != 'home'">
@@ -67,6 +67,14 @@ box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
     <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
       *ngIf="activePath == 'products'">
       <span class="hoo activated">Products</span>
+    </ion-button>
+    <ion-button (click)="goToPage('policy')" fill="clear"
+      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'policy'">
+      <span class="hoo">Policy</span>
+    </ion-button>
+    <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
+      *ngIf="activePath == 'policy'">
+      <span class="hoo activated">Policy</span>
     </ion-button>
     <ion-button (click)="goToPage('about')" fill="clear"
       style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'about'">
