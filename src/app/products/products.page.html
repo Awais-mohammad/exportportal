@@ -4,13 +4,10 @@
       <ion-label style="font-family: title;font-size: 4em;color: white;">All <span class="highlight">
           Exported</span> Products</ion-label>
 
-      <div style="text-align: center;">
-        <ion-searchbar style="display:inline-block;max-width:700px;width: 90%;" mode="ios" color="light"
-          placeholder="Search for products..">
-        </ion-searchbar>
-      </div>
+
     </div>
   </div>
+
   <!--Products-->
   <div>
     <ion-toolbar style="text-align: center;" color="tertiary">
@@ -33,7 +30,7 @@
           </ion-col>
           <ion-col style="padding-left:50px;padding-right:50px;text-align: center;" size="10">
             <div *ngIf="products">
-              <ion-card color="none" style="background:white;width: 300px;display: inline-block;"
+              <ion-card color="none" style="background:white;width: 300px;display: inline-block;min-height: 280px;"
                 *ngFor="let product of products;let i = index">
                 <div *ngIf="product">
                   <div class="card_image">
@@ -43,11 +40,13 @@
                     <ion-card-title style="font-family: title;color:rgb(43, 43, 43)">{{product.productName.stringValue}}
                     </ion-card-title>
                   </ion-card-header>
-                  <ion-item (click)="openProfilePage(product.uploadedBy.stringValue)" color="success"
-                    style="font-family: monospace;text-align: center;" button>
-                    View
-                    Exporter
-                  </ion-item>
+                  <ion-card-content style="padding: 0;margin: 0;position: absolute;bottom: 0px;width: 100%;">
+                    <ion-item (click)="openProfilePage(product.uploadedBy.stringValue)" color="success"
+                      style="font-family: monospace;text-align: center;" button>
+                      View
+                      Exporter
+                    </ion-item>
+                  </ion-card-content>
                 </div>
 
                 <div *ngIf="!product && i == 0">

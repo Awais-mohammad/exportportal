@@ -66,8 +66,9 @@
 }
 .header {
   height: 700px;
-  background: url("../../assets/images/back3.jpg");
+  background: url("../../assets/images/test.jpg");
   background-size: cover;
+  object-fit: contain;
   background-position: center;
 }
 @media all and (max-width: 500px) {

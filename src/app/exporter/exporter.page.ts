@@ -34,6 +34,8 @@ export class ExporterPage implements OnInit {
   subCat: string;
   catIndex: number = 0;
 
+
+
   ngOnInit() {
     this.fireStore.collection('vendors').doc(this.ExporterID).get().subscribe((data: any) => {
       this.vendor = data.Df.sn.proto.mapValue.fields;
@@ -50,8 +52,8 @@ export class ExporterPage implements OnInit {
 
       this.getCats();
       setTimeout(() => {
-        this.getProds("automotive");
 
+        this.getProducts()
         this.catIndex++;
       }, 2000);
 
@@ -75,40 +77,13 @@ export class ExporterPage implements OnInit {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  changeCat(cat: string) {
-    this.products = [];
-    this.cat = cat;
-    this.getProds(cat);
-  }
 
-  showMore() {
-    if (this.catIndex < this.categories.cats.arrayValue.values.length) {
-      this.catIndex = this.catIndex + 1;
-      this.getProds(this.categories.cats.arrayValue.values[this.catIndex].stringValue);
-    }
+  getProducts() {
+    this.fireStore.collection('vendors').doc(this.ExporterID).collection('products').valueChanges().subscribe(data => {
+      console.log('vendor data=>', data);
+      this.products = data;
+    })
   }
-
-  getProds(cat: string) {
-    console.log(cat);
-    for (var i = 0; i < this.categories[cat].arrayValue.values.length; i++) {
-      const subCat = this.categories[cat].arrayValue.values[i].stringValue;
-      console.log("Checking >>> ", subCat);
-      const getDocs = this.fireStore.collection('products').doc(cat).collection(subCat).get().subscribe((data: any) => {
-        if (data.empty == false) {
-          for (var k = 0; k < data.docs.length; k++) {
-            if (data.docs[k].Df.sn.proto.mapValue.fields != undefined) {
-              this.products.push(data.docs[k].Df.sn.proto.mapValue.fields);
-            }
-            if (k == data.docs.length - 1) {
-              getDocs.unsubscribe();
-            }
-          }
-        }
-      })
-    }
-    console.log(this.products);
-  }
-
 
   goToPage(path: string) {
     this.router.navigate([path])

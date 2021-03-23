@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { IonContent } from '@ionic/angular';
 import { MenuController } from '@ionic/angular';
 import { LoginPage } from '../login/login.page';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit {
     private firestore: AngularFirestore,
     private menu: MenuController,
     private firebaseauth: AngularFireAuth,
+    public modalController: ModalController,
   ) { }
 
   width = window.innerWidth;
@@ -96,7 +98,15 @@ export class HeaderComponent implements OnInit {
     this.router.navigate([path]).then(() => {
       this.activePath = this.router.url.slice(1, this.router.url.length);
       this.menu.close();
+      this.dismiss()
     });
+  }
+  dismiss() {
+    this.modalController.getTop().then(v => {
+      if (v != null) {
+        this.modalController.dismiss();
+      }
+    })
   }
 
   login() {

@@ -235,3 +235,7 @@ ion-input {
     --background: rgb(219, 219, 219) !important;
     max-width: 20em;
 }
+
+ion-label:hover {
+    cursor: pointer;
+}

@@ -110,6 +110,8 @@ export class ProductsPage implements OnInit {
     console.log(this.products);
   }
 
+
+
   ionViewWillEnter() {
     this.titleService.setTitle("Products - Export Portal");
     try {

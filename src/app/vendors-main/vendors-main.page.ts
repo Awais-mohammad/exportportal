@@ -140,7 +140,7 @@ export class VendorsMainPage implements OnInit {
               websiteURL,
               top,
             }).then(() => {
-            
+
               this.restoperation()
             }).catch(err => {
               alert(JSON.stringify(err.message))
@@ -156,7 +156,7 @@ export class VendorsMainPage implements OnInit {
 
 
   restoperation() {
-  
+
     for (var i = 0; i < this.cates.length; i++) {
 
       this.firestore.collection('products').doc(this.cates[i]).get().subscribe(res => {
@@ -249,18 +249,20 @@ export class VendorsMainPage implements OnInit {
 
   choosecat(selected: string) {
     this.selectedcat = selected
-  
+
     if (this.selectedcat) {
       this.cates.push(this.selectedcat)
     }
     else {
-    
+
     }
   }
-
+  gotoPrivacy() {
+    this.router.navigate(['policy'])
+  }
 
   delete(index) {
-  
+
     this.cates.splice(index, 1)
   }
 
@@ -301,7 +303,7 @@ export class VendorsMainPage implements OnInit {
     this.loadermsg = 'FETCHING!!!!!'
     this.presentLoading()
     this.imageURL = 'https://exportportal.site/vendors/' + this.selectedFiles[0].name;
-   
+
 
     this.upload()
   }

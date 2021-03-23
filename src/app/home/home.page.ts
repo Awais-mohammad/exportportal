@@ -86,7 +86,7 @@ export class HomePage {
     } else {
       currDex = this.showCats.length;
     }
-    for (var i = currDex; i < currDex + 5; i++) {
+    for (var i = currDex; i < currDex + 15; i++) {
       this.showCats.push(this.categories.cats.arrayValue.values[i].stringValue);
     }
   }

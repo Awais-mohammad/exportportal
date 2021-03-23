@@ -1,9 +1,9 @@
 <ion-menu style="background: white;" side="start" content-id="content" class="menu">
   <div>
-    <ion-toolbar style="display: flex;" color="success">
+    <ion-toolbar style="display: flex;background: white;" color="none">
 
-      <img src="../../assets/icon/favicon.png" alt="">
-      <ion-title style="font-family:fantasy;font-size:2em;font-weight:bolder;">EXPORTPORTAL</ion-title>
+      <img src="../../assets/images/logo.png" alt="">
+
     </ion-toolbar>
     <ion-item *ngFor="let page of pages" color="none" button>
       <ion-label class="mobilePage" *ngIf="activePath != page" style="color:black;font-family:impact"
@@ -30,79 +30,94 @@
   </div>
 </ion-menu>
 
-<ion-toolbar color="none" style="background-color: rgba(255, 255, 255, 0.979);position: fixed;z-index: 2; border-bottom:1px solid rgba(0, 0, 0, 0.274);
+<ion-toolbar color="none" style="background-color: rgba(255, 255, 255, 0.979);position: fixed;z-index: 2; border-bottom:1px solid rgba(0, 0, 0, 0.274);height: 5em;
 box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.199);">
-  <ion-icon *ngIf="width<=600" class="bars" name="menu-outline" size="large" color="dark"
-    style="border: 2px solid white;" slot="start" (click)="openFirst()"></ion-icon>
-  <img src="../../assets/images/logo.png" height="90px" style="margin-left:10px;padding:10px;" />
-  <div slot="end" *ngIf="width > 600" style="padding-right:100px;">
-    <ion-button (click)="goToPage('home')" fill="clear"
-      style="color: rgb(7, 7, 7); font-size:1.2em; font-family: title;" *ngIf="activePath != 'home'">
-      <span class="hoo"> Home</span>
-    </ion-button>
-    <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
-      *ngIf="activePath == 'home'">
-      <span class="hoo activated">Home</span>
-    </ion-button>
-    <ion-button (click)="goToPage('exporters-list')" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'exporters-list'">
-      <span class="hoo">Exporters</span>
-    </ion-button>
-    <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
-      *ngIf="activePath == 'exporters-list'">
-      <span class="hoo activated">Exporters</span>
-    </ion-button>
-    <ion-button (click)="goToPage('categories')" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'categories'">
-      <span class="hoo">Categories</span>
-    </ion-button>
-    <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
-      *ngIf="activePath == 'categories'">
-      <span class="hoo activated">Categories</span>
-    </ion-button>
-    <ion-button (click)="goToPage('products')" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'products'">
-      <span class="hoo">Products</span>
-    </ion-button>
-    <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
-      *ngIf="activePath == 'products'">
-      <span class="hoo activated">Products</span>
-    </ion-button>
-    <ion-button (click)="goToPage('policy')" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'policy'">
-      <span class="hoo">Policy</span>
-    </ion-button>
-    <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
-      *ngIf="activePath == 'policy'">
-      <span class="hoo activated">Policy</span>
-    </ion-button>
-    <ion-button (click)="goToPage('about')" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'about'">
-      <span class="hoo">About</span>
-    </ion-button>
-    <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
-      *ngIf="activePath == 'about'">
-      <span class="hoo activated">About</span>
-    </ion-button>
-    <ion-button (click)="goToPage('contact')" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'contact'">
-      <span class="hoo">Contact</span>
-    </ion-button>
-    <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
-      *ngIf="activePath == 'contact'">
-      <span class="hoo activated">Contact</span>
-    </ion-button>
-    <ion-button (click)="toggleForm()" *ngIf="!loggedIn" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">Login
-    </ion-button>
-    <ion-button *ngIf="!loggedIn" (click)="goToPage('vendors-main')" fill="clear"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">Register</ion-button>
-    <ion-button *ngIf="loggedIn && currentUserData" (click)="showOptions2()" fill="outline"
-      style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">
-      <ion-icon name="person-outline"></ion-icon>
-      {{currentUserData.name}}
-    </ion-button>
+
+  <div style="display: flex;position: relative;top: 1em;" *ngIf="width < 600">
+    <ion-icon *ngIf="width<=600" class="bars" name="menu-outline" size="large" color="dark"
+      style="border: 2px solid white;" slot="start" (click)="openFirst()"></ion-icon>
+    <ion-title style="color: black;font-size: 22px;font-family: slides;font-weight: bold;">EXPORTPORTAL</ion-title>
   </div>
+
+
+  <div *ngIf="width > 600" style="display: flex;justify-content: space-between;">
+
+    <div style="display: flex;padding-top: 1em;">
+      <img style="height: 4em;" src="../../assets/images/logo.png" alt="">
+      <ion-title style="color: black;font-size: 22px;font-family: slides;font-weight: bolder;">EXPORTPORTAL</ion-title>
+    </div>
+
+    <div *ngIf="width > 600" style="padding-right:100px;padding-top: 1em;">
+      <ion-button (click)="goToPage('home')" fill="clear"
+        style="color: rgb(7, 7, 7); font-size:1.2em; font-family: title;" *ngIf="activePath != 'home'">
+        <span class="hoo"> Home</span>
+      </ion-button>
+      <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
+        *ngIf="activePath == 'home'">
+        <span class="hoo activated">Home</span>
+      </ion-button>
+      <ion-button (click)="goToPage('exporters-list')" fill="clear"
+        style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'exporters-list'">
+        <span class="hoo">Exporters</span>
+      </ion-button>
+      <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
+        *ngIf="activePath == 'exporters-list'">
+        <span class="hoo activated">Exporters</span>
+      </ion-button>
+      <ion-button (click)="goToPage('categories')" fill="clear"
+        style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'categories'">
+        <span class="hoo">Categories</span>
+      </ion-button>
+      <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
+        *ngIf="activePath == 'categories'">
+        <span class="hoo activated">Categories</span>
+      </ion-button>
+      <ion-button (click)="goToPage('products')" fill="clear"
+        style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'products'">
+        <span class="hoo">Products</span>
+      </ion-button>
+      <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
+        *ngIf="activePath == 'products'">
+        <span class="hoo activated">Products</span>
+      </ion-button>
+      <ion-button (click)="goToPage('policy')" fill="clear"
+        style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'policy'">
+        <span class="hoo">Policy</span>
+      </ion-button>
+      <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
+        *ngIf="activePath == 'policy'">
+        <span class="hoo activated">Policy</span>
+      </ion-button>
+      <ion-button (click)="goToPage('about')" fill="clear"
+        style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'about'">
+        <span class="hoo">About</span>
+      </ion-button>
+      <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
+        *ngIf="activePath == 'about'">
+        <span class="hoo activated">About</span>
+      </ion-button>
+      <ion-button (click)="goToPage('contact')" fill="clear"
+        style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;" *ngIf="activePath != 'contact'">
+        <span class="hoo">Contact</span>
+      </ion-button>
+      <ion-button fill="clear" style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;"
+        *ngIf="activePath == 'contact'">
+        <span class="hoo activated">Contact</span>
+      </ion-button>
+      <ion-button (click)="toggleForm()" *ngIf="!loggedIn" fill="clear"
+        style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">Login
+      </ion-button>
+      <ion-button *ngIf="!loggedIn" (click)="goToPage('vendors-main')" fill="clear"
+        style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">Register</ion-button>
+      <ion-button *ngIf="loggedIn && currentUserData" (click)="showOptions2()" fill="outline"
+        style="color: rgb(0, 0, 0); font-size:1.2em; font-family: title;">
+        <ion-icon name="person-outline"></ion-icon>
+        {{currentUserData.name}}
+      </ion-button>
+    </div>
+  </div>
+
+
 </ion-toolbar>
 <div style="position:fixed;right:100px;top:70px;z-index:1000;" *ngIf="showOptions">
   <ion-item color="none" style="background:rgb(255, 255, 255);color:rgb(0, 68, 255);font-family: title;"
