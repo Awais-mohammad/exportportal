@@ -2,8 +2,20 @@
   <div class="header" *ngIf="width">
     <ion-grid *ngIf="width>600">
       <ion-row>
-        <ion-col style="padding-left:150px;padding-right:150px;padding-top:250px;" size="7">
+        <ion-col offset="2"
+          style="padding-left:150px;padding-right:150px;padding-top:250px;position: relative;top: -0.9em;" size="5">
           <ion-slides [options]="slideOpts">
+
+            <ion-slide>
+              <div>
+                <h1 style="color:white; font-weight: bold;font-family: bangers;text-align:center;
+                font-family: slides; font-size:3em;font-weight: 600!important;">STRATEGIC PARTNERS</h1>
+
+                <img style="max-height: 250px;object-fit: contain;" src="../../assets/images/stratic_part_logo.png">
+
+              </div>
+            </ion-slide>
+
             <ion-slide>
               <div>
                 <!--<h3 style = "color:white; font-family: bangers;text-align:center;">Coming</h3>-->
@@ -22,7 +34,7 @@
               <div>
                 <!--<h3 style = "color:white; font-family: bangers;text-align:center;">Coming</h3>-->
                 <h1 style="color:white; font-weight: 600!important;;font-family: bangers;text-align:center;
-                font-family: slides; font-size:3em;">FIND EXPORTERS BY <span class="highlight">CATEGORY</span>
+                font-family: slides; font-size:3em;">FIND EXPORTERS BY <br> <span class="highlight">CATEGORY</span>
                 </h1>
                 <p style="color:white;text-align:center;">
                   <ion-button class="butn" style="font-family: title;" color="none" mode="ios"
@@ -46,9 +58,10 @@
               </div>
             </ion-slide>
           </ion-slides>
+
         </ion-col>
         <ion-col
-          style="padding-left:40px;padding-right:40px;padding-bottom:40px;background:rgba(177, 177, 177, 0.329);border-radius:10px;margin-top:130px;"
+          style="padding-left:40px;padding-right:40px;padding-bottom:40px;background:rgba(177, 177, 177, 0.329);border-radius:10px;margin-top:130px;min-height: 500px;"
           size="4">
           <h1 style="color:white; font-weight: 500!important;font-family: title;text-align:center;
           font-family: slides; font-size:40px;">FINDING EXPORTERS IN PAKISTAN MADE EASIER
@@ -72,13 +85,13 @@
       </ion-row>
     </ion-grid>
     <ion-grid style="padding-top:200px;width:100%;float: right;" *ngIf="width<=600">
+
+      <ion-searchbar mode="ios" color="none"
+        style="background: rgba(255, 255, 255, 0.836);color:black;border-radius: 25px;" debounce="100"
+        (ionChange)="search($event)" placeholder="Search for product, vendor or category..">
+      </ion-searchbar>
       <ion-row>
-        <ion-col style="width: 40%;">
-          <ion-searchbar mode="ios" color="none"
-            style="background: rgba(255, 255, 255, 0.836);color:black;border-radius: 25px;" debounce="100"
-            (ionChange)="search($event)" placeholder="Search for product, vendor or category..">
-          </ion-searchbar>
-        </ion-col>
+
         <ion-col>
           <ion-slides [options]="slideOpts">
             <ion-slide>
@@ -160,12 +173,13 @@
     </div>
   </div>
 
+
   <div *ngIf="width >600"
-    style="display: flex;justify-content: center;align-items: center;padding-top: 3em;padding-bottom:40px;color:rgb(19, 19, 19);"
-    class="greyBack">
+    style="display: flex;justify-content: center;align-items: center;padding-top: 3em;padding-bottom:40px;color:rgb(19, 19, 19); background: white;">
+
     <div style="width: 70%;">
       <h1 style="font-size: 35px;font-weight: bold;font-family: title;text-align: center;">
-        Affiliated Partners
+        Affiliated Sponsors
       </h1>
 
       <div style="display: flex;align-items: center;justify-content: center;text-align: center;padding-top: 3em;">
@@ -185,13 +199,77 @@
           <img width="200px" height="200px" src="../../assets/images/spon-1.jpg">
         </div>
 
+        <div style="width: 25%;">
 
+          <img width="200px" height="200px" src="../../assets/images/spon-1.jpg">
+        </div>
+        <div style="width: 25%;">
+
+          <img width="200px" height="200px" src="../../assets/images/spon-1.jpg">
+        </div>
 
 
       </div>
     </div>
+
+
   </div>
 
+  <!-- 
+
+  <div *ngIf="width > 600" style="display: flex;justify-content: center;align-items: center;text-align: center;">
+
+
+    <div style="min-height: 20em;display: flex;width: 70%;">
+
+      <div style="padding-top: 25px;">
+
+        <ion-label
+          style="color: black;font-family: Helvetica;font-size: 30px;font-weight: bold;text-align: center;padding-top: 10px;">
+          STRATEGIC PARTNER
+        </ion-label>
+
+        <div style="display: flex;padding-top: 35px;">
+
+          <div style="width: 50%;">
+            <img style="height: 100%;width: 60%; object-fit: contain;" src="../../assets/images/strat_bck.jpg" alt="">
+          </div>
+
+          <div style="padding:20px;display: flex;flex-direction: column;width: 40%;">
+
+
+            <div
+              style="display: flex;justify-content: right;align-items: flex-end;text-align: right; box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.199);padding: 15px;">
+              <img style="max-height: 250px;object-fit: contain;" src="../../assets/images/stratic_part_logo.png"
+                alt="">
+
+              <div style="text-align: center;padding-left: 20px;position: relative;top: -2.5em;">
+                <p style="color: black;font-family: slides;">
+
+                  <span
+                    style="color: rgba(0, 0, 255, 0.562);font-family: slides;font-weight: bold;font-size: 20px;text-align: center;">
+                    Pakistan Promotion Network Europe
+                  </span>
+                  <br>
+                  is sharing resources to help us develop our employees, and is assisting in developing an
+                  edge in the marketplace.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div style="height: 4em;">
+
+  </div> -->
   <!--TOP EXPORTERS-->
   <div style="z-index: 4;" class="whiteBack">
     <div class="titleDiv">

@@ -66,11 +66,11 @@
 }
 .header {
   height: 700px;
-  background: url("../../assets/images/test.jpg");
+  background: url("../../assets/images/homepage.jpg");
   background-size: cover;
-  object-fit: contain;
   background-position: center;
 }
+
 @media all and (max-width: 500px) {
   .card-list {
     flex-direction: column;
@@ -127,4 +127,11 @@
 
 #container a {
   text-decoration: none;
+}
+ion-slide {
+  box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.199);
+  transition: 0.3s;
+  min-height: 350px;
+  border-radius: 20px;
+  
 }
